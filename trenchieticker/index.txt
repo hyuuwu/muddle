@@ -3,7 +3,8 @@ Let's make a game!
     desc: the Great War incremental game
     by: Not the Bear
     //I could show update dates n shit but Im lazy
-    version:0.0.2test
+    version:1
+    //show the fucking version
 Settings
     //I need Emery for like all of ts (no buildings)
     no particles
