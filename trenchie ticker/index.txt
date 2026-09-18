@@ -2,6 +2,8 @@ Let's make a game!
 
 name: Trenchie Ticker
 
+desc: the Great War incremental game
+
 by: Not the Bear
 
 version: 0.0.1
