@@ -1,11 +1,28 @@
 Let's make a game!
-
-name: Trenchie Ticker
-
-desc: the Great War incremental game
-
-by: Not the Bear
-
-version: 0.0.1
-
+    name: Trenchie Ticker
+    desc: the Great War incremental game
+    by: Not the Bear
+    //I could show update dates n shit but Im lazy
+    version: 0.0.2
 Settings
+    //I need Emery for like all of ts (no buildings)
+    no particles
+    no bulk particles
+    //cause Im evil and boring
+//CSS, my future enemy
+Layout
+    //Shits getting serious, maybe later
+    use default
+Resources
+  *pie
+    name:Pie
+    desc:A delicious pie.
+
+Upgrades
+  *applePieRecipe
+    name:Apple pie recipe
+    desc:Unlocks the ability to make apple pies!
+    
+  *cherryPieRecipe
+    name:Cherry pie recipe
+    desc:Boy, you'll never guess!
