@@ -1,0 +1,9 @@
+Let's make a game!
+
+name: Trenchie Ticker
+
+by: Not the Bear
+
+version: 0.0.1
+
+Settings
