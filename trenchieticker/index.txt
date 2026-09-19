@@ -18,7 +18,7 @@ Resources
         name:Tin
         desc:From melted dog tags.
 Buttons
-    *Go!
+    *Go
     name:Go!
     desc:Send a trenchie running.
     on click: yield 1 Tin
