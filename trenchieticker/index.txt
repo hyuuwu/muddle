@@ -21,4 +21,4 @@ Buttons
     *Go
     name:Go!
     desc:Send a trenchie running.
-    on click: yield 1 Tin
+    on click:yield 1 Tin
