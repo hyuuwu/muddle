@@ -12,7 +12,7 @@ Settings
 //CSS, my future enemy
 Layout
     *ticker
-        contains:Buttons,Resources
+        contains:Buttons, Resources
         footer:I earned these.
     *updates
         contains:Upgrades
