@@ -3,7 +3,7 @@ Let's make a game!
     desc: the Great War incremental game
     by: Not the Bear
     //I could show update dates n shit but Im lazy
-    version:0.0.003
+    version:0.003
 Settings
     //I need Emery for like all of ts (no buildings)
     no particles
@@ -11,8 +11,8 @@ Settings
     //cause Im evil and boring
 //CSS, my future enemy
 Layout
-    *earned
-        contains:Resources
+    *ticker
+        contains:Buttons,Resources
         footer:I earned these.
     *updates
         contains:Upgrades
