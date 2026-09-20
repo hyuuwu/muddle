@@ -10,13 +10,15 @@ Settings
     //idek what those mean but no buildings and no particles
     //spritesheet and background jpgs go here (that means you Emery)
 CSS
-    //this part is the game window (debug vertical overflow later if needed)
+    //this part is the game window
     #game {
         aspect-ratio:5 / 4;
         width:auto;
         height:100vh;
-        max-height:calc(100vh);  
+        max-width:100vh;
+        max-height:100vh;  
         position:absolute;
+        margin:0
     }
 Layout
     *ticker
