@@ -47,7 +47,7 @@ CSS
         margin:0;
     }
     //and these parts the boxes
-    #upgradepanel {
+    .upgradepanel {
         position:absolute;
         top:0;
         right:0;
