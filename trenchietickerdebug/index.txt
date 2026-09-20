@@ -10,11 +10,12 @@ Settings
     //idek what those mean but no buildings and no particles
     //spritesheet and background jpgs go here (that means you Emery)
 Layout
-    *everythingpanel
+    *game
+    **everythingpanel
         contains:Resources
-    *upgradepanel
+    **upgradepanel
         contains:Upgrades
-    *thetrench
+    **thetrench
         contains:Buttons
 Resources
     *Tin
@@ -25,12 +26,6 @@ Buttons
         name:Go!
         desc:Send a trenchie running.
         on click:yield 1 Tin
-Items
-    *shovel
-        name:Shovel
-        desc:Very strong, made of tin.
-        passive:increase yield of Go by 1
-        cost:400 Tin
 Upgrades
     *shave
         name:Shaved heads
@@ -42,11 +37,6 @@ Upgrades
         desc:For no reason...
         passive:multiply yield of Go by 2
         cost:100 Tin
-    *shovels
-        name:Sharpen Shovels
-        desc:We can't dig, but this is the next best thing!
-        passive:lower cost of shovel by 200
-        cost:1200 Tin
 CSS
     //this part is the game window
     #game {
@@ -57,13 +47,14 @@ CSS
         position:relative;
         margin:0;
     }
+    //and these parts the boxes
     .upgradepanel {
         position:absolute;
         top:0;
         right:0;
         width:34%;
         height:100%;
-        borderleft:1cqw solid #000;
+        border-left:1cqw solid #000;
         box-sizing:border-box;
         z-index:99 !important;
     }
