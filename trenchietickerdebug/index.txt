@@ -3,7 +3,7 @@ Let's make a game!
     desc: the Great War incremental game
     by: Not the Bear
     //I could show update dates n shit but Im lazy
-    version:0.0.002
+    version:0.0.003
 Settings
     //I need Emery for like all of ts (no buildings)
     no particles
@@ -11,8 +11,12 @@ Settings
     //cause Im evil and boring
 //CSS, my future enemy
 Layout
-    //Shits getting serious, maybe later
-    use default
+    *earned
+        contains:Resources
+        footer:I earned these.
+    *updates
+        contains:Upgrades
+        names:hide
 Resources
     *Tin
         name:Tin
@@ -22,3 +26,9 @@ Buttons
     name:Go!
     desc:Send a trenchie running.
     on click:yield 1 Tin
+Upgrades
+    *shave
+  name:Shaved heads
+  desc:Can't tangle no hair!
+  passive:multiply yield of Go by 2
+  cost:60 Tin
