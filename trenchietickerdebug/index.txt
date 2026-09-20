@@ -65,4 +65,5 @@ CSS
         height:100%;
         borderleft:1cqw solid #000;
         box-sizing:border-box;
+        z-index:99 !important;
     }
