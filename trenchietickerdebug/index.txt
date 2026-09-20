@@ -15,6 +15,7 @@ CSS
         aspect-ratio:5/4;
         width:auto;
         height:auto;
+        max-height:100vh;
         position:relative;
         margin:0;
     }
