@@ -2,13 +2,23 @@ Let's make a game!
     name: Trenchie Ticker
     desc: the Great War incremental game
     by: Not the Bear
-    version:0.003
+    //add update dates here if loser
+    version:0.004
 Settings
-    //I need Emery for like all of ts (no buildings)
     no particles
     no bulk particles
-    //cause Im evil and boring
-//CSS, my future enemy
+    //idek what those mean but no buildings and no particles
+    //spritesheet and background jpgs go here (that means you Emery)
+CSS
+    //this part is the game window (debug vertical overflow later if needed)
+    #game {
+        aspect-ratio:5 / 4;
+        width:auto;
+        height:calc(100vh - 40px);
+        
+        margin: auto;
+        position: relative;
+    }
 Layout
     *ticker
         contains:Buttons, Resources
@@ -45,17 +55,3 @@ Upgrades
         desc:We can't dig, but this is the next best thing!
         passive:lower cost of shovel by 200
         cost:1200 Tin
-CSS
-    //this part is the game window
-    #game {
-        aspect-ratio:5 / 4;
-        width: 90vw;
-        max-height: 90vh
-        
-        margin: auto;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-    }
