@@ -13,7 +13,7 @@ Layout
     *ticker
         contains:Buttons, Resources
     *updates
-        contains:Upgrades
+        contains:Upgrades, Items
         names:hide
 Resources
     *Tin
@@ -24,14 +24,26 @@ Buttons
         name:Go!
         desc:Send a trenchie running.
         on click:yield 1 Tin
+Items
+    *shovel
+        name:Shovel
+        desc:Very strong, made of tin.
+        passive:increase yield of Go by 1
+        cost:400 Tin
 Upgrades
     *shave
         name:Shaved heads
         desc:Can't tangle no hair!
-        passive:increase yield of Go by 1
-        cost:60 Tin
+        passive:multiply yield of Go by 2
+        cost:20 Tin
     *spikes
         name:Helmet spike
         desc:For no reason...
-        passive:increase yield of Go by 1
-        cost:120 Tin
+        passive:multiply yield of Go by 2
+        cost:100 Tin
+    *shovels
+        name:Sharpen Shovels
+        desc:We can't dig, but this is the next best thing!
+        passive:lower cost of shovel by 200
+        cost: 1200 Tin
+    
