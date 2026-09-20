@@ -2,8 +2,7 @@ Let's make a game!
     name: Trenchie Ticker
     desc: the Great War incremental game
     by: Not the Bear
-    //I could show update dates n shit but Im lazy
-    version:0.0.002
+    version:0.003
 Settings
     //I need Emery for like all of ts (no buildings)
     no particles
@@ -11,14 +10,39 @@ Settings
     //cause Im evil and boring
 //CSS, my future enemy
 Layout
-    //Shits getting serious, maybe later
-    use default
+    *ticker
+        contains:Buttons, Resources
+    *updates
+        contains:Upgrades, Items
 Resources
     *Tin
         name:Tin
         desc:From melted dog tags.
 Buttons
     *Go
-    name:Go!
-    desc:Send a trenchie running.
-    on click:yield 1 Tin
+        name:Go!
+        desc:Send a trenchie running.
+        on click:yield 1 Tin
+Items
+    *shovel
+        name:Shovel
+        desc:Very strong, made of tin.
+        passive:increase yield of Go by 1
+        cost:400 Tin
+Upgrades
+    *shave
+        name:Shaved heads
+        desc:Can't tangle no hair!
+        passive:multiply yield of Go by 2
+        cost:20 Tin
+    *spikes
+        name:Helmet spike
+        desc:For no reason...
+        passive:multiply yield of Go by 2
+        cost:100 Tin
+    *shovels
+        name:Sharpen Shovels
+        desc:We can't dig, but this is the next best thing!
+        passive:lower cost of shovel by 200
+        cost:1200 Tin
+    
