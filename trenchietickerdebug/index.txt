@@ -34,4 +34,4 @@ Upgrades
         name:Helmet spike
         desc:For no reason...
         passive:increase yield of Go by 1
-        cost: 120 Tin
+        cost:120 Tin
