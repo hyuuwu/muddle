@@ -19,11 +19,20 @@ CSS
         position:relative;
         margin:0;
     }
+    #upgradepanel {
+        position:absolute;
+        top:0;
+        right:0;
+        width:33.33%;
+        height:100%;
+    }
 Layout
-    *ticker
-        contains:Buttons, Resources
-    *updates
-        contains:Upgrades, Items
+    *everythingpanel
+        contains:Resources
+    *upgradepanel
+        contains:Upgrades
+    *thetrench
+        contains:Buttons
 Resources
     *Tin
         name:Tin
