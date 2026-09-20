@@ -18,8 +18,8 @@ CSS
         max-height:calc(100vh-32px);
         
         position:absolute;
-        left:0;
-        top:32px;
+        right:0;
+        top:34px;
     }
 Layout
     *ticker
