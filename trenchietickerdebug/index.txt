@@ -14,7 +14,6 @@ Layout
         contains:Buttons, Resources
     *updates
         contains:Upgrades, Items
-        names:hide
 Resources
     *Tin
         name:Tin
@@ -45,5 +44,5 @@ Upgrades
         name:Sharpen Shovels
         desc:We can't dig, but this is the next best thing!
         passive:lower cost of shovel by 200
-        cost: 1200 Tin
+        cost:1200 Tin
     
