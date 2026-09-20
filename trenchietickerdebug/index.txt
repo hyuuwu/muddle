@@ -45,4 +45,17 @@ Upgrades
         desc:We can't dig, but this is the next best thing!
         passive:lower cost of shovel by 200
         cost:1200 Tin
-    
+CSS
+    //this part is the game window
+    #game {
+        aspect-ratio:5 / 4;
+        width: 90vw;
+        max-height: 90vh
+        
+        margin: auto;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
