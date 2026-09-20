@@ -13,11 +13,10 @@ CSS
     //this part is the game window (debug vertical overflow later if needed)
     #game {
         aspect-ratio:5 / 4;
-        height:auto;
         width:auto;
+        height:calc(100vh-32px);
         
-        margin:0;
-        position:relative;
+        position:absolute;
         right:0;
         top:32px;
     }
