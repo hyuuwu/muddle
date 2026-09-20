@@ -14,7 +14,8 @@ CSS
     #game {
         aspect-ratio:5 / 4;
         width:auto;
-        height:calc(100vh-32px);
+        height:100vh;
+        max-height:calc(100vh-32px);
         
         position:absolute;
         right:0;
