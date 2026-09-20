@@ -13,11 +13,11 @@ CSS
     //this part is the game window (debug vertical overflow later if needed)
     #game {
         aspect-ratio:5 / 4;
-        width:auto;
-        height:calc(100vh - 40px);
+        height:calc(100vh - 32px);
+        width:auto:
         
-        margin: auto;
-        position: relative;
+        margin:0 auto;
+        position:relative;
     }
 Layout
     *ticker
