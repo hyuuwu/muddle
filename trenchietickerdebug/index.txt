@@ -19,12 +19,14 @@ CSS
         position:relative;
         margin:0;
     }
-    #upgradepanel {
+    #upgradepanel{
         position:absolute;
         top:0;
         right:0;
-        width:33.33%;
+        width:34%;
         height:100%;
+        borderleft:1cqw solid #000;
+        box-sizing:border-box;
     }
 Layout
     *everythingpanel
