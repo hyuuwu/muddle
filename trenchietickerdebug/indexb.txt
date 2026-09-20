@@ -19,7 +19,7 @@ CSS
         
         position:absolute;
         right:0;
-        top:50px;
+        top:200px;
     }
 Layout
     *ticker
