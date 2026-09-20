@@ -15,11 +15,8 @@ CSS
         aspect-ratio:5 / 4;
         width:auto;
         height:100vh;
-        max-height:calc(100vh-32px);
-        
+        max-height:calc(100vh);  
         position:absolute;
-        right:0;
-        top:200px;
     }
 Layout
     *ticker
