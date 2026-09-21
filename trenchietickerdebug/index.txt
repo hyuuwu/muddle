@@ -10,11 +10,11 @@ Settings
     //idek what those mean but no buildings and no particles
     //spritesheet and background jpgs go here (that means you Emery)
 Layout
-    *everythingpanel
+    *box:everythingpanel
         contains:Resources
-    *upgradepanel
+    *box:upgradepanel
         contains:Upgrades
-    *thetrench
+    *box:thetrench
         contains:Buttons
 Resources
     *Tin
@@ -47,13 +47,12 @@ CSS
         margin:0;
     }
     //and these parts the boxes
-    .upgradepanel {
+    #box-upgradepanel {
         position:absolute;
         top:0;
         right:0;
         width:34%;
         height:100%;
-        border-left:4px solid #000; //placeholder I want 1% of game screen for this border
+        border-left:1vw solid #000; //placeholder I want 1% of game screen for this border
         box-sizing:border-box;
-        z-index:99 !important;
     }
