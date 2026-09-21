@@ -83,7 +83,8 @@ Upgrades
         req:1 tier5upA
         req:1 tier5upB
         cost:10000 tin
-Items
+//dw bbg no buildings here
+Buildings
     *tier3token
         start with:0
         name: 
