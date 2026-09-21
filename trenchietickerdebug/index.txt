@@ -56,6 +56,9 @@ Upgrades
         req:0 tier3upA
         on earn:earn 1 tier3up
         cost:1 tin
+    *tier3up
+        name:OR
+        hidden
     *tier4up
         name:Eye drying treatment
         desc:The perfect counter for flares.
