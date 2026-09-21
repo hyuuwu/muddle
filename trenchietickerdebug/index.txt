@@ -45,6 +45,7 @@ Upgrades
         class:tier3
         req:1 tier2up
         req:0 tier3upB
+        on earn:earn 1 tier3up
         passive:increase yield of tinbutton by 1
         cost:1000 tin
     *tier3upB
@@ -53,12 +54,13 @@ Upgrades
         class:tier3
         req:1 tier2up
         req:0 tier3upA
+        on earn:earn 1 tier3up
         cost:1 tin
     *tier4up
         name:Eye drying treatment
         desc:The perfect counter for flares.
         class:tier4
-        req:(1 tier3upA or 1 tier3upB)
+        req:1 tier3up
         passive:multiply yield of tinbutton by 2
         cost:5000 tin
     *tier5upA
