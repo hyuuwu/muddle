@@ -58,7 +58,8 @@ Upgrades
         name:Eye drying treatment
         desc:The perfect counter for flares.
         class:tier4
-        req:1 tier3upA || 1 tier3upB //dont ask me man that means or I guess
+        req:1 tier3upA || 1 tier3upB
+        //that means or??
         passive:multiply yield of tinbutton by 2
         cost:5000 tin
     *tier5upA
