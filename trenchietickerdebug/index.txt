@@ -37,7 +37,7 @@ Upgrades
         desc:No reason...
         class:tier2
         req:1 tier1up
-        on earn:yield 1 tier2token
+        on earn:yield 1 tier3token
         passive:increase yield of tinbutton by 2
         cost:100 tin
     *tier3upA
