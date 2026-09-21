@@ -37,6 +37,7 @@ Upgrades
         desc:No reason...
         class:tier2
         req:1 tier1up
+        on earn:yield 1 tier2token
         passive:increase yield of tinbutton by 2
         cost:100 tin
     *tier3upA
@@ -44,18 +45,18 @@ Upgrades
         desc:Is that how you spell that?
         class:tier3
         req:1 tier2up
-        req:V('tier3upB') < 1
         on earn:yield 1 tier3up
         passive:increase yield of tinbutton by 1
         cost:1000 tin
+        cost:1 tier3token
     *tier3upB
         name:Patriotic colors
         desc:At least it's cheap.
         class:tier3
         req:1 tier2up
-        req:V('tier3upA') < 1
         on earn:yield 1 tier3up
         cost:1 tin
+        cost:1 tier3token
     *tier4up
         name:Eye drying treatment
         desc:The perfect counter for flares.
@@ -83,6 +84,9 @@ Upgrades
         req:1 tier5upB
         cost:10000 tin
 Items
+    *tier3token
+        name:why is this needed
+        hidden
     *tier3up
         name:an oar
         hidden
