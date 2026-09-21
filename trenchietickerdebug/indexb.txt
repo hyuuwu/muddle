@@ -43,8 +43,7 @@ Upgrades
         name:Camoflage
         desc:Is that how you spell that?
         class:tier3
-        req:1 tier2up
-        req:0 tier3upB
+        req:(1 tier2up and 0 tier3upB)
         on earn:yield 1 tier3up
         passive:increase yield of tinbutton by 1
         cost:1000 tin
@@ -52,8 +51,7 @@ Upgrades
         name:Patriotic colors
         desc:At least it's cheap.
         class:tier3
-        req:1 tier2up
-        req:0 tier3upA
+        req:(1 tier2up and 0 tier3upA)
         on earn:yield 1 tier3up
         cost:1 tin
     *tier3up
