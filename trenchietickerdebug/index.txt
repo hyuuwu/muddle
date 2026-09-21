@@ -12,30 +12,74 @@ Settings
 Layout
     *everythingpanel
         contains:Resources
+   *thetrench
+        contains:Buttons
     *upgradepanel
         contains:Upgrades
-    *thetrench
-        contains:Buttons
 Resources
-    *Tin
+    *tin
         name:Tin
-        desc:From melted dog tags.
+        desc:Melted dog tags.
 Buttons
-    *Go
+    *tinbutton
         name:Go!
         desc:Send a trenchie running.
-        on click:yield 1 Tin
+        on click:yield 1 tin
 Upgrades
-    *shave
-        name:Shaved heads
+    *tier1up
+        name:Clean shave
         desc:Can't tangle no hair!
-        passive:multiply yield of Go by 2
-        cost:20 Tin
-    *spikes
+        class:tier1
+        passive:increase yield of tinbutton by 1
+        cost:10 tin
+    *tier2up
         name:Helmet spike
-        desc:For no reason...
-        passive:multiply yield of Go by 2
-        cost:100 Tin
+        desc:No reason...
+        class:tier2
+        req:1 tier1up
+        passive:increase yield of tinbutton by 2
+        cost:100 tin
+    *tier3upA
+        name:Camoflage
+        desc:Is that how you spell that?
+        class:tier3
+        req:1 tier2up
+        req:0 tier3upB
+        passive:increase yield of tinbutton by 1
+        cost:1000 tin
+    *tier3upB
+        name:Patriotic colors
+        desc:At least it's cheap.
+        class:tier3
+        req:1 tier2up
+        req:0 tier3upA
+        cost:1 tin
+    *tier4up
+        name:Eye drying treatment
+        desc:The perfect counter for flares.
+        class:tier4
+        req:1 tier3upA or 1 tier3upB
+        passive:multiply yield of tinbutton by 2
+        cost:5000 tin
+    *tier5upA
+        name:Cat food
+        desc:There's no cats why do... ah.
+        class:tier5
+        req:1 tier4up
+        cost:500 tin
+    *tier5upB
+        name:Rats
+        desc:NO DONT DROP THEM OFF HERE
+        class:tier5
+        req:1 tier4up
+        cost:-2 tin
+    *tier6up
+        name:Trench cats
+        desc:Awww can we keep him? And him? And him?
+        class:tier6
+        req:1 tier5upA
+        req:1 tier5upB
+        cost:10000 tin
 CSS
     //this part is the game window
     #game {
@@ -53,6 +97,6 @@ CSS
         right:0;
         width:34%;
         height:100%;
-        border-left:1vw solid #000; //placeholder I want 1% of game screen for this border
+        border-left:1vw solid #000;
         box-sizing:border-box;
     }
