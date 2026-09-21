@@ -85,7 +85,8 @@ Upgrades
         cost:10000 tin
 Items
     *tier3token
-        name:why is this needed
+        start with:0
+        name: 
         hidden
     *tier3up
         name:an oar
