@@ -10,11 +10,11 @@ Settings
     //idek what those mean but no buildings and no particles
     //spritesheet and background jpgs go here (that means you Emery)
 Layout
-    *box:everythingpanel
+    *box: everythingpanel
         contains:Resources
-    *box:upgradepanel
+    *box: upgradepanel
         contains:Upgrades
-    *box:thetrench
+    *box: thetrench
         contains:Buttons
 Resources
     *Tin
