@@ -44,7 +44,7 @@ Upgrades
         desc:Is that how you spell that?
         class:tier3
         req:1 tier2up
-        req:0 tier3upB
+        req:V('tier3upB') < 1
         on earn:yield 1 tier3up
         passive:increase yield of tinbutton by 1
         cost:1000 tin
@@ -53,7 +53,7 @@ Upgrades
         desc:At least it's cheap.
         class:tier3
         req:1 tier2up
-        req:0 tier3upA:
+        req:V('tier3upA') < 1
         on earn:yield 1 tier3up
         cost:1 tin
     *tier4up
