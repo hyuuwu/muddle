@@ -103,6 +103,13 @@ CSS
         margin:0;
         padding:0;
         overflow:hidden;
+        background-image:
+            linear-gradient(to bottom, transparent 15px, #222 15px, #222 calc(100%-15px), transparent calc(100%-15px)),
+            linear-gradient(to right, transparent 15px, #222 15px, #222 calc(60%-15px), transparent calc(60%-15px)) !important;
+            /*that was just borders*/
+        background-size:2px 100%, 100% 2px !important;
+        background-repeat:no-repeat !important;
+        background-position:calc(60%-1px) center, 0px calc(60%-1px) !important;
     }
     /*the panels*/
     #modpanel,
@@ -143,34 +150,6 @@ CSS
         flex-direction:column !important;
         justify-content:flex-end !important;
         align-items:center;
-    }
-    #modpanel::before {
-        content:'';
-        display:block !important;
-        position:absolute !important;
-        top:15px;
-        bottom:15px;
-        /*that was inset*/
-        left:0px;
-        width:2px;
-        /*and width*/
-        background-color:#222;
-        /*and color*/
-        pointer-events:none;
-    }
-    #elsepanel::before {
-        content:'';
-        display:block !important;
-        position:absolute !important;
-        top:0;
-        left:15px;
-        right:15px;
-        /*that was inset*/
-        height:2px;
-        /*and width*/
-        background-color:#222;
-        /*and color*/
-        pointer-events:none;
     }
 Settings
     no particles
