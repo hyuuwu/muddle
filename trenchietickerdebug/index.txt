@@ -93,14 +93,11 @@ Layout
     *clickpanel
         contains:Buttons
 CSS
-    #content, #panel, .panel {
-    display: contents !important
-    }
     /*the game window*/
-    #game {
+    #content {
         display:grid !important;
-        grid-template-columns:3fr 2fr;
-        grid-template-rows:3fr 2fr;
+        grid-template-columns:3fr 2fr !important;
+        grid-template-rows:3fr 2fr !important;
         width:100vw !important;
         height:100vh !important;
         margin:0;
@@ -131,14 +128,15 @@ CSS
         overflow-y:auto;
         overflow-x:hidden;
     }
-    body #elsepanel {
+    #elsepanel {
         grid-column:1/2 !important;
         grid-row:2/3 !important;
         display:flex !important;
+        flex-direction:column !important;
         justify-content:flex-start !important;
         align-items:center;
     }
-    body #clickpanel {
+    #clickpanel {
         grid-column:1/2 !important;
         grid-row:1/2 !important;
         display:flex !important;
