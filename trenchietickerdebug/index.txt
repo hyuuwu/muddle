@@ -130,7 +130,7 @@ CSS
         overflow-x:auto !important;
         overflow-y:hidden !important;
     #modpanel {
-        grid-column:2/3 !important;
+        grid-column:1/2 !important;
         grid-row:1/3 !important;
         //full right (confusing as fuck but fractions mean borders)
         display:flex !important;
@@ -141,14 +141,14 @@ CSS
         overflow-x:hidden !important;
     }
     #elsepanel {
-        grid-column:1/2 !important;
+        grid-column:2/3 !important;
         grid-row:2/3 !important;
         display:flex !important;
         justify-content:center !important;
         align-items:flex-start !important;
     }
     #clickpanel {
-        grid-column:1/2 !important;
+        grid-column:2/3 !important;
         grid-row:1/2 !important;
         display:flex !important;
         justify-content:center !important;
