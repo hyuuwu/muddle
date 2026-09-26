@@ -129,6 +129,14 @@ CSS
         box-sizing:border-box !important;
         overflow-x:auto !important;
         overflow-y:hidden !important;
+    //allow boxes to move
+    #modpanel *, #elsepanel *, #clickpanel * {
+        position:relative !important;
+        top:auto !important;
+        left:auto !important;
+        right:auto !important;
+        bottom:auto !important;
+    }
     #modpanel {
         grid-column:2/3 !important;
         grid-row:1/3 !important;
