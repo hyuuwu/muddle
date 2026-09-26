@@ -10,12 +10,12 @@ Settings
     //idek what those mean but no buildings and no particles
     //spritesheet and background jpgs go here (that means you Emery)
 Layout
-    *everythingpanel
-        contains:Resources
-   *thetrench
-        contains:Buttons
-    *upgradepanel
+    *modpanel
         contains:Upgrades
+    *elsepanel
+        contains:Resources
+    *clickpanel
+        contains:Buttons
 Resources
     *tin
         name:Tin
@@ -78,37 +78,95 @@ Upgrades
         cost:-2 tin
     *tier6up
         name:Trench cats
-        desc:Awww can we keep him? And him? And him?
+        desc:Awww can we keep him? And him? And them?
         class:tier6
         req:1 tier5upA
         req:1 tier5upB
         cost:10000 tin
-//dw bbg no buildings here
 Buildings
     *tier3token
         start with:0
-        name: 
+        name:tier 3
         hidden
     *tier3up
-        name:an oar
+        name:this means or
         hidden
+Shinies
+//add runnermen
+Achievements
+//oh man idfk
+Includes
+//geeks can do this
 CSS
     //this part is the game window
     #game {
-        aspect-ratio:5/4;
-        width:auto;
-        height:auto;
-        max-height:100vh;
         position:relative;
+        display:grid !important;
+        grid-template-columns:3fr 2fr;
+        grid-template-rows:3fr 2fr;
+        width:100vw;
+        height:100vh;
         margin:0;
+        padding:0;
+        overflow:hidden;
     }
     //and these parts the boxes
-    #box-upgradepanel {
-        position:absolute;
-        top:0;
-        right:0;
-        width:34%;
-        height:100%;
-        border-left:1vw solid #000;
-        box-sizing:border-box;
+    #modpanel {
+        grid-column:2/3;
+        grid-row:1/3;
+        //full right (confusing as fuck but fractions mean borders)
+        display:flex;
+        flex-direction:column;
+        justify-content:flex-start;
+        align-items:center;
+        overflow-y:auto;
+        overflow-x:hidden;
     }
+    #elsepanel {
+        grid-column:1/2;
+        grid-row:2/3;
+        display:flex;
+        justify-content:center;
+        align-items:flex-start;
+        overflow:auto;
+        transform-origin:top center;
+    }
+    #clickpanel {
+        grid-column:1/2;
+        grid-row:1/2;
+        display:flex;
+        flex-direction:row;
+        justify-content:center;
+        align-items:flex-end;
+        overflow-x:auto;
+        overflow-y:hidden;
+        white-space:nowrap;
+    }
+    #border-vertical,
+    #border-horizontal {
+        position:absolute;
+        z-index:99;
+        pointer-events:none;
+        //that made clicks do nothing
+        background-color:#222
+        //make sprite for that emery
+        image-rendering:pixelated;
+        image-rendering:crisp-edges;
+    }
+    #border-vertical {
+        top:0;
+        left:60%;
+        width:4px;
+        //make thickness anything
+        height:100%;
+        transform:translateX(-50%)
+        //center on seam
+    }
+    #border-horizontal {
+        top:60%;
+        left:0;
+        width:60%;
+        height:4px;
+        transform:translateX(-50%)
+    }
+    
