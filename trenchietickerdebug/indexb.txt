@@ -86,12 +86,12 @@ Achievements
 Includes
 //geeks can do this
 Layout
+    *clickpanel
+        contains:Buttons
     *modpanel
         contains:Upgrades, Buildings
     *elsepanel
         contains:Resources
-    *clickpanel
-        contains:Buttons
 CSS
     /*the game window*/
     #content {
