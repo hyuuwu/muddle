@@ -146,6 +146,7 @@ CSS
     }
     #modpanel::before {
         content:'';
+        display:block !important;
         position:absolute !important;
         top:15px;
         bottom:15px;
@@ -159,6 +160,7 @@ CSS
     }
     #elsepanel::before {
         content:'';
+        display:block !important;
         position:absolute !important;
         top:0;
         left:15px;
