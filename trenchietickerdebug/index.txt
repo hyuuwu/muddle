@@ -144,6 +144,32 @@ CSS
         justify-content:flex-end !important;
         align-items:center;
     }
+    #modpanel::before {
+        content:'';
+        position:absolute !important;
+        top:15px;
+        bottom:15px;
+        /*that was inset*/
+        left:0px;
+        width:2px;
+        /*and width*/
+        background-color:#222;
+        /*and color*/
+        pointer-events:none;
+    }
+    #elsepanel::before {
+        content:'';
+        position:absolute !important;
+        top:0;
+        left:15px;
+        right:15px;
+        /*that was inset*/
+        height:2px;
+        /*and width*/
+        background-color:#222;
+        /*and color*/
+        pointer-events:none;
+    }
 Settings
     no particles
     no bulk particles
