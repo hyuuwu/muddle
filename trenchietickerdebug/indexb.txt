@@ -98,7 +98,12 @@ Layout
     *clickpanel
         contains:Buttons
 CSS
-//FUCK IT LETS PUT IMPORTANT ON EVERYTHING IM MAD
+    //FUCK IT LETS PUT IMPORTANT ON EVERYTHING IM MAD
+    #content,
+    #panel,
+    .panel {
+        display:contents !important;
+    }
     //the game window
     #game {
         display:grid !important;
@@ -122,6 +127,8 @@ CSS
         width:100% !important;
         height:100% !important;
         box-sizing:border-box !important;
+        overflow-x:auto !important;
+        overflow-y:hidden !important;
     #modpanel {
         grid-column:2/3 !important;
         grid-row:1/3 !important;
@@ -130,6 +137,8 @@ CSS
         flex-direction:column !important;
         justify-content:flex-start !important;
         align-items:center !important;
+        overflow-y:auto !important;
+        overflow-x:hidden !important;
     }
     #elsepanel {
         grid-column:1/2 !important;
