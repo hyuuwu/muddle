@@ -129,8 +129,6 @@ CSS
         box-sizing:border-box !important;
         overflow-x:auto !important;
         overflow-y:hidden !important;
-    //allow boxes to move
-    #modpanel *, #elsepanel *, #clickpanel * {
         position:relative !important;
         top:auto !important;
         left:auto !important;
