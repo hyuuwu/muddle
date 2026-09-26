@@ -90,6 +90,13 @@ Achievements
 //oh man idfk
 Includes
 //geeks can do this
+Layout
+    *modpanel
+        contains:Upgrades
+    *elsepanel
+        contains:Resources
+    *clickpanel
+        contains:Buttons
 CSS
     //this part is the game window
     #game {
