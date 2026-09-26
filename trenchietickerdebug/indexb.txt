@@ -9,13 +9,6 @@ Settings
     no bulk particles
     //idek what those mean but no buildings and no particles
     //spritesheet and background jpgs go here (that means you Emery)
-Layout
-    *modpanel
-        contains:Upgrades
-    *elsepanel
-        contains:Resources
-    *clickpanel
-        contains:Buttons
 Resources
     *tin
         name:Tin
@@ -100,12 +93,12 @@ Includes
 CSS
     //this part is the game window
     #game {
-        position:relative;
+        position:relative !important;
         display:grid !important;
         grid-template-columns:3fr 2fr;
         grid-template-rows:3fr 2fr;
-        width:100vw;
-        height:100vh;
+        width:100vw !important;
+        height:100vh !important;
         margin:0;
         padding:0;
         overflow:hidden;
@@ -121,6 +114,12 @@ CSS
         align-items:center;
         overflow-y:auto;
         overflow-x:hidden;
+        //this next part overrides igm box settings
+        position:relative !important;
+        top:auto !important;
+        left:auto !important;
+        width:100% !important;
+        height:100% !important;
     }
     #elsepanel {
         grid-column:1/2;
@@ -130,6 +129,11 @@ CSS
         align-items:flex-start;
         overflow:auto;
         transform-origin:top center;
+        position:relative !important;
+        top:auto !important;
+        left:auto !important;
+        width:100% !important;
+        height:100% !important;
     }
     #clickpanel {
         grid-column:1/2;
@@ -140,7 +144,11 @@ CSS
         align-items:flex-end;
         overflow-x:auto;
         overflow-y:hidden;
-        white-space:nowrap;
+        position:relative !important;
+        top:auto !important;
+        left:auto !important;
+        width:100% !important;
+        height:100% !important;
     }
     #border-vertical,
     #border-horizontal {
