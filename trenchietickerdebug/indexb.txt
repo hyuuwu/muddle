@@ -77,8 +77,7 @@ Buildings
         name:ink
         hidden
     *tier3up
-        name:this means or
-        hidden
+        name:;
 Shinies
 //add runnermen
 Achievements
@@ -93,10 +92,9 @@ Layout
     *elsepanel
         contains:Resources
     *linev
-        title:!
         contains:Buildings
     *lineh
-        title:!
+        contains:Buildings
 CSS
     /*the game window*/
     #content {
