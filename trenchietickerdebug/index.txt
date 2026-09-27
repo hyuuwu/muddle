@@ -89,11 +89,13 @@ Layout
     *clickpanel
         contains:Buttons
     *modpanel
-        contains:Upgrades, Buildings
+        contains:Upgrades
     *elsepanel
         contains:Resources
     *linev
+        contains:Buildings
     *lineh
+        contains:Buildings
 CSS
     /*the game window*/
     #content {
