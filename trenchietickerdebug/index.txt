@@ -129,11 +129,6 @@ CSS
         justify-content:flex-start !important;
         align-items:center;
         overflow:visible !important;
-        background-image:linear-gradient(to bottom, transparent 15px, #000 15px, #000 calc(100%-15px), transparent calc(100%-15px)) !important;
-        background-size:2px 100% !important;
-        background-repeat:no-repeat !important;
-        background-position:-1px center !important;
-        
     }
     #elsepanel {
         grid-column:1/2 !important;
@@ -143,10 +138,6 @@ CSS
         justify-content:flex-start !important;
         align-items:center;
         overflow:visible !important;
-        background-image:linear-gradient(to right, transparent 15px, #000 15px, #000 calc(100%-15px), transparent calc(100%-15px)) !important;
-        background-size:100% 2px !important;
-        background-repeat:no-repeat !important;
-        background-position:center -1px !important;
     }
     #clickpanel {
         grid-column:1/2 !important;
@@ -162,16 +153,18 @@ CSS
         position:absolute !important;
         pointer-events:none !important;
         z-index:99 !important;
+    }
     #linev {
         top:15px !important;
         bottom:15px !important;
-        left:calc(60%-1px) !important;
+        left:calc(60% - 1px) !important;
         width:2px !important;
         background-color #000 !important;
+    }
     #lineh {
-        top:calc(60%-1px) !important;
+        top:calc(60% - 1px) !important;
         left:15px !important;
-        width:calc(60%-30px) !important;
+        width:calc(60% - 30px) !important;
         height:2px !important;
         background-color #000 !important;
     }
