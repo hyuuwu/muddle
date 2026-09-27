@@ -92,6 +92,8 @@ Layout
         contains:Upgrades, Buildings
     *elsepanel
         contains:Resources
+    *linev
+    *lineh
 CSS
     /*the game window*/
     #content {
@@ -152,6 +154,25 @@ CSS
         flex-direction:column !important;
         justify-content:flex-end !important;
         align-items:center;
+    /*borders*/
+    #linev {
+        position:absolute !important;
+        top:15px !important;
+        bottom:15px !important;
+        left:calc(60%-1px) !important;
+        width:2px !important;
+        background-color #000 !important;
+        pointer-events:none !important;
+        z-index:99 !important;
+    #lineh {
+        position:absolute !important;
+        top:calc(60%-1px) !important;
+        left:15px !important;
+        width:calc(60%-30px) !important;
+        height:2px !important;
+        background-color #000 !important;
+        pointer-events:none !important;
+        z-index:99 !important;
     }
 Settings
     no particles
