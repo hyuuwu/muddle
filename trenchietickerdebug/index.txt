@@ -79,14 +79,13 @@ Buildings
     *tier3up
         name:;
 Items
-    *placeholderitem
-        name:;
+    //for era 2
 Shinies
-//add runnermen
+    //add runnermen
 Achievements
-//oh man idfk
+    //oh man idfk
 Includes
-//geeks can do this
+    //geeks can do this
 Layout
     *clickpanel
         contains:Buttons
@@ -94,10 +93,6 @@ Layout
         contains:Upgrades
     *elsepanel
         contains:Resources
-    *linev
-        contains:Buildings
-    *lineh
-        contains:Items
 CSS
     /*the game window*/
     #content {
@@ -132,7 +127,8 @@ CSS
         flex-direction:column !important;
         justify-content:flex-start !important;
         align-items:center;
-        overflow:visible !important;
+        overflow-y:visible !important;
+        border-left:2px solid #000 !important;
     }
     #elsepanel {
         grid-column:1/2 !important;
@@ -142,37 +138,15 @@ CSS
         justify-content:flex-start !important;
         align-items:center;
         overflow:visible !important;
+        border-top:2px solid #000 !important;
     }
     #clickpanel {
         grid-column:1/2 !important;
         grid-row:1/2 !important;
         display:flex !important;
         flex-direction:column !important;
-        justify-content:flex-end !important;
+        justify-content:flex-start !important;
         align-items:center;
-    /*borders*/
-    #linev,
-    #lineh {
-        display:block !important;
-        grid-area:1/1/3/3 !important;
-        position:absolute !important;
-        pointer-events:none !important;
-        z-index:99 !important;
-    }
-    #linev {
-        top:15px !important;
-        bottom:15px !important;
-        left:calc(60% - 1px) !important;
-        width:2px !important;
-        background-color: #000 !important;
-    }
-    #lineh {
-        top:calc(60% - 1px) !important;
-        left:15px !important;
-        width:calc(60% - 30px) !important;
-        height:2px !important;
-        background-color: #000 !important;
-    }
 Settings
     no particles
     no bulk particles
