@@ -103,13 +103,6 @@ CSS
         margin:0;
         padding:0;
         overflow:hidden;
-        background-image:
-            linear-gradient(to bottom, transparent 15px, #222 15px, #222 calc(100%-15px), transparent calc(100%-15px)),
-            linear-gradient(to right, transparent 15px, #222 15px, #222 calc(60%-15px), transparent calc(60%-15px)) !important;
-            /*that was just borders*/
-        background-size:2px 100%, 100% 2px !important;
-        background-repeat:no-repeat !important;
-        background-position:calc(60%-1px) center, 0px calc(60%-1px) !important;
     }
     /*the panels*/
     #modpanel,
@@ -132,8 +125,12 @@ CSS
         flex-direction:column !important;
         justify-content:flex-start !important;
         align-items:center;
-        overflow-y:auto;
-        overflow-x:hidden;
+        overflow:visible !important;
+        background-image:linear-gradient(to bottom, transparent 15px, #000 15px, #000 calc(100%-15px), transparent calc(100%-15px)) !important;
+        background-size:2px 100% !important;
+        background-repeat:no-repeat !important;
+        background-position:-1px center !important;
+        
     }
     #elsepanel {
         grid-column:1/2 !important;
@@ -142,6 +139,11 @@ CSS
         flex-direction:column !important;
         justify-content:flex-start !important;
         align-items:center;
+        overflow:visible !important;
+        background-image:linear-gradient(to right, transparent 15px, #000 15px, #000 calc(100%-15px), transparent calc(100%-15px)) !important;
+        background-size:100% 2px !important;
+        background-repeat:no-repeat !important;
+        background-position:center -1px !important;
     }
     #clickpanel {
         grid-column:1/2 !important;
