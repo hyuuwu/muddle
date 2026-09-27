@@ -97,6 +97,7 @@ Layout
 CSS
     /*the game window*/
     #content {
+        position:relative !important;
         display:grid !important;
         grid-template-columns:3fr 2fr !important;
         grid-template-rows:3fr 2fr !important;
