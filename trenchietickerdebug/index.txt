@@ -149,6 +149,7 @@ CSS
     /*borders*/
     #linev,
     #lineh {
+        display:block !important;
         grid-area:1/1/3/3 !important;
         position:absolute !important;
         pointer-events:none !important;
