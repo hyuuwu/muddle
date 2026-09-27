@@ -78,6 +78,9 @@ Buildings
         hidden
     *tier3up
         name:;
+Items
+    *placeholderitem
+        name:;
 Shinies
 //add runnermen
 Achievements
@@ -94,7 +97,7 @@ Layout
     *linev
         contains:Buildings
     *lineh
-        contains:Buildings
+        contains:Items
 CSS
     /*the game window*/
     #content {
