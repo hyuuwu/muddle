@@ -159,14 +159,14 @@ CSS
         bottom:15px !important;
         left:calc(60% - 1px) !important;
         width:2px !important;
-        background-color #000 !important;
+        background-color: #000 !important;
     }
     #lineh {
         top:calc(60% - 1px) !important;
         left:15px !important;
         width:calc(60% - 30px) !important;
         height:2px !important;
-        background-color #000 !important;
+        background-color: #000 !important;
     }
 Settings
     no particles
