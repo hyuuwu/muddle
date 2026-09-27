@@ -93,9 +93,10 @@ Layout
     *elsepanel
         contains:Resources
     *linev
+        title: 
         contains:Buildings
     *lineh
-        contains:Buildings
+        title: 
 CSS
     /*the game window*/
     #content {
