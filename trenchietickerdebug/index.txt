@@ -199,6 +199,7 @@ CSS
         justify-content:flex-end !important;
         align-items:center !important;
         position:absolute !important;
+    }
     #box-things-Buttons {
         width:100% !important;
     }
