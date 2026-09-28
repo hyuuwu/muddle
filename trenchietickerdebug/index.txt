@@ -114,6 +114,7 @@ CSS
         box-sizing:border-box !important;
     }
     div#modpanel {
+        display:none !important;
         right:0 !important;
         top:0 !important;
         bottom:0 !important;
