@@ -118,7 +118,7 @@ CSS
         right:0 !important;
         top:0 !important;
         bottom:0 !important;
-        width:320px !important;
+        width:620px !important;
         height:auto !important;
         display:flex !important;
         flex-direction:column !important;
