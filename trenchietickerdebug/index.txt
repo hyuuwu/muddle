@@ -73,10 +73,61 @@ Upgrades
         req:1 tier5upA
         req:1 tier5upB
         cost:10000 tin
+        passive:multiply yield of tinbutton by 2
+    *tier7upA
+        name:Gun Safety Training
+        desc:The Camoflage bored them to (Self-inflicted) DEATH. (+2 tin)
+        class:tier7
+        req:1 tier6up
+        on earn:yield 1 tier8token
+        passive:increase yield of tinbutton by 2
+        cost:20000 tin
+        cost:1 lefttiertoken
+    *tier7upB
+        name:Spears
+        desc:Bayonets without rifles, saves tin! (x2 tin)
+        class:tier7
+        req:1 tier6up
+        on earn:yield 1 tier8token
+        passive:multiply yield of tinbutton by 2
+        cost:-2000 tin
+        cost:1 righttiertoken
+    *tier8up
+        name:Acid resistance training
+        desc:Well they already got used to gas. (x2 tin)
+        class:tier8
+        cost:100000 tin
+        cost:1 tier8token
+    *tier9up
+        name:Salt
+        desc:For the snow to come.
+        class:tier9
+        req:1 tier8up
+        cost:200000 tin
+    *tier10upA
+        name:Lobotomy
+        desc:If they won't be happy then why not? (x4 tin)
+        class:tier10
+        cost:1000000 tin
+        req:1 tier9up
+        cost:1 lefttiertoken
+        passive:multiply yield of tinbutton by 3
+    *tier10upB
+        name:Fireworks
+        desc:Flares just aren't doing it for us. (x3 tin)
+        class:tier10
+        cost:1000000 tin
+        req:1 tier9up
+        cost:1 righttiertoken
+        passive:multiply yield of tinbutton by 3
 Buildings
     *tier3token
         start with:0
         name:Ink
+        hidden
+    *tier8token
+        start with:0
+        name:Mtn Dew?
         hidden
     *tier3up
         hidden
@@ -159,6 +210,10 @@ CSS
     #box-modpanel .thing.tier4 {grid-row: 4 !important; }
     #box-modpanel .thing.tier5 {grid-row: 5 !important; }
     #box-modpanel .thing.tier6 {grid-row: 6 !important; }
+    #box-modpanel .thing.tier7 {grid-row: 7 !important; }
+    #box-modpanel .thing.tier8 {grid-row: 9 !important; }
+    #box-modpanel .thing.tier9 {grid-row: 9 !important; }
+    #box-modpanel .thing.tier10 {grid-row: 10 !important; }
     #box-elsepanel {
         left:0 !important;
         right:420px !important;
