@@ -161,7 +161,6 @@ Buildings
     *tintimes
         hidden
         no buy
-        max:1
         passive:lose 0.1 tinboost
         passive:multiply yield of tinbutton by 4
 Shinies
