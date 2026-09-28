@@ -95,7 +95,7 @@ Layout
         contains:Resources
 CSS
     /*the game window*/
-    div#content {
+    #content {
         display:block !important;
         position:relative !important;
         width:100vw !important;
@@ -108,12 +108,12 @@ CSS
         left:0 !important;
     }
     /*the panels*/
-    div#modpanel,
-    div#elsepanel,
-    div#clickpanel {
+    #modpanel,
+    #elsepanel,
+    #clickpanel {
         box-sizing:border-box !important;
     }
-    div#modpanel {
+    #modpanel {
         display:none !important;
         right:0 !important;
         top:0 !important;
@@ -129,7 +129,7 @@ CSS
         border-left:2px solid black !important;
         position:absolute !important;
     }
-    div#elsepanel {
+    #elsepanel {
         left:0 !important;
         right:320px !important;
         top:360px !important;
@@ -143,7 +143,7 @@ CSS
         border-top:2px solid black !important;
         position:absolute !important;
     }
-    div#clickpanel {
+    #clickpanel {
         top:0 !important;
         left:0 !important;
         right:320px !important;
