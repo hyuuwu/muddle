@@ -4,16 +4,30 @@ Let's make a game!
     by: Not the Bear
     //add update dates here if loser
     version:0.004
-Resources
-    *tin
-        name:Tin
-        desc:Melted dog tags.
+Settings
+    no particles
+    no bulk particles
+    //idek what those mean but no buildings and no particles
+    //spritesheet and background jpgs go here (that means you Emery)
+Layout
+    *clickpanel
+        contains:Buttons
+        names:hide
+    *elsepanel
+        contains:Resources
+    *modpanel
+        contains:Upgrades
 Buttons
     *tinbutton
         name:Go!
         desc:Send a trenchie running.
         on click:yield 1 tin
+Resources
+    *tin
+        name:Tin
+        desc:Melted dog tags.
 Upgrades
+    //just remember I can make text fancy (Orteil handbook)
     *tier1up
         name:Clean shave
         desc:Can't tangle no hair! (+1 Tin)
@@ -126,35 +140,35 @@ Buildings
         start with:0
         name:Ink
         hidden
+        no buy
     *tier8token
         start with:0
         name:Mtn Dew?
         hidden
+        no buy
     *tier3up
         hidden
+        no buy
     *lefttiertoken
         start with:0
         name:Depression
         hidden
+        no buy
     *righttiertoken
         start with:0
         name:Patriotism
         hidden
-Items
-    //for era 2
+        no buy
 Shinies
     //add runnermen
+Items
+    //for v1.000
 Achievements
-    //oh man idfk
+    //Brave Man, Brave Men
 Includes
     //geeks can do this
-Layout
-    *clickpanel
-        contains:Buttons
-    *modpanel
-        contains:Upgrades
-    *elsepanel
-        contains:Resources
+
+//change default icon size and bg color in css? also make my own font
 CSS
     /*the game window*/
     #content {
@@ -170,11 +184,48 @@ CSS
         left:0 !important;
     }
     /*the panels*/
-    #box-modpanel,
+    #box-clickpanel,
     #box-elsepanel,
-    #box-clickpanel {
+    #box-modpanel {
         box-sizing:border-box !important;
     }
+    #box-clickpanel {
+        top:0 !important;
+        left:0 !important;
+        right:420px !important;
+        width:auto !important;
+        height:360px !important;
+        display:flex !important;
+        flex-direction:column !important;
+        justify-content:flex-end !important;
+        align-items:center !important;
+        position:absolute !important;
+    #box-things-Buttons {
+        width:100% !important;
+    }
+    #thing-1 {
+        width:100% !important;
+        box-sizing:border-box !important;
+        padding-top:16px !important;
+        padding-bottom:16px !important;
+        display:block !important;
+    }
+
+    #box-elsepanel {
+        left:0 !important;
+        right:420px !important;
+        top:360px !important;
+        bottom:0 !important;
+        width:auto !important;
+        height:auto !important;
+        display:flex !important;
+        flex-direction:column !important;
+        justify-content:flex-start !important;
+        align-items:center !important;
+        border-top:2px solid black !important;
+        position:absolute !important;
+  }
+
     #box-modpanel {
         display:none !important;
         right:0 !important;
@@ -215,43 +266,3 @@ CSS
     #box-modpanel .thing.tier8 {grid-row: 8 !important; }
     #box-modpanel .thing.tier9 {grid-row: 9 !important; }
     #box-modpanel .thing.tier10 {grid-row: 10 !important; }
-    #box-elsepanel {
-        left:0 !important;
-        right:420px !important;
-        top:360px !important;
-        bottom:0 !important;
-        width:auto !important;
-        height:auto !important;
-        display:flex !important;
-        flex-direction:column !important;
-        justify-content:flex-start !important;
-        align-items:center !important;
-        border-top:2px solid black !important;
-        position:absolute !important;
-    }
-    #box-clickpanel {
-        top:0 !important;
-        left:0 !important;
-        right:420px !important;
-        width:auto !important;
-        height:360px !important;
-        display:flex !important;
-        flex-direction:column !important;
-        justify-content:flex-end !important;
-        align-items:center !important;
-        position:absolute !important;
-    #box-things-Buttons {
-        width:100% !important;
-    }
-    #thing-1 {
-        width:100% !important;
-        box-sizing:border-box !important;
-        padding-top:16px !important;
-        padding-bottom:16px !important;
-        display:block !important;
-    }
-Settings
-    no particles
-    no bulk particles
-    //idek what those mean but no buildings and no particles
-    //spritesheet and background jpgs go here (that means you Emery)
