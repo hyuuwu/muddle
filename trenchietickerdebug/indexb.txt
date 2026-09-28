@@ -102,15 +102,13 @@ CSS
         height:100vh !important;
         margin:0 !important;
         padding:0 !important;
-        /*fuck it*/
-        background-color:red !important;
     }
     /*the panels*/
     #modpanel,
     #elsepanel,
     #clickpanel {
         position:absolute !important;
-        box-sizing:border-box;
+        box-sizing:border-box !important;
     }
     #modpanel {
         right:0 !important;
@@ -141,15 +139,14 @@ CSS
     }
     #clickpanel {
         top:0 !important;
-        bottom:240px !important;
         left:0 !important;
         right:320px !important;
         width:auto !important;
-        height:auto !important;
+        height:360px !important;
         display:flex !important;
         flex-direction:column !important;
         justify-content:flex-end !important;
-        align-items:center;
+        align-items:center !important;
     }
 Settings
     no particles
