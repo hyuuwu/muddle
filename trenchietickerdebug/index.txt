@@ -134,6 +134,11 @@ Upgrades
         req:1 tier9up
         cost:1 righttiertoken
         passive:multiply yield of tinbutton by 3
+    *tintimes
+        hidden
+        no buy
+        duration:10
+        passive:multiply yield of tinbutton by 4
 Buildings
     *tier3token
         start with:0
@@ -164,7 +169,7 @@ Shinies
         class:runnermen
         frequency:100
         frequency variation:200
-        on click:multiply yield of tinbutton by 4 for 10 seconds
+        on click:yield 1 tintimes
         movement:onTop moveBottom
     *runnermanplus
         name:Runnerman
