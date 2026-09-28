@@ -290,7 +290,7 @@ CSS
         top:0;
         left:0;
         width:calc(100vw - 420px) !important;
-        height:100vh;
+        height:312px !important;
         overflow:hidden !important;
         transform:translateZ(0) !important;
         pointer-events:none;
