@@ -3,7 +3,7 @@ Let's make a game!
     desc: the Great War incremental game
     by: Not the Bear
     //add update dates here if loser
-    version:0.004
+    version:0.005
 Settings
     no particles
     no bulk particles
