@@ -102,6 +102,10 @@ CSS
         height:100vh !important;
         margin:0 !important;
         padding:0 !important;
+        max-width:none !important;
+        min-width:100vw !important;
+        top:0 !important;
+        left:0 !important;
     }
     /*the panels*/
     #modpanel,
