@@ -3,7 +3,7 @@ Let's make a game!
     desc: the Great War incremental game
     by: Not the Bear
     //add update dates here if loser
-    version:0.005
+    version:0.006
 Settings
     no particles
     no bulk particles
@@ -159,7 +159,20 @@ Buildings
         hidden
         no buy
 Shinies
-    //add runnermen
+    *runnerman-times
+        name:Runnerman
+        class:runnermen
+        frequency:100
+        frequency variation:200
+        on click:multiply yield of tinbutton by 4 for 10 seconds
+        movement:onTop moveBottom
+    *runnerman-plus
+        name:Runnerman
+        class:runnermen
+        frequency:30
+        frequency variation:20
+        on click:yield 200 tin
+        movement:onTop moveBottom
 Items
     //for v1.000
 Achievements
@@ -265,3 +278,4 @@ CSS
     #box-modpanel .thing.tier8 {grid-row: 8 !important; }
     #box-modpanel .thing.tier9 {grid-row: 9 !important; }
     #box-modpanel .thing.tier10 {grid-row: 10 !important; }
+        
