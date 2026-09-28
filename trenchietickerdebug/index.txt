@@ -96,6 +96,7 @@ Upgrades
         name:Acid resistance training
         desc:Well they already got used to gas. (x2 tin)
         class:tier8
+        req:1 tier8token
         cost:100000 tin
         cost:1 tier8token
     *tier9up
