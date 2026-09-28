@@ -131,13 +131,13 @@ CSS
     }
     #box-elsepanel {
         left:0 !important;
-        right:320px !important;
+        right:620px !important;
         top:360px !important;
         bottom:0 !important;
         width:auto !important;
         height:auto !important;
         display:flex !important;
-        flex-direction:row !important;
+        flex-direction:column !important;
         justify-content:flex-start !important;
         align-items:center !important;
         border-top:2px solid black !important;
