@@ -188,18 +188,6 @@ CSS
     #box-modpanel {
         box-sizing:border-box !important;
     }
-    #box-clickpanel {
-        top:0 !important;
-        left:0 !important;
-        right:420px !important;
-        width:auto !important;
-        height:360px !important;
-        display:flex !important;
-        flex-direction:column !important;
-        justify-content:flex-end !important;
-        align-items:stretch !important;
-        position:absolute !important;
-    }
     #box-elsepanel {
         left:0 !important;
         right:420px !important;
@@ -257,6 +245,18 @@ CSS
     #box-modpanel .thing.tier10 {grid-row: 10 !important; }
 
     /*I'm mad but this needs to be at the bottom*/
+    #box-clickpanel {
+        top:0 !important;
+        left:0 !important;
+        right:420px !important;
+        width:auto !important;
+        height:360px !important;
+        display:flex !important;
+        flex-direction:column !important;
+        justify-content:flex-end !important;
+        align-items:stretch !important;
+        position:absolute !important;
+    }
     #box-things-Buttons {
         width:100% !important;
     }
