@@ -197,13 +197,11 @@ CSS
         display:flex !important;
         flex-direction:column !important;
         justify-content:flex-end !important;
-        align-items:center !important;
+        align-items:stretch !important;
         position:absolute !important;
     }
     #box-things-Buttons {
         width:100% !important;
-        left:0 !important;
-        right:0 !important;
     }
     #thing-1 {
         width:100% !important;
