@@ -108,12 +108,12 @@ CSS
         left:0 !important;
     }
     /*the panels*/
-    #modpanel,
-    #elsepanel,
-    #clickpanel {
+    #box-modpanel,
+    #box-elsepanel,
+    #box-clickpanel {
         box-sizing:border-box !important;
     }
-    #modpanel {
+    #box-modpanel {
         display:none !important;
         right:0 !important;
         top:0 !important;
@@ -129,7 +129,7 @@ CSS
         border-left:2px solid black !important;
         position:absolute !important;
     }
-    #elsepanel {
+    #box-elsepanel {
         left:0 !important;
         right:320px !important;
         top:360px !important;
@@ -143,7 +143,7 @@ CSS
         border-top:2px solid black !important;
         position:absolute !important;
     }
-    #clickpanel {
+    #box-clickpanel {
         top:0 !important;
         left:0 !important;
         right:320px !important;
