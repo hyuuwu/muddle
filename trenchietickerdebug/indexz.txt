@@ -200,21 +200,6 @@ CSS
         align-items:stretch !important;
         position:absolute !important;
     }
-    #box-things-Buttons {
-        width:100% !important;
-        min-width:100% !important;
-        max-width:none !important;
-    }
-    #thing-1 {
-        width:100% !important;
-        min-width:100% !important;
-        max-width:none !important;
-        box-sizing:border-box !important;
-        padding-top:16px !important;
-        padding-bottom:16px !important;
-        display:block !important;
-    }
-
     #box-elsepanel {
         left:0 !important;
         right:420px !important;
@@ -270,3 +255,15 @@ CSS
     #box-modpanel .thing.tier8 {grid-row: 8 !important; }
     #box-modpanel .thing.tier9 {grid-row: 9 !important; }
     #box-modpanel .thing.tier10 {grid-row: 10 !important; }
+
+    /*I'm mad but this needs to be at the bottom*/
+    #box-things-Buttons {
+        width:100% !important;
+    }
+    #thing-1 {
+        width:100% !important;
+        box-sizing:border-box !important;
+        padding-top:16px !important;
+        padding-bottom:16px !important;
+        display:block !important;
+    }
