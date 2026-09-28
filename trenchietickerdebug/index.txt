@@ -107,7 +107,6 @@ CSS
     #modpanel,
     #elsepanel,
     #clickpanel {
-        position:absolute !important;
         box-sizing:border-box !important;
     }
     #modpanel {
@@ -123,6 +122,7 @@ CSS
         overflow-y:auto !important;
         overflow-x:hidden !important;
         border-left:2px solid #000 !important;
+        position:absolute !important;
     }
     #elsepanel {
         left:0 !important;
@@ -136,6 +136,7 @@ CSS
         justify-content:flex-start !important;
         align-items:center !important;
         border-top:2px solid #000 !important;
+        position:relative !important;
     }
     #clickpanel {
         top:0 !important;
@@ -147,6 +148,7 @@ CSS
         flex-direction:column !important;
         justify-content:flex-end !important;
         align-items:center !important;
+        position:absolute !important;
     }
 Settings
     no particles
