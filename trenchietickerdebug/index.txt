@@ -16,13 +16,13 @@ Buttons
 Upgrades
     *tier1up
         name:Clean shave
-        desc:Can't tangle no hair!
+        desc:Can't tangle no hair! (+1 Tin)
         class:tier1
         passive:increase yield of tinbutton by 1
         cost:10 tin
     *tier2up
         name:Helmet spike
-        desc:No reason...
+        desc:No reason... (+2 Tin)
         class:tier2
         req:1 tier1up
         on earn:yield 1 tier3token
@@ -30,10 +30,11 @@ Upgrades
         cost:100 tin
     *tier3upA
         name:Camoflage
-        desc:Is that how you spell that?
+        desc:Is that how you spell that? (+1 Tin)
         class:tier3
         req:1 tier2up
         on earn:yield 1 tier3up
+        on earn:yield 99 lefttiertoken
         passive:increase yield of tinbutton by 1
         cost:1000 tin
         cost:1 tier3token
@@ -43,6 +44,7 @@ Upgrades
         class:tier3
         req:1 tier2up
         on earn:yield 1 tier3up
+        on earn:yield 99 righttiertoken
         cost:1 tin
         cost:1 tier3token
     *tier4up
@@ -74,9 +76,17 @@ Upgrades
 Buildings
     *tier3token
         start with:0
-        name:ink
+        name:Ink
         hidden
     *tier3up
+        hidden
+    *lefttiertoken
+        start with:0
+        name:Depression
+        hidden
+    *righttiertoken
+        start with:0
+        name:Patriotism
         hidden
 Items
     //for era 2
@@ -130,21 +140,24 @@ CSS
         position:absolute !important;
     }
     #box-modpanel .box-things {
-        display:flex !important;
-        flex-direction:column !important;
-        align-items:center !important;
+        display:grid !important;
+        grid-template-columns:repeat(auto-fit, minmax(120px, 1fr)) !important;
+        gap:8px !important;
         width:100% !important;
+        padding:8px !important;
+        box-sizing:border-box !important;
     }
     #box-modpanel .thing {
-        width:90% !important;
-        margin:4px 0 !important;
+        width:100% !important;
+        box-sizing:border-box !important;
+        margin:0 !important;
     }
-    #box-modpanel .thing.tier1 {order: 1 !important; }
-    #box-modpanel .thing.tier2 {order: 2 !important; }
-    #box-modpanel .thing.tier3 {order: 3 !important; }
-    #box-modpanel .thing.tier4 {order: 4 !important; }
-    #box-modpanel .thing.tier5 {order: 5 !important; }
-    #box-modpanel .thing.tier6 {order: 6 !important; }
+    #box-modpanel .thing.tier1 {grid-row: 1 !important; }
+    #box-modpanel .thing.tier2 {grid-row: 2 !important; }
+    #box-modpanel .thing.tier3 {grid-row: 3 !important; }
+    #box-modpanel .thing.tier4 {grid-row: 4 !important; }
+    #box-modpanel .thing.tier5 {grid-row: 5 !important; }
+    #box-modpanel .thing.tier6 {grid-row: 6 !important; }
     #box-elsepanel {
         left:0 !important;
         right:420px !important;
