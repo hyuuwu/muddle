@@ -265,5 +265,3 @@ CSS
     #box-modpanel .thing.tier8 {grid-row: 8 !important; }
     #box-modpanel .thing.tier9 {grid-row: 9 !important; }
     #box-modpanel .thing.tier10 {grid-row: 10 !important; }
-
-    /*I'm mad but this needs to be at the bottom*/
