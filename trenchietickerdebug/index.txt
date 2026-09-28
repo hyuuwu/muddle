@@ -240,6 +240,9 @@ CSS
         justify-content:flex-end !important;
         align-items:center !important;
         position:absolute !important;
+    #box-things-Buttons {
+        width:100% !important;
+        flex:1 1 100% !important;
     }
     #thing-1 {
         width:100% !important;
@@ -247,7 +250,7 @@ CSS
         padding-top:16px !important;
         padding-bottom:16px !important;
         display:block !important;
-        }
+    }
 Settings
     no particles
     no bulk particles
