@@ -118,7 +118,7 @@ CSS
         right:0 !important;
         top:0 !important;
         bottom:0 !important;
-        width:620px !important;
+        width:420px !important;
         height:auto !important;
         display:flex !important;
         flex-direction:column !important;
@@ -131,7 +131,7 @@ CSS
     }
     #box-elsepanel {
         left:0 !important;
-        right:620px !important;
+        right:420px !important;
         top:360px !important;
         bottom:0 !important;
         width:auto !important;
