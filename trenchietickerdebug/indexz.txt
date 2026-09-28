@@ -159,14 +159,14 @@ Buildings
         hidden
         no buy
 Shinies
-    *runnerman-times
+    *runnermantimes
         name:Runnerman
         class:runnermen
         frequency:100
         frequency variation:200
         on click:multiply yield of tinbutton by 4 for 10 seconds
         movement:onTop moveBottom
-    *runnerman-plus
+    *runnermanplus
         name:Runnerman
         class:runnermen
         frequency:30
