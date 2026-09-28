@@ -291,6 +291,8 @@ CSS
         left:0;
         width:calc(100vw - 420px) !important;
         height:100vh;
+        overflow:hidden !important;
+        transform:translateZ(0) !important;
         pointer-events:none;
     }
     div.shiny.runnermen {
