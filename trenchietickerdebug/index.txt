@@ -207,6 +207,8 @@ CSS
     }
     #thing-1 {
         width:100% !important;
+        min-width:100% !important;
+        max-width:none !important;
         box-sizing:border-box !important;
         padding-top:16px !important;
         padding-bottom:16px !important;
