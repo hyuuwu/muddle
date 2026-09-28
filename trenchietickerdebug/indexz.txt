@@ -202,6 +202,8 @@ CSS
     }
     #box-things-Buttons {
         width:100% !important;
+        min-width:100% !important;
+        max-width:none !important;
     }
     #thing-1 {
         width:100% !important;
