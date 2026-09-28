@@ -212,7 +212,7 @@ CSS
     #box-modpanel .thing.tier5 {grid-row: 5 !important; }
     #box-modpanel .thing.tier6 {grid-row: 6 !important; }
     #box-modpanel .thing.tier7 {grid-row: 7 !important; }
-    #box-modpanel .thing.tier8 {grid-row: 9 !important; }
+    #box-modpanel .thing.tier8 {grid-row: 8 !important; }
     #box-modpanel .thing.tier9 {grid-row: 9 !important; }
     #box-modpanel .thing.tier10 {grid-row: 10 !important; }
     #box-elsepanel {
