@@ -128,6 +128,7 @@ CSS
         overflow-x:hidden !important;
         border-left:2px solid black !important;
         position:absolute !important;
+    }
     #box-modpanel .box-things {
         display:flex !important;
         flex-direction:column !important;
@@ -144,7 +145,6 @@ CSS
     #box-modpanel .thing.tier4 {order: 4 !important; }
     #box-modpanel .thing.tier5 {order: 5 !important; }
     #box-modpanel .thing.tier6 {order: 6 !important; }
-    }
     #box-elsepanel {
         left:0 !important;
         right:420px !important;
