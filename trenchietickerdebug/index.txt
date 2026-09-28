@@ -134,11 +134,6 @@ Upgrades
         req:1 tier9up
         cost:1 righttiertoken
         passive:multiply yield of tinbutton by 3
-    *tintimes
-        hidden
-        no buy
-        duration:10
-        passive:multiply yield of tinbutton by 4
 Buildings
     *tier3token
         start with:0
@@ -163,6 +158,12 @@ Buildings
         name:Patriotism
         hidden
         no buy
+    *tintimes
+        hidden
+        no buy
+        max:1
+        passive:lose 0.1 tinboost
+        passive:multiply yield of tinbutton by 4
 Shinies
     *runnermantimes
         name:Runnerman
