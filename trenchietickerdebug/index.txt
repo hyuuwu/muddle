@@ -25,27 +25,27 @@ Buttons
         name:Retire
         desc:Go home, hope to not be drafted
         on buy:yield 1 retiretimes
-                tin is 0
-                tier1up is 0
-                tier2up is 0
-                tier3upA is 0
-                tier3upB is 0
-                tier4up is 0
-                tier5upA is 0
-                tier5upB is 0
-                tier6up is 0
-                tier7upA is 0
-                tier7upB is 0
-                tier8up is 0
-                tier9up is 0
-                tier10upA is 0
-                tier10upB is 0
+                lose 100% tin
+                lose 100% tier1up
+                lose 100% tier2up
+                lose 100% tier3upA
+                lose 100% tier3upB
+                lose 100% tier4up
+                lose 100% tier5upA
+                lose 100% tier5upB
+                lose 100% tier6up
+                lose 100% tier7upA
+                lose 100% tier7upB
+                lose 100% tier8up
+                lose 100% tier9up
+                lose 100% tier10upA
+                lose 100% tier10upB
                 //buildings
-                tier3up is 0
-                tier3token is 0
-                tier8token is 0
-                lefttiertoken is 0
-                righttiertoken is 0
+                lose 100% tier3up
+                lose 100% tier3token
+                lose 100% tier8token
+                lose 100% lefttiertoken
+                lose 100% righttiertoken
         end
 Resources
     *tin
