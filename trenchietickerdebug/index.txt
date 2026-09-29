@@ -187,6 +187,7 @@ Includes
 CSS
     /*the game window*/
     #content {
+        background-color:#D4C5A9 !important;
         display:block !important;
         position:relative !important;
         width:100vw !important;
@@ -294,4 +295,7 @@ CSS
     }
     div.shiny.runnermen {
         pointer-events:auto !important;
+        width:30px !important;
+        height:90px !important;
+        background-size:100% 100% !important;
     }
