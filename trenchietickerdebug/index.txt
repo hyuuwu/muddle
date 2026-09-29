@@ -21,10 +21,39 @@ Buttons
         name:Go!
         desc:Send a trenchie running.
         on click:yield 1 tin
+    *retirebutton
+        name:Retire
+        desc:Go home, hope to not be drafted
+        on buy:yield 1 retiretimes
+                set tin 0
+                set tier1up 0
+                set tier2up 0
+                set tier3upA 0
+                set tier3upB 0
+                set tier4up 0
+                set tier5upA 0
+                set tier5upB 0
+                set tier6up 0
+                set tier7upA 0
+                set tier7upB 0
+                set tier8up 0
+                set tier9up 0
+                set tier10upA 0
+                set tier10upB 0
+                //buildings
+                set tier3up 0
+                set tier3token 0
+                set tier8token 0
+                set lefttiertoken 0
+                set righttiertoken 0
+        end
 Resources
     *tin
         name:Tin
         desc:Melted dog tags.
+    *day
+        name:Days
+        desc:You don't know what a day is??
 Upgrades
     //just remember I can make text fancy (Orteil handbook)
     *tier1up
@@ -32,6 +61,7 @@ Upgrades
         desc:Can't tangle no hair! (+1 Tin)
         class:tier1
         passive:increase yield of tinbutton by 1
+        on earn:yield 1 day
         cost:10 tin
     *tier2up
         name:Helmet spike
@@ -39,6 +69,7 @@ Upgrades
         class:tier2
         req:1 tier1up
         on earn:yield 1 tier3token
+        on earn:yield 1 day
         passive:increase yield of tinbutton by 2
         cost:100 tin
     *tier3upA
@@ -48,6 +79,7 @@ Upgrades
         req:1 tier2up
         on earn:yield 1 tier3up
         on earn:yield 99 lefttiertoken
+        on earn:yield 1 day
         passive:increase yield of tinbutton by 1
         cost:1000 tin
         cost:1 tier3token
@@ -58,6 +90,7 @@ Upgrades
         req:1 tier2up
         on earn:yield 1 tier3up
         on earn:yield 99 righttiertoken
+        on earn:yield 1 day
         cost:1 tin
         cost:1 tier3token
     *tier4up
@@ -65,6 +98,7 @@ Upgrades
         desc:The perfect counter for flares.
         class:tier4
         req:1 tier3up
+        on earn:yield 1 day
         passive:multiply yield of tinbutton by 2
         cost:5000 tin
     *tier5upA
@@ -72,12 +106,14 @@ Upgrades
         desc:There's no cats why do... ah.
         class:tier5
         req:1 tier4up
+        on earn:yield 1 day
         cost:500 tin
     *tier5upB
         name:Rats
         desc:NO DONT DROP THEM OFF HERE
         class:tier5
         req:1 tier4up
+        on earn:yield 1 day
         cost:-2 tin
     *tier6up
         name:Trench cats
@@ -85,6 +121,7 @@ Upgrades
         class:tier6
         req:1 tier5upA
         req:1 tier5upB
+        on earn:yield 1 day
         cost:10000 tin
         passive:multiply yield of tinbutton by 2
     *tier7upA
@@ -93,6 +130,7 @@ Upgrades
         class:tier7
         req:1 tier6up
         on earn:yield 1 tier8token
+        on earn:yield 1 day
         passive:increase yield of tinbutton by 2
         cost:20000 tin
         cost:1 lefttiertoken
@@ -102,6 +140,7 @@ Upgrades
         class:tier7
         req:1 tier6up
         on earn:yield 1 tier8token
+        on earn:yield 1 day
         passive:multiply yield of tinbutton by 2
         cost:-2000 tin
         cost:1 righttiertoken
@@ -110,6 +149,7 @@ Upgrades
         desc:Well they already got used to gas. (x2 tin)
         class:tier8
         req:1 tier8token
+        on earn:yield 1 day
         cost:100000 tin
         cost:1 tier8token
     *tier9up
@@ -117,6 +157,7 @@ Upgrades
         desc:For the snow to come.
         class:tier9
         req:1 tier8up
+        on earn:yield 1 day
         cost:200000 tin
     *tier10upA
         name:Lobotomy
@@ -124,6 +165,7 @@ Upgrades
         class:tier10
         cost:1000000 tin
         req:1 tier9up
+        on earn:yield 1 day
         cost:1 lefttiertoken
         passive:multiply yield of tinbutton by 3
     *tier10upB
@@ -132,6 +174,7 @@ Upgrades
         class:tier10
         cost:1000000 tin
         req:1 tier9up
+        on earn:yield 1 day
         cost:1 righttiertoken
         passive:multiply yield of tinbutton by 3
 Buildings
@@ -146,6 +189,8 @@ Buildings
         hidden
         no buy
     *tier3up
+        /*test this later*/
+        start with:0
         hidden
         no buy
     *lefttiertoken
