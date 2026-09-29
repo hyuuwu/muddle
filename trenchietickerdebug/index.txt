@@ -25,35 +25,32 @@ Buttons
         name:Retire
         desc:Go home, hope to not be drafted
         on buy:yield 1 retiretimes
-                lose 100% tin
-                lose 100% tier1up
-                lose 100% tier2up
-                lose 100% tier3upA
-                lose 100% tier3upB
-                lose 100% tier4up
-                lose 100% tier5upA
-                lose 100% tier5upB
-                lose 100% tier6up
-                lose 100% tier7upA
-                lose 100% tier7upB
-                lose 100% tier8up
-                lose 100% tier9up
-                lose 100% tier10upA
-                lose 100% tier10upB
+                lose 2147483647 tin
+                lose 2147483647 tier1up
+                lose 2147483647 tier2up
+                lose 2147483647 tier3upA
+                lose 2147483647 tier3upB
+                lose 2147483647 tier4up
+                lose 2147483647 tier5upA
+                lose 2147483647 tier5upB
+                lose 2147483647 tier6up
+                lose 2147483647 tier7upA
+                lose 2147483647 tier7upB
+                lose 2147483647 tier8up
+                lose 2147483647 tier9up
+                lose 2147483647 tier10upA
+                lose 2147483647 tier10upB
                 //buildings
-                lose 100% tier3up
-                lose 100% tier3token
-                lose 100% tier8token
-                lose 100% lefttiertoken
-                lose 100% righttiertoken
+                lose 2147483647 tier3up
+                lose 2147483647 tier3token
+                lose 2147483647 tier8token
+                lose 2147483647 lefttiertoken
+                lose 2147483647 righttiertoken
         end
 Resources
     *tin
         name:Tin
         desc:Melted dog tags.
-    *day
-        name:Days
-        desc:You don't know what a day is??
 Upgrades
     //just remember I can make text fancy (Orteil handbook)
     *tier1up
@@ -203,6 +200,13 @@ Buildings
         name:Patriotism
         hidden
         no buy
+    *day
+        name:Days
+        start with:0
+        desc:You don't know what a day is??
+        no buy
+        hidden
+        passive:multiply yield of tinbutton by 1.01
 Shinies
     /* make this work in v1
     *runnermantimes
