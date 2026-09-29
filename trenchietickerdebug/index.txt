@@ -159,20 +159,22 @@ Buildings
         hidden
         no buy
 Shinies
+    /* make this work in v1
     *runnermantimes
         name:Runnerman
         class:runnermen
         frequency:1
         frequency variation:1
-        on click:yield 400% tin production for 2 seconds
+        on click:
         movement:onTop moveBottom
+    */
     *runnermanplus
         name:Runnerman
         class:runnermen
         frequency:30
         frequency variation:20
-        /*change this later*/
-        on click:yield 200 tin
+        /*change this on v1 to scale*/
+        on click:yield 600 tin
         movement:onTop moveBottom
 Items
     //for v1.000
