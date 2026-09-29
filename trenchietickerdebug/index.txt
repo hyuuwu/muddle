@@ -158,18 +158,13 @@ Buildings
         name:Patriotism
         hidden
         no buy
-    *tintimes
-        hidden
-        no buy
-        passive:lose 0.1 tintimes
-        passive:multiply yield of tinbutton by 4
 Shinies
     *runnermantimes
         name:Runnerman
         class:runnermen
         frequency:1
         frequency variation:1
-        on click:yield 1 tintimes
+        on click:yield 400% tin production for 2 seconds
         movement:onTop moveBottom
     *runnermanplus
         name:Runnerman
