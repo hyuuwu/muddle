@@ -176,10 +176,17 @@ Shinies
         /*change this on v1 to scale*/
         on click:yield 600 tin
         movement:onTop moveBottom
-Items
-    //for v1.000
 Achievements
-    //Brave Man, Brave Men
+    *1runner
+        name:Brave Man
+        desc:Imagine the barbs on your skin... idiot.
+        req:1 runnermanplus:clicks
+    *5runner
+        name:Brave Men
+        desc:More than one?
+        req:5 runnermanplus:clicks
+Items
+    //for v1
 Includes
     //geeks can do this
 
