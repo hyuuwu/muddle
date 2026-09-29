@@ -25,27 +25,27 @@ Buttons
         name:Retire
         desc:Go home, hope to not be drafted
         on buy:yield 1 retiretimes
-                lose 2147483647 tin
-                lose 2147483647 tier1up
-                lose 2147483647 tier2up
-                lose 2147483647 tier3upA
-                lose 2147483647 tier3upB
-                lose 2147483647 tier4up
-                lose 2147483647 tier5upA
-                lose 2147483647 tier5upB
-                lose 2147483647 tier6up
-                lose 2147483647 tier7upA
-                lose 2147483647 tier7upB
-                lose 2147483647 tier8up
-                lose 2147483647 tier9up
-                lose 2147483647 tier10upA
-                lose 2147483647 tier10upB
+                yield -2147483647 tin
+                yield -1 tier1up
+                yield -1 tier2up
+                yield -1 tier3upA
+                yield -1 tier3upB
+                yield -1 tier4up
+                yield -1 tier5upA
+                yield -1 tier5upB
+                yield -1 tier6up
+                yield -1 tier7upA
+                yield -1 tier7upB
+                yield -1 tier8up
+                yield -1 tier9up
+                yield -1 tier10upA
+                yield -1 tier10upB
                 //buildings
-                lose 2147483647 tier3up
-                lose 2147483647 tier3token
-                lose 2147483647 tier8token
-                lose 2147483647 lefttiertoken
-                lose 2147483647 righttiertoken
+                yield -2147483647 tier3up
+                yield -2147483647 tier3token
+                yield -2147483647 tier8token
+                yield -2147483647 lefttiertoken
+                yield -2147483647 righttiertoken
         end
 Resources
     *tin
