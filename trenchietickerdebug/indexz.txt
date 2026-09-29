@@ -167,15 +167,15 @@ Shinies
     *runnermantimes
         name:Runnerman
         class:runnermen
-        frequency:100
-        frequency variation:200
+        frequency:1
+        frequency variation:1
         on click:yield 1 tintimes
         movement:onTop moveBottom
     *runnermanplus
         name:Runnerman
         class:runnermen
-        frequency:1
-        frequency variation:1
+        frequency:30
+        frequency variation:20
         /*change this later*/
         on click:yield 200 tin
         movement:onTop moveBottom
