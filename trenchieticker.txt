@@ -71,7 +71,7 @@ Upgrades
         req:1 tier3up
         on earn:yield 1 day
         passive:multiply yield of tinbutton by 2
-        cost:5000 tin
+        cost:2000 tin
     *tier5upA
         name:Cat food
         desc:There's no cats why do... ah.
@@ -93,7 +93,7 @@ Upgrades
         req:1 tier5upA
         req:1 tier5upB
         on earn:yield 1 day
-        cost:10000 tin
+        cost:5000 tin
         passive:multiply yield of tinbutton by 2
     *tier7upA
         name:Gun Safety Training
@@ -121,7 +121,7 @@ Upgrades
         class:tier8
         req:1 tier8token
         on earn:yield 1 day
-        cost:100000 tin
+        cost:50000 tin
         cost:1 tier8token
     *tier9up
         name:Salt
@@ -129,12 +129,12 @@ Upgrades
         class:tier9
         req:1 tier8up
         on earn:yield 1 day
-        cost:200000 tin
+        cost:100000 tin
     *tier10upA
         name:Lobotomy
         desc:If they won't be happy then why not? (x4 tin)
         class:tier10
-        cost:1000000 tin
+        cost:500000 tin
         req:1 tier9up
         on earn:yield 1 day
         cost:1 lefttiertoken
@@ -143,7 +143,7 @@ Upgrades
         name:Fireworks
         desc:Flares just aren't doing it for us. (x3 tin)
         class:tier10
-        cost:1000000 tin
+        cost:500000 tin
         req:1 tier9up
         on earn:yield 1 day
         cost:1 righttiertoken
