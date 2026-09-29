@@ -25,27 +25,27 @@ Buttons
         name:Retire
         desc:Go home, hope to not be drafted
         on buy:yield 1 retiretimes
-                set tin 0
-                set tier1up 0
-                set tier2up 0
-                set tier3upA 0
-                set tier3upB 0
-                set tier4up 0
-                set tier5upA 0
-                set tier5upB 0
-                set tier6up 0
-                set tier7upA 0
-                set tier7upB 0
-                set tier8up 0
-                set tier9up 0
-                set tier10upA 0
-                set tier10upB 0
+                tin is 0
+                tier1up is 0
+                tier2up is 0
+                tier3upA is 0
+                tier3upB is 0
+                tier4up is 0
+                tier5upA is 0
+                tier5upB is 0
+                tier6up is 0
+                tier7upA is 0
+                tier7upB is 0
+                tier8up is 0
+                tier9up is 0
+                tier10upA is 0
+                tier10upB is 0
                 //buildings
-                set tier3up 0
-                set tier3token 0
-                set tier8token 0
-                set lefttiertoken 0
-                set righttiertoken 0
+                tier3up is 0
+                tier3token is 0
+                tier8token is 0
+                lefttiertoken is 0
+                righttiertoken is 0
         end
 Resources
     *tin
