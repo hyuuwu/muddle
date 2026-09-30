@@ -2,12 +2,6 @@
   margin:0;
   padding:0;
 }
-.box {
-  border:2px solid black;
-  background-color:#D4C5A9;
-  padding:6px;
-  border-radius:0px;
-}
 #modpanel {
   position:fixed;
   top:0;
@@ -19,6 +13,9 @@
   background-image:url('trenchieticker/sprites/sub-bg.png');
   background-repeat:repeat-y;
   background-size:255px 255px;
+  border:2px solid black;
+  padding:6px;
+  border-radius:0px;
 }
 #clickpanel {
   position:fixed;
@@ -27,6 +24,10 @@
   right:255px;
   height:255px;
   box-sizing:border-box;
+  border:2px solid black;
+  background-color:#D4C5A9;
+  padding:6px;
+  border-radius:0px;
 }
 #tinbutton {
   position:absolute;
@@ -46,4 +47,8 @@
   right:255px;
   bottom:0;
   box-sizing:border-box;
+  border:2px solid black;
+  background-color:#D4C5A9;
+  padding:6px;
+  border-radius:0px;
 }
