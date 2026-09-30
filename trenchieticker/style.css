@@ -24,7 +24,7 @@
   height:255px;
   box-sizing:border-box;
 }
-#clickpanel tinbutton {
+#tinbutton {
   position:absolute;
   bottom:0;
   left:0;
