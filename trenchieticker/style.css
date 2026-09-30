@@ -28,8 +28,7 @@ body {
     overflow:hidden;
     background-image:url('sprites/guy.png'); /*has caused many issues*/
     background-repeat:no-repeat;
-    background-size:255px 510px
-    z-index:99;
+    background-size:255px 510px;
   }
   #tiers {
     display:flex;
