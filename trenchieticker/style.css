@@ -69,13 +69,14 @@ body {
   position:fixed;
   top:0;
   left:0;
-  passing:0 !important;
+  padding:0 !important;
   margin-top:auto;
   right:255px;
   height:255px;
   box-sizing:border-box;
   display:flex;
   flex-direction:column;
+  justify-content:flex-end;
 }
   #tinbutton {
     display:block;
@@ -88,7 +89,7 @@ body {
     cursor:pointer;
     background-image:url('sprites/thetrench.png');
     background-repeat:repeat-x;
-    background-position:left center;
+    background-position:left bottom;
     background-size:auto 100%;
     user-select:none; /*to prevent blue highlight*/
     -webkit-user-select:none;
