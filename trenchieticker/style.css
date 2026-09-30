@@ -23,6 +23,8 @@ body {
   position:fixed;
   top:0;
   width:auto;
+  height:510px;
+  right:0;
   background-image:url('sprites/guy.png');
   z-index:99;
 }
