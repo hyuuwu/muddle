@@ -1,8 +1,8 @@
 let tin=0;
 const tinbutton = document.getElementById('tinbutton');
-const tintext = document.getElementById('tintext');
+const tinnumber = document.getElementById('tinnumber');
 
 tinbutton.addEventListener('click', () => {
   tin += 1;
-  tintext.textcontent = 'Tin: ${tin}';
+  tinnumber.textcontent = tin;
 });
