@@ -11,4 +11,5 @@
   width:255px;
   height:100vh;
   box-sizing:border-box;
-  z-index:99
+  z-index:99;
+}
