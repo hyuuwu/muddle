@@ -5,6 +5,7 @@ body {
   border:2px solid black;
   padding:6px;
   border-radius:0px;
+  height:100vh;
 }
 #modpanel {
   position:fixed;
@@ -68,10 +69,13 @@ body {
   position:fixed;
   top:0;
   left:0;
+  passing:0 !important;
   margin-top:auto;
   right:255px;
   height:255px;
   box-sizing:border-box;
+  display:flex;
+  flex-direction:column;
 }
   #tinbutton {
     display:block;
