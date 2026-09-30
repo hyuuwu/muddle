@@ -61,6 +61,7 @@ body {
     display:flex;
     justify-content:space-between;
     align-items:center;
+    border-radius:0px; /*no round corners*/
 #clickpanel {
   position:fixed;
   top:0;
