@@ -3,7 +3,6 @@ body {
   padding:0;
 .box {
   border:2px solid black;
-  background-color:#9F8859;
   padding:6px;
   border-radius:0px;
 }
@@ -65,7 +64,7 @@ body {
     border-radius:0px; /*no round corners*/
   }
 #clickpanel {
-  background-color: #A38166 !important;
+  background-color: #A38166;
   position:fixed;
   top:0;
   left:0;
@@ -89,6 +88,7 @@ body {
     -webkit-user-select:none;
 }
 #elsepanel {
+  background-color:#9F8859;
   position:fixed;
   top:255px;
   left:0;
