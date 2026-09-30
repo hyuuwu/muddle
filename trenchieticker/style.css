@@ -23,7 +23,7 @@ body {
   position:fixed;
   top:0;
   width:auto;
-  background-image:url('sprites/uniform and guy.png');
+  background-image:url('sprites/guy.png');
   z-index:99;
 }
 #clickpanel {
