@@ -25,6 +25,7 @@ body {
   width:auto;
   background-image:url('sprites/uniform and guy.png');
   z-index:99;
+}
 #clickpanel {
   position:fixed;
   top:0;
