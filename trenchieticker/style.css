@@ -23,6 +23,8 @@ body {
   position:fixed;
   top:0;
   right:0;
+  width:255px;
+  height:510px;
   overflow:hidden;
   background-image:url('sprites/guy.png');
   background-repeat:no-repeat;
