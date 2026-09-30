@@ -26,7 +26,7 @@ body {
   width:255px;
   height:510px;
   overflow:hidden;
-  background-image:url('sprites/guy.png');
+  background-image:url('sprites/guy.png'); /*has caused many issues*/
   background-repeat:no-repeat;
   background-size:255px 510px
   z-index:99;
