@@ -19,18 +19,48 @@ body {
   background-repeat:repeat-y;
   background-size:255px 255px;
 }
-#guy {
-  position:fixed;
-  top:0;
-  right:0;
-  width:255px;
-  height:510px;
-  overflow:hidden;
-  background-image:url('sprites/guy.png'); /*has caused many issues*/
-  background-repeat:no-repeat;
-  background-size:255px 510px
-  z-index:99;
-}
+  #guy {
+    position:fixed;
+    top:0;
+    right:0;
+    width:255px;
+    height:510px;
+    overflow:hidden;
+    background-image:url('sprites/guy.png'); /*has caused many issues*/
+    background-repeat:no-repeat;
+    background-size:255px 510px
+    z-index:99;
+  }
+  #tiers {
+    display:flex;
+    flex-direction:column;
+    gap:20px /*vertical space between*/
+    width:100%
+  }
+  .lonetier,
+  .ortier,
+  .andtier {
+    display:flex;
+    width:100%;
+    height:40px;
+    gap:6px; /*horizontal space between*/
+  }
+  .button {
+    flex: 1; /*for tier splitting*/
+    height:100%;
+    box-sizing:border-box;
+    background-color:transparent;
+    border:2px solid #000000;
+    font-family:'Courier New', Courier, monospace;
+    font-weight:bold;
+    font-size:16px;
+    letter-spacing:1.5px;
+    color:#000000;
+    padding:6px 10px;
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 #clickpanel {
   position:fixed;
   top:0;
@@ -39,16 +69,16 @@ body {
   height:255px;
   box-sizing:border-box;
 }
-#tinbutton {
-  position:absolute;
-  bottom:0;
-  left:0;
-  right:0;
-  width:100%;
-  height:51px;
-  box-sizing:border-box;
-  border:2px solid black;
-  outline:none; /*stopping weird lines*/
+  #tinbutton {
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    width:100%;
+    height:51px;
+    box-sizing:border-box;
+    border:2px solid black;
+    outline:none; /*stopping weird lines*/
 }
 #elsepanel {
   position:fixed;
@@ -58,12 +88,12 @@ body {
   bottom:0;
   box-sizing:border-box;
 }
-#tintext {
-  text-align:center;
-  margin:12px;
-  font-family:'Courier New', Courier, monospace;
-  font-weight:bold;
-  font-size:16px;
-  letter-spacing:1.5px;
-  border:2px solid #000;
-}
+  #tintext {
+    text-align:center;
+    margin:12px;
+    font-family:'Courier New', Courier, monospace;
+    font-weight:bold;
+    font-size:16px;
+    letter-spacing:1.5px;
+    border:2px solid #000;
+  }
