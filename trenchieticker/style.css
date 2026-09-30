@@ -31,10 +31,12 @@ body {
     background-size:255px 510px;
   }
   #tiers {
+    position:relative;
     display:flex;
     flex-direction:column;
     gap:20px /*vertical space between*/
     width:100%
+    z-index:99;
   }
   .lonetier,
   .ortier,
