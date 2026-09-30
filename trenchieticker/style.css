@@ -1,6 +1,10 @@
 body {
   margin:0;
   padding:0;
+  font-family:'Courier New', Courier, monospace;
+  font-weight:bold;
+  font-size:16px;
+  letter-spacing:1.5px;
 .box {
   border:2px solid black;
   padding:6px;
@@ -25,7 +29,6 @@ body {
     right:0;
     width:255px;
     height:510px;
-    overflow:hidden;
     background-image:url('sprites/guy.png'); /*has caused many issues*/
     background-repeat:no-repeat;
     background-size:255px 510px;
@@ -52,10 +55,6 @@ body {
     box-sizing:border-box;
     background-color:transparent;
     border:2px solid white;
-    font-family:'Courier New', Courier, monospace;
-    font-weight:bold;
-    font-size:16px;
-    letter-spacing:1.5px;
     color:white;
     padding:6px 10px;
     cursor:pointer;
@@ -70,7 +69,6 @@ body {
   top:0;
   left:0;
   padding:0 !important;
-  margin-top:auto;
   right:255px;
   height:255px;
   box-sizing:border-box;
@@ -79,7 +77,6 @@ body {
   justify-content:flex-end;
 }
   #tinbutton {
-    display:block;
     border:none;
     background-color:transparent;
     outline:none; /*stopping weird lines*/
@@ -106,9 +103,5 @@ body {
   #tintext {
     text-align:center;
     margin:12px;
-    font-family:'Courier New', Courier, monospace;
-    font-weight:bold;
-    font-size:16px;
-    letter-spacing:1.5px;
     border:2px solid #000;
   }
