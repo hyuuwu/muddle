@@ -11,5 +11,20 @@
   width:255px;
   height:100vh;
   box-sizing:border-box;
-  z-index:99;
+}
+#clickpanel {
+  position:fixed;
+  top:0;
+  left:0;
+  right:255px;
+  height:255px;
+  box-sizing:border-box;
+}
+#elsepanel {
+  position:fixed;
+  top:255px;
+  left:0;
+  right:255px;
+  bottom:0;
+  box-sizing:border-box;
 }
