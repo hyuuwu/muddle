@@ -22,10 +22,11 @@ body {
 #guy {
   position:fixed;
   top:0;
-  width:auto;
-  height:510px;
   right:0;
+  overflow:hidden;
   background-image:url('sprites/guy.png');
+  background-repeat:no-repeat;
+  background-size:255px 510px
   z-index:99;
 }
 #clickpanel {
