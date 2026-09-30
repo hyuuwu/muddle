@@ -15,6 +15,10 @@
   width:255px;
   height:100vh;
   box-sizing:border-box;
+  overflow:hidden;
+  background-image:url('sub-bg.png');
+  background-repeat:repeat-y;
+  background-size:255px 255px;
 }
 #clickpanel {
   position:fixed;
