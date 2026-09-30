@@ -34,8 +34,8 @@ body {
     position:relative;
     display:flex;
     flex-direction:column;
-    gap:20px /*vertical space between*/
-    width:100%
+    gap:20px; /*vertical space between*/
+    width:100%;
     z-index:99;
   }
   .lonetier,
