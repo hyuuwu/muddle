@@ -89,6 +89,21 @@ body {
   flex-direction:column;
   justify-content:flex-end;
 }
+  #tinbutton {
+    border:none;
+    background-color:transparent;
+    outline:none; /*stopping weird lines*/
+    padding:0;
+    width:100%;
+    height:51px;
+    cursor:pointer;
+    background-image:url('sprites/thetrench.png');
+    background-repeat:repeat-x;
+    background-position:left bottom;
+    background-size:auto 100%;
+    user-select:none; /*to prevent blue highlight*/
+    -webkit-user-select:none;
+  }
   #runnerman {
     position:absolute;
     top:0;
@@ -114,21 +129,6 @@ body {
       top:255px;
     }
   }
-  #tinbutton {
-    border:none;
-    background-color:transparent;
-    outline:none; /*stopping weird lines*/
-    padding:0;
-    width:100%;
-    height:51px;
-    cursor:pointer;
-    background-image:url('sprites/thetrench.png');
-    background-repeat:repeat-x;
-    background-position:left bottom;
-    background-size:auto 100%;
-    user-select:none; /*to prevent blue highlight*/
-    -webkit-user-select:none;
-}
 #elsepanel {
   background-color:#9F8859;
   position:fixed;
