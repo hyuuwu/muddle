@@ -62,7 +62,11 @@ body {
     justify-content:space-between;
     align-items:center;
     border-radius:0px; /*no round corners*/
+  .button:hover {
+    max-height:80px
   }
+  .button .flavor {
+    margin-top:6px;
 #clickpanel {
   background-color: #A38166;
   position:fixed;
