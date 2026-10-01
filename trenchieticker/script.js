@@ -26,7 +26,7 @@ function buymod(cost, boost, element) {
     element.style.display = 'none';
     const currenttier = element.parentElement;
     if (currenttier.classList.contains('andtier')) {
-      const unbought = Array.from(currentTier.querySelectorAll('.button'))
+      const unbought = Array.from(currenttier.querySelectorAll('.button'))
                             .some(btn => btn.style.display !== 'none');
       if (unbought) return;
     }
