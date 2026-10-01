@@ -8,8 +8,13 @@ tinbutton.addEventListener('click', () => {
   tinnumber.textContent = tin;
 });
 document.querySelectorAll('#tiers .button').forEach((btn, index) => {
-  if (index > 0) btn.classList.add('locked');
-}
+  if (index > 0) {
+    btn.classList.add('locked');
+    btn.dataset.original = btn.innerHTML;
+    const cost = btn.getAttribute('onclick').match(/\d+/)[0]; //what??
+    btn.innerHTML = '${cost} Tin';
+  }
+});
 function buymod(cost, boost, element) {
   if (tin >= cost) {
     tin -= cost;
@@ -19,6 +24,7 @@ function buymod(cost, boost, element) {
     const buttons = Array.from(document.querySelectorAll('#tiers .button'));
     const nextbutton = buttons[buttons.indexOf(element) + 1];
     if (nextbutton) {
-      nextbutton.classList.remove('locked');
+      nextbutton.classList.remove('locked'); //unlock
+      nextbutton.innerHTML = nextbutton.dataset.original;
   }
 }
