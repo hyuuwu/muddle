@@ -89,6 +89,31 @@ body {
   flex-direction:column;
   justify-content:flex-end;
 }
+  #runnerman {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:255px;
+    overflow:hidden;
+    cursor:pointer;
+  }
+  .runnerman {
+    position:absolute;
+    left:50%; /*change later*/
+    width:30px;
+    height:90px;
+    background-color:black; /*change later aswell*/
+    animation:droprunnerman 2s linear infinite;
+  }
+  @keyframes droprunnerman {
+    0% {
+      top:0;
+    }
+    100% {
+      top:255px;
+    }
+  }
   #tinbutton {
     border:none;
     background-color:transparent;
