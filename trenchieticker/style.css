@@ -51,8 +51,8 @@ body {
   }
   .button {
     flex: 1; /*for tier splitting*/
-    min-height:40px;
-    max-height:40px;
+    min-height:30px;
+    max-height:30px;
     width:100%;
     box-sizing:border-box;
     background-color:transparent;
@@ -67,7 +67,7 @@ body {
     border-radius:0px; /*no round corners*/
   }
   .button:hover {
-    max-height:80px
+    max-height:120px
   }
   .button .flavor {
     margin-top:6px;
