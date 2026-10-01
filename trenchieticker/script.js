@@ -13,7 +13,7 @@ document.querySelectorAll('#tiers > div').forEach((row, index) => {
       btn.classList.add('locked');
       btn.dataset.original = btn.innerHTML;
       const attr = btn.getAttribute('onclick');
-      if (attr) btn.innerHTML = `${attr.match(/\d+/[0]} Tin`;
+      if (attr) btn.innerHTML = `${attr.match(/\d+/)[0]} Tin`;
       else btn.innerHTML = '';
     });
   }
