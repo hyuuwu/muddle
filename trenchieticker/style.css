@@ -73,6 +73,9 @@ body {
     margin-top:6px;
     color:white;
   }
+  .button.locked {
+    pointer-events:none;
+  }
 #clickpanel {
   background-color: #A38166;
   position:fixed;
