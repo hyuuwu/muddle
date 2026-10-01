@@ -7,12 +7,15 @@ tinbutton.addEventListener('click', () => {
   tin += tinperclick;
   tinnumber.textContent = tin;
 });
-document.querySelectorAll('#tiers .button').forEach((btn, index) => {
+document.querySelectorAll('#tiers > div').forEach((row, index) => {
   if (index > 0) {
-    btn.classList.add('locked');
-    btn.dataset.original = btn.innerHTML;
-    const attr = btn.getAttribute('onclick');
-    if (attr) btn.innerHTML = `${attr.match(/\d+/)[0]} Tin`; //regex
+    row.querySelectorAll('.button').forEach(btn => {
+      btn.classList.add('locked');
+      btn.dataset.original = btn.innerHTML;
+      const attr = btn.getAttribute('onclick');
+      if (attr) btn.innerHTML = `${attr.match(/\d+/[0]} Tin`;
+      else btn.innerHTML = '';
+    });
   }
 });
 function buymod(cost, boost, element) {
@@ -20,12 +23,14 @@ function buymod(cost, boost, element) {
     tin -= cost;
     tinperclick += boost;
     tinnumber.textContent = tin;
-    element.style.display = 'none';
-    const buttons = Array.from(document.querySelectorAll('#tiers .button'));
-    const nextbutton = buttons[buttons.indexOf(element) + 1];
-    if (nextbutton) {
-      nextbutton.classList.remove('locked'); //unlock
-      nextbutton.innerHTML = nextbutton.dataset.original;
+    const currentTier = element.parentElement;
+    currentTier.style.display = 'none';
+    const nextTier = currentTier.nextElementSibling;
+    if (nextTier) {
+      nextTier.querySelectorAll('.button').forEach(btn => {
+        btn.classList.remove('locked');
+        if (btn.dataset.original) btn.innerHTML = btn.dataset.original;
+      });
     }
   }
 }
