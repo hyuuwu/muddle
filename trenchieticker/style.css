@@ -103,6 +103,7 @@ body {
     background-size:auto 100%;
     user-select:none; /*to prevent blue highlight*/
     -webkit-user-select:none;
+    z-index:99;
   }
   #runnerman {
     position:absolute;
