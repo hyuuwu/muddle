@@ -5,7 +5,7 @@ const tinnumber = document.getElementById('tinnumber');
 
 tinbutton.addEventListener('click', () => {
   tin += tinperclick;
-  tinnumber.textContext = tin;
+  tinnumber.textContent = tin;
 });
 function buymod(cost, boost, element) {
   if (tin >= cost) {
