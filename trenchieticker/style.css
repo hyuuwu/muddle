@@ -67,7 +67,7 @@ body {
     border-radius:0px; /*no round corners*/
   }
   .button:hover {
-    max-height:120px
+    max-height:9999px
   }
   .button .flavor {
     margin-top:6px;
