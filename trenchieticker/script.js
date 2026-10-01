@@ -11,8 +11,8 @@ document.querySelectorAll('#tiers .button').forEach((btn, index) => {
   if (index > 0) {
     btn.classList.add('locked');
     btn.dataset.original = btn.innerHTML;
-    const cost = btn.getAttribute('onclick').match(/\d+/)[0]; //what??
-    btn.innerHTML = `${cost} Tin`;
+    const attr = btn.getAttribute('onclick');
+    if (attr) btn.innerHTML = `${attr.match(/\d+/)[0]} Tin`; //regex
   }
 });
 function buymod(cost, boost, element) {
