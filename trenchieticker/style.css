@@ -53,6 +53,7 @@ body {
     flex: 1; /*for tier splitting*/
     min-height:40px;
     max-height:40px;
+    width:100%;
     box-sizing:border-box;
     background-color:transparent;
     border:2px solid white;
@@ -70,6 +71,7 @@ body {
   }
   .button .flavor {
     margin-top:6px;
+    color:white;
   }
 #clickpanel {
   background-color: #A38166;
