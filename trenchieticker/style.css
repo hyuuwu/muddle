@@ -104,7 +104,7 @@ body {
     width:30px;
     height:90px;
     background-color:black; /*change later aswell*/
-    animation:droprunnerman 2s linear infinite;
+    animation:droprunnerman 2s linear forwards;
   }
   @keyframes droprunnerman {
     0% {
