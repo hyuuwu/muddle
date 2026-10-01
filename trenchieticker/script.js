@@ -26,5 +26,6 @@ function buymod(cost, boost, element) {
     if (nextbutton) {
       nextbutton.classList.remove('locked'); //unlock
       nextbutton.innerHTML = nextbutton.dataset.original;
+    }
   }
 }
