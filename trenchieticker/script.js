@@ -23,11 +23,17 @@ function buymod(cost, boost, element) {
     tin -= cost;
     tinperclick += boost;
     tinnumber.textContent = tin;
-    const currentTier = element.parentElement;
-    currentTier.style.display = 'none';
-    const nextTier = currentTier.nextElementSibling;
-    if (nextTier) {
-      nextTier.querySelectorAll('.button').forEach(btn => {
+    element.style.display = 'none';
+    const currenttier = element.parentElement;
+    if (currenttier.classList.contains('andtier')) {
+      const unbought = Array.from(currentTier.querySelectorAll('.button'))
+                            .some(btn => btn.style.display !== 'none');
+      if (unbought) return;
+    }
+    currenttier.style.display = 'none';
+    const nexttier = currenttier.nextElementSibling;
+    if (nexttier) {
+      nexttier.querySelectorAll('.button').forEach(btn => {
         btn.classList.remove('locked');
         if (btn.dataset.original) btn.innerHTML = btn.dataset.original;
       });
