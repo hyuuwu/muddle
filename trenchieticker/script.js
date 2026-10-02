@@ -54,6 +54,12 @@ function spawnRunnerman() {
   const flipInterval = setInterval(() => {
   sprite.classList.toggle('flipped');
   }, 1000);
+  if (progress >= 1) {
+    clearInterval(flipInterval);
+    runnerman.remove()
+  } else {
+    requestAnimationFrame(step);
+  }
   container.appendChild(runnerman);
 
   const duration = 6000;
