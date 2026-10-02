@@ -64,7 +64,7 @@ function spawnRunnerman() {
       const elapsed = timestamp - startTime;
       const progress = Math.min(elapsed / duration, 1);
     
-      runnerman.style.transform = `TranslateY(${progress * endPos}px)`;
+      runnerman.style.transform = `translateY(${progress * endPos}px)`;
 
     if (progress >= 1) {
       clearInterval(flipInterval);
