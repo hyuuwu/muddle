@@ -90,7 +90,6 @@ body {
   justify-content:flex-start;
 }
   #theothertrench {
-    flex:1;
     border:none;
     background-color:transparent;
     outline:none; /*stopping weird lines*/
@@ -104,7 +103,6 @@ body {
     background-size:auto 100%;
   }
   #tinbutton {
-    flex:2;
     border:none;
     background-color:transparent;
     outline:none; /*stopping weird lines*/
@@ -120,6 +118,7 @@ body {
     user-select:none; /*to prevent blue highlight*/
     -webkit-user-select:none;
     z-index:98;
+    order:66;
   }
   #runnerman {
     position:absolute;
