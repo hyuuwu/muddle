@@ -48,11 +48,11 @@ function spawnrunner() {
   runnerman.className = 'runnerman';
   const maxleft = container.clientWidth - 30;
   runnerman.style.left = Math.floor(Math.random() * maxleft) + 'px';
-  void runnerman.offsetWidth;
   runnerman.addEventListener('animationend', () => {
     runnerman.remove();
   });
   container.appendChild(runnerman);
+  void runnerman.offsetWidth;
 }
 function schedulerunner() {
   const randomDelay = Math.floor(Math.random() * (60000 - 50000 + 1)) + 50000;
