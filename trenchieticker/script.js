@@ -38,5 +38,26 @@ function buymod(cost, boost, element) {
         if (btn.dataset.original) btn.innerHTML = btn.dataset.original;
       });
     }
+    function spawnrunner() {
+      const container = document.getElementById('runnerman');
+      if (!container) return;
+
+      const runnerman = document.createElement('div');
+      runnerman.className = 'runnerman';
+      const maxleft = container.clientWidth - 30;
+      runnerman.style.left = Math.floor(Math.random() * maxleft) + 'px';
+      runnerman.addEventListener('animationend', () => {
+        runner.remove();
+      });
+      container.appendChild(runnerman);
+    }
+    function schedulerunner() {
+      const randomDelay = Math.floor(Math.random() * (60000 - 50000 + 1)) + 50000;
+      setTimeout(() => {
+        spawnrunner();
+        schedulenextrunner();
+      }, randomDelay);
+    }
+  
   }
 }
