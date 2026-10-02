@@ -168,9 +168,30 @@ body {
   right:255px;
   bottom:0;
   box-sizing:border-box;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  padding:12px;
 }
   #tintext {
     text-align:center;
     margin:12px;
     border:2px solid #000;
+    justify-content:flex-start;
+    order:1;
+  }
+  #daystext {
+    text-align:center;
+    margin:12px;
+    border:2px solid #000;
+    justify-content:flex-start;
+    order:2;
+  }
+  #elsepanel #retirebutton {
+    width:100%;
+    margin-top:auto;
+    background-color:transparent;
+    border:2px solid white;
+    color:white;
+    cursor:pointer;
   }
