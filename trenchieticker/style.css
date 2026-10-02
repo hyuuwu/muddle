@@ -132,6 +132,7 @@ body {
     height:100%;
     background-image:url('sprites/runnerman.png');
     background-size:contain;
+  }
   .sprite.flipped {
     transform:scaleX(-1);
   }
