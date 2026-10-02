@@ -57,12 +57,12 @@ function spawnRunnerman() {
 
   runnerman.onclick = function() {
     const roll = Math.random();
+    const baseTin = tinPerClick;
     if (roll < 0.5) {
       const instantTin = tinPerClick * 400;
-      tin += instantReward;
+      tin += instantTin;
       tinNumber.textContent = tin;
     } else {
-      const baseTin = tinPerClick;
       tinPerClick *= 4;
 
       setTimeout(() => {
