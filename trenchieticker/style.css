@@ -129,6 +129,9 @@ body {
     pointer-events:auto;
     cursor:pointer;
   }
+  .runnerman.flipped {
+    transform:scaleX(-1);
+  }
 #elsepanel {
   background-color:#9F8859;
   position:fixed;
