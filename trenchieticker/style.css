@@ -18,11 +18,18 @@ body {
   width:255px;
   height:100vh;
   box-sizing:border-box;
-  overflow:hidden;
+  overflow-x:hidden;
+  overflow-y:auto;
   background-image:url('sprites/sub-bg.png');
   background-repeat:repeat-y;
   background-size:255px 255px;
 }
+  #bigblock {
+    opacity:0;
+    min-height:500px;
+    max-height:none;
+    border:none;
+  }
   #guy {
     position:fixed;
     top:0;
