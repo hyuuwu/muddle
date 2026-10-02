@@ -59,6 +59,5 @@ function schedulerunner() {
       spawnrunner();
       schedulerunner();
     }, randomDelay);
-  }
 }
 schedulerunner();
