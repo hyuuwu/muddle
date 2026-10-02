@@ -48,6 +48,12 @@ function spawnRunnerman() {
   runnerman.className = 'runnerman';
   const maxLeft = container.clientWidth - 30;
   runnerman.style.left = Math.floor(Math.random() * maxLeft) + 'px';
+  const sprite = document.createElement('div');
+  sprite.className = 'sprite';
+  runnerman.appendChild(sprite);
+  const flipInterval = setInterval(() => {
+  sprite.classList.toggle('flipped');
+  }, 1000);
   container.appendChild(runnerman);
 
   const duration = 6000;
@@ -57,7 +63,7 @@ function spawnRunnerman() {
       if (!startTime) startTime = timestamp;
       const elapsed = timestamp - startTime;
       const progress = Math.min(elapsed / duration, 1);
-
+    
       runnerman.style.transform = `TranslateY(${progress * endPos}px)`;
 
       if (progress < 1) {
@@ -66,12 +72,6 @@ function spawnRunnerman() {
           runnerman.remove();
       }
   }
-  requestAnimationFrame(step);
-  let flipped = false;
-  const flipInterval = setInterval(() => {
-    flipped = !flipped;
-    runnerman.classList.toggle('flipped', flipped);
-  }, 1000);
 }
 function scheduleRunnerman() {
   const randomDelay = Math.floor(Math.random() * 50000) + 40000
