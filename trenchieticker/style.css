@@ -173,19 +173,12 @@ body {
   justify-content:space-between;
   padding:12px;
 }
-  #tintext {
+  #tintext,
+  #daystext {
     text-align:center;
     margin:12px;
     border:2px solid #000;
     justify-content:flex-start;
-    order:1;
-  }
-  #daystext {
-    text-align:center;
-    margin:0px;
-    border:2px solid #000;
-    justify-content:flex-start;
-    order:2;
   }
   #tintext span, #daystext span {
     border:none !important;
