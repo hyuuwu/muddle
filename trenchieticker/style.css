@@ -132,6 +132,7 @@ body {
   }
   .runnerman {
     position:absolute;
+    display:block;
     top:0px;
     width:30px;
     height:90px;
