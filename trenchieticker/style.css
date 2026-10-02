@@ -113,6 +113,7 @@ body {
     height:255px;
     overflow:hidden;
     z-index:100;
+    pointer-events:none;
   }
   .runnerman {
     position:absolute;
@@ -121,13 +122,14 @@ body {
     width:30px;
     height:90px;
     background-color:black; /*change later aswell*/
+    pointer-events:none;
   }
   @keyframes droprunnerman {
     0% {
-      top:0px;
+      transform:translateY(0px);
     }
     100% {
-      top:255px;
+      transform:translateY(255px);
     }
   }
 #elsepanel {
