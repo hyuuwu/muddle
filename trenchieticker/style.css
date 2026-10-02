@@ -101,7 +101,6 @@ body {
     background-repeat:repeat-x;
     background-position:left bottom;
     background-size:auto 100%;
-    z-index:100;
   }
   #tinbutton {
     border:none;
