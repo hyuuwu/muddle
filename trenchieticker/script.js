@@ -101,3 +101,22 @@ function scheduleRunnerman() {
   }, randomDelay);
 }
 scheduleRunnerman();
+function rebirth() {
+  activeDays += passiveDays;
+  passiveDays = 0;
+  rebirthTimes += 1;
+  tin = 0;
+  baseTinPerClick = 1;
+  updateTinPerClick();
+  tinNumber.textContent = 0;
+  if (daysNumber) daysNumber.textContent = activeDays;
+  document.querySelectorAll('#tiers > div').forEach((tier, index) => {
+    tier.style.display = 'flex';
+    tier.querySelectorAll('.button').forEach((tier, index) => {
+      btn.style.display = 'block';
+      if (index > 0) {
+        btn.classList.add('locked');
+      }
+    });
+  });
+}
