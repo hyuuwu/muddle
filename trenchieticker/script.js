@@ -56,19 +56,18 @@ function spawnRunnerman() {
   const duration = 6000;
   const endPos = 255;
   let startTime = null;
-}
-function step(timestamp) {
-    if (!startTime) startTime = timestamp;
-    const elapsed = timestamp - startTime;
-    const progress = Math.min(elapsed / duration, 1);
+  function step(timestamp) {
+      if (!startTime) startTime = timestamp;
+      const elapsed = timestamp - startTime;
+      const progress = Math.min(elapsed / duration, 1);
 
-    runnerman.style.transform = 'TranslateY(${progress * endPos}px)';
+      runnerman.style.transform = `TranslateY(${progress * endPos}px)`;
 
-    if (progress < 1) {
-      requestAnimationFrame(step);
-    } else {
-        runnerman.remove();
-    }
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+          runnerman.remove();
+      }
   }
   requestAnimationFrame(step);
 }
