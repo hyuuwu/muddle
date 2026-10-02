@@ -39,6 +39,7 @@ function buymod(cost, boost, element) {
       });
     }
   }
+}
 function spawnrunner() {
   const container = document.getElementById('runnerman');
   if (!container) return;
