@@ -101,7 +101,7 @@ function scheduleRunnerman() {
   }, randomDelay);
 }
 scheduleRunnerman();
-function rebirth() {
+function retire() {
   activeDays += passiveDays;
   passiveDays = 0;
   rebirthTimes += 1;
