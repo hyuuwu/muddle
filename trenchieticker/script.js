@@ -1,11 +1,11 @@
 let tin = 0;
-let tinperclick = 1; //at base
-const tinbutton = document.getElementById('tinbutton');
-const tinnumber = document.getElementById('tinnumber');
+let tinPerClick = 1; //at base
+const tinButton = document.getElementById('tinbutton');
+const tinNumber = document.getElementById('tinnumber');
 
-tinbutton.addEventListener('click', () => {
-  tin += tinperclick;
-  tinnumber.textContent = tin;
+tinButton.addEventListener('click', () => {
+  tin += tinPerClick;
+  tinNumber.textContent = tin;
 });
 document.querySelectorAll('#tiers > div').forEach((row, index) => {
   if (index > 0) {
@@ -18,49 +18,57 @@ document.querySelectorAll('#tiers > div').forEach((row, index) => {
     });
   }
 });
-function buymod(cost, boost, element) {
+function buyMod(cost, boost, element) {
   if (tin >= cost) {
     tin -= cost;
-    tinperclick += boost;
-    tinnumber.textContent = tin;
+    tinPerClick += boost;
+    tinNumber.textContent = tin;
     element.style.display = 'none';
-    const currenttier = element.parentElement;
-    if (currenttier.classList.contains('andtier')) {
-      const unbought = Array.from(currenttier.querySelectorAll('.button'))
+    const currentTier = element.parentElement;
+    if (currentTier.classList.contains('andtier')) {
+      const unbought = Array.from(currentTier.querySelectorAll('.button'))
                             .some(btn => btn.style.display !== 'none');
       if (unbought) return;
     }
-    currenttier.style.display = 'none';
-    const nexttier = currenttier.nextElementSibling;
-    if (nexttier) {
-      nexttier.querySelectorAll('.button').forEach(btn => {
+    currentTier.style.display = 'none';
+    const nextTier = currentTier.nextElementSibling;
+    if (nextTier) {
+      nextTier.querySelectorAll('.button').forEach(btn => {
         btn.classList.remove('locked');
         if (btn.dataset.original) btn.innerHTML = btn.dataset.original;
       });
     }
   }
 }
-function spawnrunner() {
+function spawnRunnerman() {
   const container = document.getElementById('runnerman');
   if (!container) return;
 
   const runnerman = document.createElement('div');
   runnerman.className = 'runnerman';
-  const maxleft = container.clientWidth - 30;
-  runnerman.style.left = Math.floor(Math.random() * maxleft) + 'px';
+  const maxLeft = container.clientWidth - 30;
+  runnerman.style.left = Math.floor(Math.random() * maxLeft) + 'px';
   runnerman.addEventListener('animationend', () => {
     runnerman.remove();
   });
   container.appendChild(runnerman);
-  requestAnimationFrame(() => {
-    runnerman.style.animation = 'droprunnerman 6s linear forwards';
-  });
+
+  const duration = 6000;
+  const endPos = 255;
+  let startTime = null;
 }
-function schedulerunner() {
-  const randomDelay = Math.floor(Math.random() * (60000 - 50000 + 1)) + 50000;
-    setTimeout(() => {
-      spawnrunner();
-      schedulerunner();
-    }, randomDelay);
+function step(timestamp) {
+    if (!startTime) startTime = timestamp;
+    const elapsed = timestamp - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+
+    runnerman.style.transform = 'TranslateY(${progress * endPos}px)';
+
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    } else {
+        runnerman.remove();
+    }
+  }
+  requestAnimationFrame(step);
 }
-schedulerunner();
