@@ -188,8 +188,8 @@ body {
     order:2;
   }
   #tintext span, #daystext span {
-    border:none;
-    outline:none;
+    border:none !important;
+    outline:none !important;
   #elsepanel #retirebutton {
     width:100%;
     margin-top:auto;
