@@ -29,6 +29,7 @@ body {
     min-height:500px;
     max-height:none;
     border:none;
+    pointer-events:none;
   }
   #guy {
     position:fixed;
