@@ -48,9 +48,6 @@ function spawnRunnerman() {
   runnerman.className = 'runnerman';
   const maxLeft = container.clientWidth - 30;
   runnerman.style.left = Math.floor(Math.random() * maxLeft) + 'px';
-  runnerman.addEventListener('animationend', () => {
-    runnerman.remove();
-  });
   container.appendChild(runnerman);
 
   const duration = 6000;
@@ -71,3 +68,11 @@ function spawnRunnerman() {
   }
   requestAnimationFrame(step);
 }
+function scheduleRunnerman() {
+  const randomDelay = Math.floor(Math.random() * 50000) + 40000
+  setTimeout(() => {
+    spawnRunnerman();
+    scheduleRunnerman(); //loop
+  }, randomDelay);
+}
+scheduleRunnerman();
