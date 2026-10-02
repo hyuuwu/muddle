@@ -73,6 +73,7 @@ function spawnRunnerman() {
       requestAnimationFrame(step);
     }
   }
+  requestAnimationFrame(step);
 }
 function scheduleRunnerman() {
   const randomDelay = Math.floor(Math.random() * 50000) + 40000
