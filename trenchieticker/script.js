@@ -52,6 +52,7 @@ function spawnrunner() {
     runnerman.remove();
   });
   container.appendChild(runnerman);
+  void runnerman.offsetWidth;
   runnerman.style.animation = 'droprunnerman 6s linear forwards';
 }
 function schedulerunner() {
