@@ -48,6 +48,7 @@ function spawnrunner() {
   runnerman.className = 'runnerman';
   const maxleft = container.clientWidth - 30;
   runnerman.style.left = Math.floor(Math.random() * maxleft) + 'px';
+  void runnerman.offsetWidth;
   runnerman.addEventListener('animationend', () => {
     runnerman.remove();
   });
