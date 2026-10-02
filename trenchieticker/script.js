@@ -54,7 +54,7 @@ function spawnRunnerman() {
   container.appendChild(runnerman);
 
   const duration = 6000;
-  const endPos = 255;
+  const endPos = 165;
   let startTime = null;
   function step(timestamp) {
       if (!startTime) startTime = timestamp;
