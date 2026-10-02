@@ -54,12 +54,6 @@ function spawnRunnerman() {
   const flipInterval = setInterval(() => {
   sprite.classList.toggle('flipped');
   }, 1000);
-  if (progress >= 1) {
-    clearInterval(flipInterval);
-    runnerman.remove()
-  } else {
-    requestAnimationFrame(step);
-  }
   container.appendChild(runnerman);
 
   const duration = 6000;
@@ -72,11 +66,12 @@ function spawnRunnerman() {
     
       runnerman.style.transform = `TranslateY(${progress * endPos}px)`;
 
-      if (progress < 1) {
-        requestAnimationFrame(step);
-      } else {
-          runnerman.remove();
-      }
+    if (progress >= 1) {
+      clearInterval(flipInterval);
+      runnerman.remove()
+    } else {
+      requestAnimationFrame(step);
+    }
   }
 }
 function scheduleRunnerman() {
