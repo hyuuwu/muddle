@@ -67,6 +67,11 @@ function spawnRunnerman() {
       }
   }
   requestAnimationFrame(step);
+  let flipped = false;
+  const flipInterval = setInterval(() => {
+    flipped = !flipped;
+    runnerman.classList.toggle('flipped', flipped);
+  }, 1000);
 }
 function scheduleRunnerman() {
   const randomDelay = Math.floor(Math.random() * 50000) + 40000
