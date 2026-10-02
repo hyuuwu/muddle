@@ -121,8 +121,10 @@ body {
     left:50%; /*change later*/
     width:30px;
     height:90px;
-    background-color:black; /*change later aswell*/
     pointer-events:none;
+    background-image:url('sprites/runnerman.png')
+    background-size:cover;
+    background-repeat:no-repeat;
   }
 #elsepanel {
   background-color:#9F8859;
