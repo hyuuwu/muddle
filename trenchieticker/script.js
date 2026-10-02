@@ -47,7 +47,7 @@ function buymod(cost, boost, element) {
       const maxleft = container.clientWidth - 30;
       runnerman.style.left = Math.floor(Math.random() * maxleft) + 'px';
       runnerman.addEventListener('animationend', () => {
-        runner.remove();
+        runnerman.remove();
       });
       container.appendChild(runnerman);
     }
@@ -55,9 +55,9 @@ function buymod(cost, boost, element) {
       const randomDelay = Math.floor(Math.random() * (60000 - 50000 + 1)) + 50000;
       setTimeout(() => {
         spawnrunner();
-        schedulenextrunner();
+        schedulerunner();
       }, randomDelay);
     }
-  
   }
 }
+schedulerunner();
