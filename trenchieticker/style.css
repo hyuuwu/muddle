@@ -124,10 +124,10 @@ body {
   }
   @keyframes droprunnerman {
     0% {
-      transform:translateY(0);
+      top:0px;
     }
     100% {
-      transform:translateY(255px);
+      top:255px;
     }
   }
 #elsepanel {
