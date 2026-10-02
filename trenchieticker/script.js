@@ -104,7 +104,7 @@ scheduleRunnerman();
 function retire() {
   activeDays += passiveDays;
   passiveDays = 0;
-  rebirthTimes += 1;
+  retireTimes += 1;
   tin = 0;
   baseTinPerClick = 1;
   updateTinPerClick();
@@ -112,7 +112,7 @@ function retire() {
   if (daysNumber) daysNumber.textContent = activeDays;
   document.querySelectorAll('#tiers > div').forEach((tier, index) => {
     tier.style.display = 'flex';
-    tier.querySelectorAll('.button').forEach((tier, index) => {
+    tier.querySelectorAll('.button').forEach((btn, index) => {
       btn.style.display = 'block';
       if (index > 0) {
         btn.classList.add('locked');
