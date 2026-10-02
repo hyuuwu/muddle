@@ -115,18 +115,19 @@ body {
   }
   .runnerman {
     position:absolute;
+    top:0;
     left:50%; /*change later*/
     width:30px;
     height:90px;
     background-color:black; /*change later aswell*/
-    animation:droprunnerman 2s linear forwards;
+    animation:droprunnerman 6s linear forwards;
   }
   @keyframes droprunnerman {
     0% {
-      top:0;
+      transform:translateY(0);
     }
     100% {
-      top:255px;
+      transform:translateY(255px);
     }
   }
 #elsepanel {
