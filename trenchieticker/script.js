@@ -54,6 +54,24 @@ function spawnRunnerman() {
   const flipInterval = setInterval(() => {
   sprite.classList.toggle('flipped');
   }, 1000);
+
+  runnerman.onclick = function() {
+    const roll = Math.random();
+    if (roll < 0.5) {
+      const instantTin = tinPerClick * 400;
+      tin += instantReward;
+      tinNumber.textContent = tin;
+    } else {
+      const baseTin = tinPerClick;
+      tinPerClick *= 4;
+
+      setTimeout(() => {
+        tinPerClick = baseTin;
+      }, 10000);
+    }
+    clearInterval(flipInterval);
+    runnerman.remove();
+  };
   container.appendChild(runnerman);
 
   const duration = 2000;
@@ -83,3 +101,4 @@ function scheduleRunnerman() {
   }, randomDelay);
 }
 scheduleRunnerman();
+runnerman.
