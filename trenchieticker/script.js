@@ -52,7 +52,9 @@ function spawnrunner() {
     runnerman.remove();
   });
   container.appendChild(runnerman);
-  runnerman.style.animation = 'droprunnerman 6s linear forwards';
+  requestAnimationFrame(() => {
+    runnerman.style.animation = 'droprunnerman 6s linear forwards';
+  });
 }
 function schedulerunner() {
   const randomDelay = Math.floor(Math.random() * (60000 - 50000 + 1)) + 50000;
