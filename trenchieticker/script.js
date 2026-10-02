@@ -58,6 +58,7 @@ function spawnRunnerman() {
 
   const duration = 6000;
   const endPos = 165;
+  let startTime = null;
   function step(timestamp) {
       if (!startTime === null) startTime = timestamp;
       const elapsed = timestamp - startTime;
