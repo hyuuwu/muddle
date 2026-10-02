@@ -120,7 +120,6 @@ body {
     width:30px;
     height:90px;
     background-color:black; /*change later aswell*/
-    animation:droprunnerman 6s linear forwards;
   }
   @keyframes droprunnerman {
     0% {
