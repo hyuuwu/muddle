@@ -30,7 +30,7 @@ document.querySelectorAll('#tiers > div').forEach((row, index) => {
 function buyMod(cost, boost, element) {
   if (tin >= cost) {
     tin -= cost;
-    getTinPerClick += boost;
+    baseTinPerClick += boost;
     tinNumber.textContent = tin;
     element.style.display = 'none';
     const currentTier = element.parentElement;
