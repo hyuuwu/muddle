@@ -1,1 +1,3 @@
-this is the website I'm gonna put my Not the Bear LLC games' demos on. You have access to this if you're part of the LLC or I guess a nosy customer
+notthebear.com is run by this git. 
+on notthebear.com will be our games' demos, you're here as a collaborator (yayy!) or a nosy customer. 
+hope you like our games!
