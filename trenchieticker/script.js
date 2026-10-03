@@ -145,6 +145,12 @@ function retire() {
             btn.innerHTML = match ? `${match[0]} Tin` : '';
           }
         }
+        if (retireTimes > 0) {
+          const greatestWar = document.getElementById('greatestwar');
+          if (greatestWar) {
+            greatestWar.style.display = 'none';
+          }
+        }
       }
     });
   });
