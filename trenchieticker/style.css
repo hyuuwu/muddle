@@ -171,8 +171,9 @@ body {
   box-sizing:border-box;
   display:flex;
   flex-direction:column;
-  justify-content:space-between;
-  padding:12px;
+  justify-content:flex-start;
+  padding:8px;
+  gap:4px;
 }
   #tintext,
   #daystext {
