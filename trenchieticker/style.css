@@ -177,10 +177,11 @@ body {
 }
   #tintext,
   #daystext {
+    display:flex !importantl
+    justify-content:flex-start;
     text-align:left;
     margin:4px 0;
     border:2px solid #000;
-    display:block;
   }
   #tintext span, #daystext span {
     border:none !important;
