@@ -177,7 +177,7 @@ body {
 }
   #tintext,
   #daystext {
-    text-align:center;
+    text-align:left;
     margin:4px 0;
     border:2px solid #000;
     display:block;
