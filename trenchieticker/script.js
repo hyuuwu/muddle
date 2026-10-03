@@ -101,24 +101,3 @@ function scheduleRunnerman() {
   }, randomDelay);
 }
 scheduleRunnerman();
-function retire() {
-  activeDays += passiveDays;
-  passiveDays = 0;
-  retireTimes += 1;
-  tin = 0;
-  baseTinPerClick = 1;
-  updateTinPerClick();
-  tinNumber.textContent = 0;
-  if (daysNumber) daysNumber.textContent = activeDays;
-  document.querySelectorAll('#tiers > div').forEach((tier, index) => {
-    tier.style.display = 'flex';
-    tier.querySelectorAll('.button').forEach((btn, index) => {
-      if (btn.style.display = 'block') {
-        btn.style.display = 'block';
-      }
-      if (index > 0) {
-        btn.classList.add('locked');
-      }
-    });
-  });
-}
