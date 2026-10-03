@@ -109,7 +109,7 @@ function scheduleRunnerman() {
     scheduleRunnerman(); //loop
   }, randomDelay);
 }
-function retire();
+function retire() {
   const allButtons = document.querySelectorAll('#tiers .button');
   let passiveDays = 0;
   allButtons.forEach(btn => {
