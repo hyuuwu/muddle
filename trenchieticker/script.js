@@ -155,4 +155,15 @@ function retire() {
       }
   }
 }
+function switchTab(tab) {
+  const basicTab = document.getElementById('basictab');
+  const menuTab = document.getElementById('menutab');
+
+  if (tab === 'basics') {
+    basicTab.style.display = 'flex';
+    menuTab.style.display = 'none';
+  } else if (tab === 'menu') {
+    basicTab.style.display = 'none';
+    menuTab.style.display = 'flex';
+  }
 scheduleRunnerman();
