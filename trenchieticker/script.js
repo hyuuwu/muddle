@@ -14,7 +14,7 @@ function getTinPerClick() {
 
 function clickTin() {
   tin += getTinPerClick();
-  tinNumber.textContent = tin;
+  tinNumber.textContent = Math.floor(tin);
 }
 document.querySelectorAll('#tiers > div').forEach((row, index) => {
   if (index > 0) {
@@ -31,7 +31,7 @@ function buyMod(cost, boost, element) {
   if (tin >= cost) {
     tin -= cost;
     baseTinPerClick += boost;
-    tinNumber.textContent = tin;
+    tinNumber.textContent = Math.floor(tin);
     element.style.display = 'none';
     const currentTier = element.parentElement;
     if (currentTier.classList.contains('andtier')) {
@@ -70,7 +70,7 @@ function spawnRunnerman() {
     if (roll < 0.5) {
       const instantTin = baseTinPerClick * 400;
       tin += instantTin;
-      tinNumber.textContent = tin;
+      tinNumber.textContent = Math.floor(tin);
     } else {
       baseTinPerClick *= 4;
 
