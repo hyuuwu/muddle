@@ -12,10 +12,10 @@ function getTinPerClick() {
   return baseTinPerClick * getMultiplier();
 }
 
-tinButton.addEventListener('click', () => {
+function clickTin() {
   tin += getTinPerClick();
   tinNumber.textContent = tin;
-});
+}
 document.querySelectorAll('#tiers > div').forEach((row, index) => {
   if (index > 0) {
     row.querySelectorAll('.button').forEach(btn => {
@@ -66,16 +66,16 @@ function spawnRunnerman() {
 
   runnerman.onclick = function() {
     const roll = Math.random();
-    const baseTin = tinPerClick;
+    const baseTin = baseTinPerClick;
     if (roll < 0.5) {
-      const instantTin = tinPerClick * 400;
+      const instantTin = baseTinPerClick * 400;
       tin += instantTin;
       tinNumber.textContent = tin;
     } else {
-      tinPerClick *= 4;
+      baseTinPerClick *= 4;
 
       setTimeout(() => {
-        tinPerClick = baseTin;
+        baseTinPerClick = baseTin;
       }, 10000);
     }
     clearInterval(flipInterval);
