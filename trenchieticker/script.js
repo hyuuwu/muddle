@@ -113,7 +113,9 @@ function retire() {
   document.querySelectorAll('#tiers > div').forEach((tier, index) => {
     tier.style.display = 'flex';
     tier.querySelectorAll('.button').forEach((btn, index) => {
-      btn.style.display = 'block';
+      if (btn.style.display = 'block') {
+        btn.style.display = 'block';
+      }
       if (index > 0) {
         btn.classList.add('locked');
       }
