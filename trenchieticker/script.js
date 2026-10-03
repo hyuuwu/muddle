@@ -166,4 +166,5 @@ function switchTab(tab) {
     basicTab.style.display = 'none';
     menuTab.style.display = 'flex';
   }
+}
 scheduleRunnerman();
