@@ -1,0 +1,331 @@
+Let's make a game!
+    name: Trenchie Ticker
+    desc: the Great War incremental game
+    by: Not the Bear
+    //add update dates here if loser
+    version:0.006
+Settings
+    no particles
+    no bulk particles
+    //idek what those mean but no buildings and no particles
+    //spritesheet and background jpgs go here (that means you Emery)
+Layout
+    *clickpanel
+        contains:Buttons
+    *elsepanel
+        contains:Resources
+    *modpanel
+        contains:Upgrades
+Buttons
+    *tinbutton
+        name:Go!
+        desc:Send a trenchie running.
+        on click:yield 1 tin
+Resources
+    *tin
+        name:Tin
+        desc:Melted dog tags.
+Upgrades
+    //just remember I can make text fancy (Orteil handbook)
+    *tier1up
+        name:Clean shave
+        desc:Can't tangle no hair! (+1 Tin)
+        class:tier1
+        passive:increase yield of tinbutton by 1
+        on earn:yield 1 day
+        cost:10 tin
+    *tier2up
+        name:Helmet spike
+        desc:No reason... (+2 Tin)
+        class:tier2
+        req:1 tier1up
+        on earn:yield 1 tier3token
+        on earn:yield 1 day
+        passive:increase yield of tinbutton by 2
+        cost:100 tin
+    *tier3upA
+        name:Camoflage
+        desc:Is that how you spell that? (+1 Tin)
+        class:tier3
+        req:1 tier2up
+        on earn:yield 1 tier3up
+        on earn:yield 99 lefttiertoken
+        on earn:yield 1 day
+        passive:increase yield of tinbutton by 1
+        cost:1000 tin
+        cost:1 tier3token
+    *tier3upB
+        name:Patriotic colors
+        desc:At least it's cheap.
+        class:tier3
+        req:1 tier2up
+        on earn:yield 1 tier3up
+        on earn:yield 99 righttiertoken
+        on earn:yield 1 day
+        cost:1 tin
+        cost:1 tier3token
+    *tier4up
+        name:Eye drying treatment
+        desc:The perfect counter for flares.
+        class:tier4
+        req:1 tier3up
+        on earn:yield 1 day
+        passive:multiply yield of tinbutton by 2
+        cost:2000 tin
+    *tier5upA
+        name:Cat food
+        desc:There's no cats why do... ah.
+        class:tier5
+        req:1 tier4up
+        on earn:yield 1 day
+        cost:500 tin
+    *tier5upB
+        name:Rats
+        desc:NO DONT DROP THEM OFF HERE
+        class:tier5
+        req:1 tier4up
+        on earn:yield 1 day
+        cost:-2 tin
+    *tier6up
+        name:Trench cats
+        desc:Awww can we keep him? And him? And them?
+        class:tier6
+        req:1 tier5upA
+        req:1 tier5upB
+        on earn:yield 1 day
+        cost:5000 tin
+        passive:multiply yield of tinbutton by 2
+    *tier7upA
+        name:Gun Safety Training
+        desc:The Camoflage bored them to (Self-inflicted) DEATH. (+2 tin)
+        class:tier7
+        req:1 tier6up
+        on earn:yield 1 tier8token
+        on earn:yield 1 day
+        passive:increase yield of tinbutton by 2
+        cost:20000 tin
+        cost:1 lefttiertoken
+    *tier7upB
+        name:Spears
+        desc:Bayonets without rifles, saves tin! (x2 tin)
+        class:tier7
+        req:1 tier6up
+        on earn:yield 1 tier8token
+        on earn:yield 1 day
+        passive:multiply yield of tinbutton by 2
+        cost:-2000 tin
+        cost:1 righttiertoken
+    *tier8up
+        name:Acid resistance training
+        desc:Well they already got used to gas. (x2 tin)
+        class:tier8
+        req:1 tier8token
+        on earn:yield 1 day
+        cost:50000 tin
+        cost:1 tier8token
+    *tier9up
+        name:Salt
+        desc:For the snow to come.
+        class:tier9
+        req:1 tier8up
+        on earn:yield 1 day
+        cost:100000 tin
+    *tier10upA
+        name:Lobotomy
+        desc:If they won't be happy then why not? (x4 tin)
+        class:tier10
+        cost:500000 tin
+        req:1 tier9up
+        on earn:yield 1 day
+        cost:1 lefttiertoken
+        passive:multiply yield of tinbutton by 3
+    *tier10upB
+        name:Fireworks
+        desc:Flares just aren't doing it for us. (x3 tin)
+        class:tier10
+        cost:500000 tin
+        req:1 tier9up
+        on earn:yield 1 day
+        cost:1 righttiertoken
+        passive:multiply yield of tinbutton by 3
+Buildings
+    *tier3token
+        start with:0
+        name:Ink
+        hidden
+        no buy
+    *tier8token
+        start with:0
+        name:Mtn Dew?
+        hidden
+        no buy
+    *tier3up
+        /*test this later*/
+        start with:0
+        hidden
+        no buy
+    *lefttiertoken
+        start with:0
+        name:Depression
+        hidden
+        no buy
+    *righttiertoken
+        start with:0
+        name:Patriotism
+        hidden
+        no buy
+    *day
+        name:Days
+        start with:0
+        desc:You don't know what a day is??
+        no buy
+        hidden
+        passive:multiply yield of tinbutton by 1.01
+Shinies
+    /* make this work in v1
+    *runnermantimes
+        name:Runnerman
+        class:runnermen
+        frequency:1
+        frequency variation:1
+        on click:
+        movement:onTop moveBottom
+    */
+    *runnermanplus
+        name:Runnerman
+        class:runnermen
+        frequency:30
+        frequency variation:20
+        /*change this on v1 to scale*/
+        on click:yield 600 tin
+        movement:onTop moveBottom
+Achievements
+    *1runner
+        name:Brave Man
+        desc:Imagine the barbs on your skin... idiot.
+        req:1 runnermanplus:clicks
+    *5runner
+        name:Brave Men
+        desc:More than one?
+        req:5 runnermanplus:clicks
+Items
+    //for v1
+Includes
+    //geeks can do this
+
+//change default icon size and bg color in css? also make my own font
+CSS
+    /*the game window*/
+    #content {
+        background-color:#D4C5A9 !important;
+        display:block !important;
+        position:relative !important;
+        width:100vw !important;
+        height:100vh !important;
+        margin:0 !important;
+        padding:0 !important;
+        max-width:none !important;
+        min-width:100vw !important;
+        top:0 !important;
+        left:0 !important;
+    }
+    /*the panels*/
+    #box-clickpanel,
+    #box-elsepanel,
+    #box-modpanel {
+        box-sizing:border-box !important;
+    }
+    #box-clickpanel {
+        top:0 !important;
+        left:0 !important;
+        right:420px !important;
+        width:auto !important;
+        height:360px !important;
+        display:flex !important;
+        flex-direction:column !important;
+        justify-content:flex-end !important;
+        align-items:stretch !important;
+        position:absolute !important;
+    }
+    #box-things-Buttons {
+        width:100% !important;
+    }
+    #thing-0 {
+        width:100% !important;
+        box-sizing:border-box !important;
+        padding-top:16px !important;
+        padding-bottom:16px !important;
+        display:block !important;
+    }
+    #box-elsepanel {
+        left:0 !important;
+        right:420px !important;
+        top:360px !important;
+        bottom:0 !important;
+        width:auto !important;
+        height:auto !important;
+        display:flex !important;
+        flex-direction:column !important;
+        justify-content:flex-start !important;
+        align-items:center !important;
+        border-top:2px solid black !important;
+        position:absolute !important;
+  }
+
+    #box-modpanel {
+        display:none !important;
+        right:0 !important;
+        top:0 !important;
+        bottom:0 !important;
+        width:420px !important;
+        height:auto !important;
+        display:flex !important;
+        flex-direction:column !important;
+        justify-content:flex-start !important;
+        align-items:center !important;
+        overflow-y:auto !important;
+        overflow-x:hidden !important;
+        border-left:2px solid black !important;
+        position:absolute !important;
+    }
+    #box-modpanel .box-things {
+        display:grid !important;
+        grid-template-columns:repeat(auto-fit, minmax(120px, 1fr)) !important;
+        justify-content:center !important;
+        gap:8px !important;
+        width:100% !important;
+        padding:8px !important;
+        box-sizing:border-box !important;
+    }
+    #box-modpanel .thing {
+        width:100% !important;
+        box-sizing:border-box !important;
+        margin:0 !important;
+    }
+    #box-modpanel .thing.tier1 {grid-row: 1 !important; }
+    #box-modpanel .thing.tier2 {grid-row: 2 !important; }
+    #box-modpanel .thing.tier3 {grid-row: 3 !important; }
+    #box-modpanel .thing.tier4 {grid-row: 4 !important; }
+    #box-modpanel .thing.tier5 {grid-row: 5 !important; }
+    #box-modpanel .thing.tier6 {grid-row: 6 !important; }
+    #box-modpanel .thing.tier7 {grid-row: 7 !important; }
+    #box-modpanel .thing.tier8 {grid-row: 8 !important; }
+    #box-modpanel .thing.tier9 {grid-row: 9 !important; }
+    #box-modpanel .thing.tier10 {grid-row: 10 !important; }
+    
+    #shinies, #game-shinies {
+        position:fixed !important;
+        top:0;
+        left:0;
+        width:calc(100vw - 420px) !important;
+        height:312px !important;
+        overflow:hidden !important;
+        transform:translateZ(0) !important;
+        pointer-events:none;
+    }
+    div.shiny.runnermen {
+        pointer-events:auto !important;
+        width:30px !important;
+        height:90px !important;
+        background-size:100% 100% !important;
+    }
