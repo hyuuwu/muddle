@@ -1,0 +1,106 @@
+<!DOCTYPE html> <!--is HTML5 ONLY-->
+<html>
+    <head>
+        <!-- hidden things in the head-->
+        <title>HTML guide</title> <!--shown on tab-->
+        <link rel="icon" type="image/png" href="NottheBear.png"> <!--favicon-->
+    </head>
+    <body>
+        <!--visible things in the body-->
+        <h1>Here, Games</h1> <!--h1 is biggest, h5 is smallest-->
+        <p>"Buy my games"</p> <!--Paragraphs can be multi-line-->
+        <p>-Avery</p>  <!--Paragraphs are separated by a line break-->
+        <br> <!--this is a line break-->
+        <hr> <!--makes line-->
+        <br> <!--stackable, doesnt need end tag-->
+        <a href="https://orteil.dashnet.org/igm/?g=https://notthebear.com/trenchieticker.txt" 
+        target="_blank"
+        title="Dashnet Demo"
+        >The Great War Incremental</a> <!--that was an absolute link, has target (where to send) and title (hover text)-->
+        <pre>
+    This is a DEMO
+As in, NOT the full game
+    So don't rate it
+        </pre> <!--paragraph, but as saved in code-->
+        <a href="trenchieticker.txt">
+        <img src="trenchieticker/sprites/sub-bg.png" alt="block of dust" title="see the code"> 
+        <!--image, relative link, alt text for screen reader and fail, height auto, can be gif, target doesnt work, doesnt need end tag-->
+        </a> <!--wrap in link (anchor)-->
+        <br>
+        <audio controls> <!--put controls to use, put autoplay but annoying, put muted to mute (unmutable), put loop to loop-->
+            <source src=""> <!--could put audio file, put type="audio/'audiotype'" to be clear to browser-->
+        </audio>
+        <br>
+        <video width="500px" controls>
+            <source src=""> <!--could put video file, put type="video/'videotype'" to be clear to browser-->
+            <source src=""> <!--could make a backup-->
+        </video> <!--to make a video, controls to play, same options as audio, could also wrap in link-->
+        <br>
+        <p>This <b>text</b> <i>is</i> <u>completely</u> <del>useless</del>, <big>only</big> <small>meant</small> <sub>to</sub> <sup>display</sup> <tt>certain</tt> <mark style="background-color:chocolate">fonts</mark></p>
+        <!--that was CSS, you dont need .CSS if you use style=""-->
+        <h2><span style="background-color:tomato;">Span paragraph</span>, with many filler words.</h2> <!--use CSS format for span or div, can choose only some-->
+        <h3>VS</h3>
+        <h4><div style="background-color:tomato;">Div text</div>and the rest of the text</h4> <!--span does its own text, div does entire block-->
+        <br>
+        <ul> <!--unordered list, order does not matter-->
+            <li>list</li>
+            <li>anything</li>
+            <li>here</li>
+            <li>even</li>
+            <ul>
+                <li>lists</li>
+                <li>in</li>
+                <li>lists</li>
+                <ul>
+                    <li>in</li>
+                    <li>lists</li>
+                    <ul>
+                        <li>in</li>
+                        <li>lists</li>
+                    </ul>
+                </ul>
+            </ul>
+        </ul>
+        <ol> <!--ordered list, order matters-->
+            <li>list</li>
+            <li>in</li>
+            <li>order</li>
+            <li>here</li>
+            <ol>
+                <li>lists in</li>
+                <ol>
+                    <li>lists still</li>
+                </ol>
+            </ol>
+        </ol>
+        <dl style="background-color:antiquewhite; border:2px solid black"> <!--definition list, define things in order-->
+            <dt>define this</dt>
+            <dd>defined</dd>
+            <dt>this too</dt>
+            <dd>defined too</dd>
+            <dt>maybe even this</dt>
+            <dd>maybe even defined</dd>
+        </dl>
+        <br>
+        <table border="1" style="background-color:black"> <!--border goes between and around, color sets ALL-->
+            <tr style="background-color:aliceblue;"> <!--means table row, color sets inside borders-->
+                <th>Thing 1</th> <!--means table header, the topic-->
+                <th>Thing 2</th>
+                <th width="100">Thing 3</th> <!--if too big, set width manually-->
+            </tr>
+            <tr align="center" style="background-color:azure;"> <!--align text-->
+                <td>Annoying</td> <!--means table data, whats below-->
+                <td>Same</td>
+                <td>this just doesnt exist</td>
+            </tr>
+        </table>
+        <br>
+        <form action="" method="post"> <!--post for confidential, get for public-->
+            <label for="username">username:</label>
+            <input type="text" id="username" placeholder="spomgbob"required minlength="2" maxlength="2"> <!--cant submit without required-->
+            <input type="submit">
+        </form>
+        <br>
+        <a href="mailto:avery@notthebear.com"title="My business email">Join the team?</a> <!--dont add target to mailto links-->
+    </body>
+</html>
