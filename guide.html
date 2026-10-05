@@ -33,44 +33,43 @@ As in, NOT the full game
         <br>
         <p>Above <b>is</b> <i>some</i> <u>completely</u> <del>useless</del> <big>video</big> <small>and</small> <sub>audio</sub> <sup>for</sup> <tt>guide</tt> <mark style="background-color:chocolate">purposes</mark></p>
         <!--that was CSS, you dont need .CSS if you use style=""-->
-        <h2><span style="background-color:tomato;">Span paragraph</span>, with many filler words.</h2> <!--use CSS format for span or div, can choose only some-->
+        <h2><span style="background-color:tomato;">Span header</span>, with many filler words.</h2> <!--use CSS format for span or div, can choose only some-->
         <h3>VS</h3> <!--different header sizes here-->
-        <h4><div style="background-color:tomato;">Div text</div>and theres no line break here</h4> <!--span does its own text, div does entire block-->
-        <br>
+        <h4><div style="background-color:tomato;">Div header </div>and theres no line break here</h4> <!--span does its own text, div does entire block-->
         <ul> <!--unordered list, order does not matter-->
             <li>list</li>
             <li>anything</li>
             <li>here</li>
-            <li>even</li>
+            <li>even</li> <!--black dots-->
             <ul>
-                <li>lists</li>
+                <li>lists</li> <!--empty dots-->
                 <li>in</li>
                 <li>lists</li>
                 <ul>
-                    <li>in</li>
+                    <li>in</li> <!--black squares-->
                     <li>lists</li>
                     <ul>
-                        <li>in</li>
+                        <li>in</li> <!--ends with the squares-->
                         <li>lists</li>
+                        <ol> <!--ordered list, order matters-->
+                            <li>list</li>
+                            <li>in</li>
+                            <li>order</li>
+                            <li>here</li> <!--only difference is numbers-->
+                            <ol>
+                                 <li>lists in</li>
+                                 <ol>
+                                    <li>lists still</li>
+                                </ol>
+                            </ol>
+                        </ol>
                     </ul>
                 </ul>
             </ul>
         </ul>
-        <ol> <!--ordered list, order matters-->
-            <li>list</li>
-            <li>in</li>
-            <li>order</li>
-            <li>here</li>
-            <ol>
-                <li>lists in</li>
-                <ol>
-                    <li>lists still</li>
-                </ol>
-            </ol>
-        </ol>
         <dl style="background-color:antiquewhite; border:2px solid black"> <!--definition list, define things in order-->
-            <dt>define this</dt>
-            <dd>defined</dd>
+            <dt>define this</dt> <!--this is defined next line, dt-->
+            <dd>defined</dd> <!--this defines the last line, dd-->
             <dt>this too</dt>
             <dd>defined too</dd>
             <dt>maybe even this</dt>
