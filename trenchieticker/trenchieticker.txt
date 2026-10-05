@@ -1,3 +1,4 @@
+//Trenchie Ticker Dashnet Demo
 Let's make a game!
     name: Trenchie Ticker
     desc: the Great War incremental game
