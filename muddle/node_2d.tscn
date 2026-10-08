@@ -28,6 +28,7 @@ color_ramp = SubResource("Gradient_0e48y")
 [node name="Node2D" type="Node2D" unique_id=479895254]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1762777954]
+position = Vector2(0, 141)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=586826940]
 position = Vector2(370.56033, 109.41527)
@@ -40,6 +41,7 @@ scale = Vector2(5.6181307, 1.2721137)
 texture = ExtResource("1_0e48y")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1099328926]
+position = Vector2(0, 137)
 script = ExtResource("2_epypp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=39355406]
