@@ -1,47 +1,56 @@
 extends Sprite2D
-@export var brush_radius: int = 20
+
+@export var digspace: int=35
+
 var image: Image
-var textura: ImageTexture #texture was taken
+var imgtexture: ImageTexture
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
+func _ready() -> void:
 	if texture == null:
-		print("no texture go fix it")
+		push_error("No texture here")
 		return
-		
-	# Get image
-	var image = texture.get_image()
+	
+	if texture is NoiseTexture2D and texture.get_image() == null:
+		await texture.changed
+	
+	image = texture.get_image()
 	if image == null:
-		print("image not returning bruh")
+		push_error("Image is null")
 		return
-		
-	image.convert(Image.FORMAT_RGBA8)
+	image.decompress() #make editable in some way, I used google
 	
-	# image -> texture
-	var textura = ImageTexture.create_from_image(image)
-	texture = textura
-# i stopepd here ok
-func _unhandled_input(event):
-	#just fucking read it
-	# ok ill read it sorry lol
-	if event is InputEventMouseMotion and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		var local_pos = to_local(event.position)
-		erase_at_position(local_pos)
+	imgtexture = ImageTexture.create_from_image(image)
+	texture = imgtexture
 
-func erase_at_position(local_pos: Vector2):
-	var image_width = image.get_width()
-	var image_height = image.get_height()
+func _unhandled_input(event: InputEvent) -> void:
+	#click and drag
+	if event is InputEventMouseMotion and event.button_mask & MOUSE_BUTTON_MASK_LEFT:
+		digdug(event.position)
+	elif event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		digdug(event.position)
+
+func digdug(global_mouse_pos: Vector2) -> void:
+	#figure out sprite coords from mouse pos
+	var local_pos: Vector2 = to_local(global_mouse_pos)
 	
-	var center_x = int(local_pos.x + image_width / 2.0)
-	var center_y = int(local_pos.y + image_width / 2.0)
+	if centered:
+		local_pos += texture.get_size() / 2.0
 	
-	var modified = false
+	var center_x: int = int(local_pos.x)
+	var center_y: int = int(local_pos.y)
+	#dig where mouse is
+	var image_width: int = image.get_width()
+	var image_height: int = image.get_height()
+	var erased_any: bool = false
 	
-	for x in range(center_x - brush_radius, center_x + brush_radius):
-		for y in range(center_y - brush_radius, center_y + brush_radius):
+	for x in range(center_x - digspace, center_x + digspace):
+		for y in range(center_y - digspace, center_y + digspace):
+			#Bounds check (idk what that means)
 			if x >= 0 and x < image_width and y >= 0 and y < image_height:
-				if Vector2(x,y).distance_to(Vector2(center_x, center_y)) <= brush_radius:
-					image.set_pixel(x,y,Color(0,0,0,0))
-					modified=true
-	if modified:
-		textura.update(image)
+				#circle not square, make unable to go past certain radius
+				if Vector2(x - center_x, y - center_y).length() <= digspace:
+					#make transparent
+					image.set_pixel(x,y, Color(0, 0, 0, 0))
+					erased_any = true
+	if erased_any:
+		imgtexture.update(image)
