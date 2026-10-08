@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b7biqg1lx5r5j"]
+[gd_scene format=3 uid="uid://b7biqg1lx5r5j"]
 
 [ext_resource type="Texture2D" uid="uid://p3un4e8uuodu" path="res://icon.svg" id="1_0e48y"]
 [ext_resource type="Script" uid="uid://cjx6ki3quycub" path="res://character_body_2d.gd" id="2_epypp"]
@@ -25,32 +25,33 @@ height = 1024
 noise = SubResource("FastNoiseLite_epypp")
 color_ramp = SubResource("Gradient_0e48y")
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" unique_id=479895254]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1762777954]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(150, 109)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=586826940]
+position = Vector2(370.56033, 109.41527)
+scale = Vector2(3.0863552, 1.4538442)
 shape = SubResource("RectangleShape2D_0hol4")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(154, 111.00001)
-scale = Vector2(1.8203125, 0.875)
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1834665546]
+position = Vector2(374.56036, 111.415276)
+scale = Vector2(5.6181307, 1.2721137)
 texture = ExtResource("1_0e48y")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1099328926]
 script = ExtResource("2_epypp")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=39355406]
 position = Vector2(116, -8)
 shape = SubResource("CapsuleShape2D_q6r6c")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1022843824]
 position = Vector2(116, -9)
 scale = Vector2(0.16406249, 0.34375)
 texture = ExtResource("1_0e48y")
 
-[node name="MudGround" type="Sprite2D" parent="."]
+[node name="MudGround" type="Sprite2D" parent="." unique_id=1408088135]
 z_index = -99
 position = Vector2(2560, 512)
 texture = SubResource("NoiseTexture2D_0hol4")

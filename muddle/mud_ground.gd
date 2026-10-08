@@ -5,14 +5,25 @@ var textura: ImageTexture #texture was taken
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#get image
-	image = texture.get_image()
+	if texture == null:
+		print("no texture go fix it")
+		return
+		
+	# Get image
+	var image = texture.get_image()
+	if image == null:
+		print("image not returning bruh")
+		return
+		
 	image.convert(Image.FORMAT_RGBA8)
-	#turn image into texture
-	textura = ImageTexture.create_from_image(image)
+	
+	# image -> texture
+	var textura = ImageTexture.create_from_image(image)
 	texture = textura
+# i stopepd here ok
 func _unhandled_input(event):
 	#just fucking read it
+	# ok ill read it sorry lol
 	if event is InputEventMouseMotion and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		var local_pos = to_local(event.position)
 		erase_at_position(local_pos)
