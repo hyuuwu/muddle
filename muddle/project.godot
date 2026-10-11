@@ -22,6 +22,10 @@ boot_splash/image="uid://cjpfbgmkedefq"
 config/icon="res://icon.svg"
 boot_splash/minimum_display_time=2000
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
+
 [input]
 
 ui_left={

@@ -3,7 +3,7 @@ extends TileMapLayer
 @onready var player: CharacterBody2D = $"../drone"
 @onready var mudgrab: Sprite2D = $"../splotch"
 @onready var foreground: TileMapLayer = $"../foreground"
-@onready var background: TileMapLayer = $"../background"
+@onready var preview: TileMapLayer = $"../preview"
 @onready var darkness: TileMapLayer = $"../darkness"
 
 @export var map_width = 100
@@ -183,7 +183,7 @@ func _process(delta: float) -> void: #what happens when youre holding a block (a
 	if not holding_mud:
 		clear_current_preview()
 		return
-	var current_cell = background.local_to_map(background.to_local(get_global_mouse_position()))
+	var current_cell = preview.local_to_map(preview.to_local(get_global_mouse_position()))
 	#follow mouse
 	mudgrab.global_position = get_global_mouse_position() + Vector2(0, 2)
 	#only change if moved to new tile
@@ -191,9 +191,9 @@ func _process(delta: float) -> void: #what happens when youre holding a block (a
 		#erase preview, then make new
 		clear_current_preview()
 		#if both layers empty, make preview
-		if foreground.get_cell_source_id(current_cell) == 1 and background.get_cell_source_id(current_cell) == -1:
+		if foreground.get_cell_source_id(current_cell) == 1 and preview.get_cell_source_id(current_cell) == -1:
 			#transparent mud
-			background.set_cell(current_cell, 0, Vector2i(0,0), 1)
+			preview.set_cell(current_cell, 0, Vector2i(0,0), 1)
 			last_preview_cell = current_cell
 func get_checkerboard_tile(): #in function _process for some reason, for water
 	for x in range(map_width):
@@ -208,5 +208,5 @@ func get_checkerboard_tile(): #in function _process for some reason, for water
 func clear_current_preview() -> void:
 	if last_preview_cell != Vector2i(-1,-1):
 		#is it preview?
-		background.set_cell(last_preview_cell, -1) #if preview, erase
+		preview.set_cell(last_preview_cell, -1) #if preview, erase
 		last_preview_cell = Vector2i(-1,-1)
