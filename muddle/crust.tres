@@ -1,19 +1,19 @@
-[gd_resource type="TileSet" load_steps=21 format=3 uid="uid://cuw813m0hcitk"]
+[gd_resource type="TileSet" format=3 uid="uid://cuw813m0hcitk"]
 
-[ext_resource type="Texture2D" uid="uid://cm7fmcmd1inxa" path="res://new mud.png" id="1_pmdnh"]
-[ext_resource type="Texture2D" uid="uid://b3om4rmrqo87j" path="res://all the muds.png" id="2_ik8c0"]
+[ext_resource type="Texture2D" uid="uid://cm7fmcmd1inxa" path="res://mud.png" id="1_ydpa2"]
+[ext_resource type="Texture2D" uid="uid://b3om4rmrqo87j" path="res://dugmud.png" id="2_1u3w2"]
 [ext_resource type="Texture2D" uid="uid://u643sfl1lw81" path="res://moonstone.png" id="3_ik8c0"]
 [ext_resource type="Texture2D" uid="uid://q2k8xt22x8vb" path="res://dust.png" id="3_ydpa2"]
 [ext_resource type="Texture2D" uid="uid://djlwyntx87cg0" path="res://ocean and sea.png" id="4_faghv"]
 [ext_resource type="Texture2D" uid="uid://cl0ci540pr12t" path="res://drone box.png" id="5_abpjn"]
 [ext_resource type="Texture2D" uid="uid://8bo2uf1ulmy6" path="res://deepmud.png" id="6_3hq5p"]
-[ext_resource type="Texture2D" uid="uid://cbpqnyi1yi2bl" path="res://real clay.png" id="7_esgdo"]
-[ext_resource type="Texture2D" uid="uid://bfvo8mfjw4whh" path="res://clay.png" id="7_gwh77"]
+[ext_resource type="Texture2D" uid="uid://cbpqnyi1yi2bl" path="res://clay.png" id="7_gwh77"]
 [ext_resource type="Texture2D" uid="uid://cmcw50fbiocdu" path="res://box drill.png" id="9_dwbm3"]
+[ext_resource type="Texture2D" uid="uid://bfvo8mfjw4whh" path="res://sand.png" id="9_ofobk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0piv4"]
 resource_name = "whole mud"
-texture = ExtResource("1_pmdnh")
+texture = ExtResource("1_ydpa2")
 texture_region_size = Vector2i(32, 32)
 0:0/next_alternative_id = 3
 0:0/0 = 0
@@ -23,7 +23,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ljna6"]
 resource_name = "empty muds"
-texture = ExtResource("2_ik8c0")
+texture = ExtResource("2_1u3w2")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16, -8.273499, -16, -8.093643, -7.913783, 7.913788, -7.733925, 7.7339325, 7.913784, -8.093643, 7.733927, -8.633209, -16)
@@ -114,13 +114,13 @@ texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dwbm3"]
-texture = ExtResource("7_esgdo")
+texture = ExtResource("7_gwh77")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_esgdo"]
-texture = ExtResource("7_gwh77")
+texture = ExtResource("9_ofobk")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)

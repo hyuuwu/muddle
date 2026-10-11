@@ -1,0 +1,24 @@
+78098b89c88a74ebe8c20117b8754620
+::res://::1791691268
+box drill.png::CompressedTexture2D::5620626915073173842::1791690739::1791691127::1::::<><><>0<>0<>a4565971478fd5bdd63d250bfcfb8d1e<>res://.godot/imported/box drill.png-f2d7f0e2625c799b662fd3e2ca8bdef2.ctex::
+clay.png::CompressedTexture2D::4874991838672735769::1791690739::1791691245::1::::<><><>0<>0<>158e335b639b4ce33b13e875b2085599<>res://.godot/imported/clay.png-7a40c50192b58253050c4a9c6542550e.ctex::
+crabbert.png::CompressedTexture2D::8601096083050933685::1791690739::1791691127::1::::<><><>0<>0<>0b55664863e5be9f66feac13d82b532a<>res://.godot/imported/crabbert.png-c12d871b2c9cde1e90fe902e1b663400.ctex::
+crust.gd::GDScript::4670504537353126615::1791690739::0::1::::<>TileMapLayer<><>0<>0<><>::
+crust.tres::TileSet::6224086132475770960::1791691268::0::1::::<><><>0<>0<><>::uid://cm7fmcmd1inxa::::res://mud.png<>uid://b3om4rmrqo87j::::res://dugmud.png<>uid://u643sfl1lw81::::res://moonstone.png<>uid://q2k8xt22x8vb::::res://dust.png<>uid://djlwyntx87cg0::::res://ocean and sea.png<>uid://cl0ci540pr12t::::res://drone box.png<>uid://8bo2uf1ulmy6::::res://deepmud.png<>uid://cbpqnyi1yi2bl::::res://clay.png<>uid://bfvo8mfjw4whh::::res://sand.png<>uid://cmcw50fbiocdu::::res://box drill.png
+crust.tscn::PackedScene::5277580974957323567::1791690739::0::1::::<><><>0<>0<><>::uid://cuw813m0hcitk::::res://crust.tres<>uid://bbex61xhs4k6g::::res://foreground.gd<>uid://be4q18uxd3r5f::::res://drone.gd<>uid://ck2rh3tf1xqm0::::res://darkness.gd<>uid://d3505rhuokyev::::res://mimic.png<>uid://23hfmle37daj::::res://mudgrab.png<>uid://8bo2uf1ulmy6::::res://deepmud.png
+darkness.gd::GDScript::5531514192828436777::1791690739::0::1::::<>TileMapLayer<><>0<>0<><>::
+deepmud.png::CompressedTexture2D::2319195531542810903::1791690739::1791691127::1::::<><><>0<>0<>81bc1696656753e696529782fe36a71f<>res://.godot/imported/deepmud.png-19789e5f7041ba39e4dec5687bf1577a.ctex::
+drone box.png::CompressedTexture2D::5596665433249287017::1791690739::1791691127::1::::<><><>0<>0<>662b7f73a7b3fabbe89cc5fe235c90ab<>res://.godot/imported/drone box.png-248562fc413b28f1f079b62627d8a88b.ctex::
+drone.gd::GDScript::2728062680855542837::1791690739::0::1::::<>CharacterBody2D<><>0<>0<><>::
+dugmud.png::CompressedTexture2D::4381390898280262749::1791690739::1791691220::1::::<><><>0<>0<>87f03bbe8a149894515a4fc74e38a78c<>res://.godot/imported/dugmud.png-12a5033f6918b4972f5c9526c057961d.ctex::
+dust.png::CompressedTexture2D::1179427037346775895::1791690739::1791691127::1::::<><><>0<>0<>c8c0e624d0d872fdf62495e6a3b1005e<>res://.godot/imported/dust.png-e9e9118e22167c3e51b752d1c5b2ea65.ctex::
+foreground.gd::GDScript::2466320290272912756::1791690739::0::1::::<>TileMapLayer<><>0<>0<><>::
+icon.svg::CompressedTexture2D::8441400154143006301::1791690739::1791691127::1::::<><><>0<>0<>61ba038fed488d32a547244b40dcc7be<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+mimic.png::CompressedTexture2D::9188053408840733165::1791690739::1791691127::1::::<><><>0<>0<>2aa7f6ddc89ee4061db8342e7b81dccb<>res://.godot/imported/mimic.png-b6ced6e0347abcf5106c1b8d0e5fd4f4.ctex::
+moonstone.png::CompressedTexture2D::1469584331835383276::1791690739::1791691127::1::::<><><>0<>0<>ac9bf5535a77d401a6e2818892a80489<>res://.godot/imported/moonstone.png-717b50ec0764c5a32eefcf688b26aaac.ctex::
+mud.png::CompressedTexture2D::5681492717418929154::1791690739::1791691268::1::::<><><>0<>0<>dc5424bb650c0a355576154cd1d96cfd<>res://.godot/imported/mud.png-fc46442845fb42543e8b05d08615aca5.ctex::
+mudgrab.png::CompressedTexture2D::1953335950752908437::1791690739::1791691127::1::::<><><>0<>0<>829d5a082cfa9540fa30b8105030f92f<>res://.godot/imported/mudgrab.png-a5af112b4f9064fcd2fb9ef46851c263.ctex::
+notes.gd::GDScript::8768913384364546862::1791690739::0::1::::<>RefCounted<><>0<>0<><>::
+ocean and sea.png::CompressedTexture2D::7815049145256041757::1791690739::1791691127::1::::<><><>0<>0<>84d5ba167a74d5882a47aacf527b692a<>res://.godot/imported/ocean and sea.png-4b8eedc9cdb87dfb17982292ce3d71d2.ctex::
+prelude.png::CompressedTexture2D::5435812331334703586::1791690739::1791691127::1::::<><><>0<>0<>3a9f070c8a4d75a246f099061c1b7d30<>res://.godot/imported/prelude.png-70611c540a0d832cf5b50e9dc1a41549.ctex::
+sand.png::CompressedTexture2D::2781626442259817845::1791690739::1791691237::1::::<><><>0<>0<>dba1f687f4057a124e864318a8cc5e9e<>res://.godot/imported/sand.png-d9d9776527d00f72b59fbb5ce17778aa.ctex::

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://chgq8twmrdapj"]
+[gd_scene format=3 uid="uid://chgq8twmrdapj"]
 
 [ext_resource type="TileSet" uid="uid://cuw813m0hcitk" path="res://crust.tres" id="1_ljna6"]
 [ext_resource type="Script" uid="uid://bbex61xhs4k6g" path="res://foreground.gd" id="2_0piv4"]
@@ -30,7 +30,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3epac")
 }],
-"loop": true,
+"loop": 1,
 "name": &"drone",
 "speed": 5.0
 }, {
@@ -38,7 +38,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ljna6")
 }],
-"loop": true,
+"loop": 1,
 "name": &"goingleft",
 "speed": 5.0
 }, {
@@ -46,58 +46,54 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0piv4")
 }],
-"loop": true,
+"loop": 1,
 "name": &"goingright",
 "speed": 5.0
 }]
 
-[node name="Crust" type="Node2D"]
+[node name="Crust" type="Node2D" unique_id=1542787482]
 
-[node name="foreground" type="TileMapLayer" parent="."]
+[node name="foreground" type="TileMapLayer" parent="." unique_id=1106368002]
 z_index = 2
 tile_set = ExtResource("1_ljna6")
 script = ExtResource("2_0piv4")
 map_width = 200
 map_height = 80
 
-[node name="darkness" type="TileMapLayer" parent="."]
+[node name="darkness" type="TileMapLayer" parent="." unique_id=1041560706]
 modulate = Color(0.24780053, 0.24780053, 0.24780053, 0.95000005)
 z_index = 5
 tile_set = ExtResource("1_ljna6")
 script = ExtResource("2_l1bmj")
 
-[node name="background" type="TileMapLayer" parent="."]
+[node name="preview" type="TileMapLayer" parent="." unique_id=1161474191]
 z_index = 1
 tile_set = ExtResource("1_ljna6")
 
-[node name="Parallax2D" type="Parallax2D" parent="."]
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=390020716]
 scroll_scale = Vector2(0.8, 0.8)
 repeat_size = Vector2(32, 32)
 repeat_times = 100
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=2087516889]
 texture_repeat = 2
 texture = ExtResource("6_0piv4")
 
-[node name="splotch" type="Sprite2D" parent="."]
+[node name="splotch" type="Sprite2D" parent="." unique_id=744015403]
 visible = false
 z_index = 3
 texture = ExtResource("5_ljna6")
 
-[node name="drone" type="CharacterBody2D" parent="."]
+[node name="drone" type="CharacterBody2D" parent="." unique_id=493170960]
 script = ExtResource("2_3epac")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="drone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="drone" unique_id=2120449979]
 shape = SubResource("CapsuleShape2D_3epac")
 
-[node name="Camera2D" type="Camera2D" parent="drone"]
+[node name="Camera2D" type="Camera2D" parent="drone" unique_id=558453330]
 zoom = Vector2(4, 4)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="drone"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="drone" unique_id=2018896713]
 z_index = 3
 sprite_frames = SubResource("SpriteFrames_l1bmj")
 animation = &"drone"
-
-[node name="Crabbert" type="CharacterBody2D" parent="."]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Crabbert"]

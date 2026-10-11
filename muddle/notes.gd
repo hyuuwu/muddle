@@ -3,6 +3,8 @@
 #menu
 	#make research
 		#host and host-neutral
+	#collectibles
+	#saves (2)
 
 #cutscene
 	#make it 3 diagonal SW frames by dragging, with solid animated drone box sprite
@@ -10,26 +12,25 @@
 
 #terrain
 	#make flatter beach
-	#better clay chunks
+	#better oil (not clay) chunks
 	#more biomes
 		#stone?
 
 #digging
-	#preview revamp
-	#tile mashing
-	#more splotches
-	#maybe indicator of can grab
+	#preview 1 block rule
+	#tile crossplacing
+	#smoother clay splotches
 
 #enemies
 	#make crab
-		#make sprites (sleep, 2 walk, bloat, agitated, suspicious, wounded, rotting, dead)
+		#make sprites (sleep, 2 walk, bloat (2 walk), agitated !, suspicious ?, wounded, rotting, dead)
 	#make more rodents
 		#same sprites
 
 #hosts
 	#inventory
-		#mashing system, mouth sprite
-		#click and remove/feed
+		#mouth sprite
+		#right click to remove from/place in inventory, left click on animal to feed
 
 #drone
 	#resprite drone box
