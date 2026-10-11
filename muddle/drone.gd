@@ -52,7 +52,7 @@ func _physics_process(delta):
 	if darkness:
 		darkness.cast_light(global_position, 3)
 	#water kills
-	var current_grid_pos = map.local_to_map(global_position)
+	var current_grid_pos = map.local_to_map(map.to_local(global_position))
 	var tile_id = map.get_cell_source_id(current_grid_pos)
 	if tile_id == 3:
 		die()
