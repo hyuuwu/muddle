@@ -18,7 +18,6 @@ config/name="Muddle"
 run/main_scene="uid://chgq8twmrdapj"
 config/features=PackedStringArray("4.7", "Forward Plus")
 boot_splash/bg_color=Color(0.13816993, 0.13816993, 0.13816993, 0)
-boot_splash/image="uid://cjpfbgmkedefq"
 config/icon="res://icon.svg"
 boot_splash/minimum_display_time=2000
 

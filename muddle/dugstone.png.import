@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjpfbgmkedefq"
-path="res://.godot/imported/prelude.png-70611c540a0d832cf5b50e9dc1a41549.ctex"
+uid="uid://es7sjnoaspmm"
+path="res://.godot/imported/dugstone.png-168018c8868254d516da34d4159f6a5f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://prelude.png"
-dest_files=["res://.godot/imported/prelude.png-70611c540a0d832cf5b50e9dc1a41549.ctex"]
+source_file="res://dugstone.png"
+dest_files=["res://.godot/imported/dugstone.png-168018c8868254d516da34d4159f6a5f.ctex"]
 
 [params]
 
