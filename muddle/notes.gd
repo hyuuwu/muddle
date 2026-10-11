@@ -50,3 +50,5 @@
 	#advice and limited items
 	#jr system, no advice
 	#shop upgrades
+#music
+	#make it sound more like minecraft music

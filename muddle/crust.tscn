@@ -10,8 +10,8 @@
 [ext_resource type="AudioStream" uid="uid://d0aq5ml8fr72m" path="res://t.mp3" id="8_1sxd4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3epac"]
-radius = 5.0
-height = 14.0
+radius = 4.0
+height = 8.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3epac"]
 atlas = ExtResource("4_3epac")
