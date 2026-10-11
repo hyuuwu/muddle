@@ -3,7 +3,7 @@
 #menu
 	#make research
 		#host and host-neutral
-	#collectibles
+	#collectibles and lore text on them
 	#saves (2)
 
 #cutscene
@@ -11,20 +11,21 @@
 	#give indication of loading screen
 
 #terrain
-	#make flatter beach
-	#better oil (not clay) chunks
 	#more biomes
-		#stone?
+		#stone
+		#roots
+		#river
+	#preset builds
 
 #digging
 	#preview 1 block rule
 	#tile crossplacing
-	#smoother clay splotches
+	#special building blocks
 
 #enemies
-	#make crab
+	#make crab for river
 		#make sprites (sleep, 2 walk, bloat (2 walk), agitated !, suspicious ?, wounded, rotting, dead)
-	#make more rodents
+	#make more rodents (rat,squirrel,ferret) and bat
 		#same sprites
 
 #hosts
@@ -38,4 +39,13 @@
 	#postgame colony
 
 #lighting
-	#add more lightbringers
+	#placeable light source (path marker)
+
+#bugs
+	#dont forget the bugs
+	
+#carb
+	#bug money
+	#advice and limited items
+	#jr system, no advice
+	#shop upgrades

@@ -20,7 +20,7 @@ const muds_source_id = 1
 const moonstone_source_id = 2
 const ocean_source_id = 3
 const drone_box_source_id = 4
-const clay_source_id = 6
+const oil_source_id = 6
 const sand_source_id = 7
 const general_atlas = Vector2i(0,0) #position in atlas
 
@@ -46,7 +46,7 @@ func generate_world() -> void:
 	
 	var clay_noise = FastNoiseLite.new()
 	clay_noise.seed = randi() + 1000 #literally any number it doesnt matter, just different from others
-	clay_noise.frequency = 0.15 #medium chunks
+	clay_noise.frequency = 0.2 #medium chunks
 	
 	var sand_noise = FastNoiseLite.new()
 	sand_noise.seed = randi() + 6767
@@ -55,21 +55,12 @@ func generate_world() -> void:
 	var chunk_rules = [
 		{
 			"name": "clay",
-			"source_id": clay_source_id,
+			"source_id": oil_source_id,
 			"coords": general_atlas,
-			"threshold": 0.40,
+			"threshold": 0.4,
 			"min_y": 11,
-			"max_y": 30,
+			"max_y": map_height-11,
 			"noise_machine": clay_noise
-		},
-		{
-			"name": "sand",
-			"source_id": sand_source_id,
-			"coords": general_atlas,
-			"threshold": 0.35, #lower threshold, larger patches
-			"min_y": map_height - 30,
-			"max_y": map_height - 10,
-			"noise_machine": sand_noise
 		},
 	]
 	for x in range(map_width):
@@ -77,6 +68,12 @@ func generate_world() -> void:
 			var chosen_source = mud_source_id
 			var chosen_coords = general_atlas #these two shits exist because basic variables cant run through whats down there
 			var cell = Vector2i(x,y)
+			#sand on bottom
+			if y == map_height - 11:
+				chosen_source=sand_source_id
+			elif y == map_height - 12:
+				if sand_noise.get_noise_2d(x,y) > 0.35: #adjust for frequency
+					chosen_source=sand_source_id
 			for chunks in chunk_rules:
 				if y < chunks.min_y or y > chunks.max_y:
 					continue
@@ -94,7 +91,7 @@ func generate_world() -> void:
 			if cave_noise.get_noise_2d(x,y) > 0.0: #change for caverns or tunnels
 				var current_source = get_cell_source_id(cell)
 				#if undiggable, dont cave
-				if current_source == clay_source_id or current_source == sand_source_id:
+				if current_source == oil_source_id or current_source == sand_source_id:
 					continue
 				set_cell(cell, muds_source_id, general_atlas)
 				update_surrounding(cell)
