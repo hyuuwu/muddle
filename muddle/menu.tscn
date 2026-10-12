@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://g3rkh66kvhuq"]
 
 [ext_resource type="Script" uid="uid://d0ccythhff8h7" path="res://menu.gd" id="1_7ty0j"]
+[ext_resource type="Texture2D" uid="uid://b0wkoqjrga6ry" path="res://deploybutton.png" id="2_4hy44"]
 [ext_resource type="AudioStream" uid="uid://cve5vlrbkgw8x" path="res://gwop wop.mp3" id="2_7ty0j"]
+[ext_resource type="Texture2D" uid="uid://q2k8xt22x8vb" path="res://dust.png" id="3_ytr4m"]
 
 [node name="menu" type="Node2D" unique_id=412104751]
 script = ExtResource("1_7ty0j")
@@ -12,21 +14,23 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="startgame" type="Button" parent="what?" unique_id=1515369712]
+[node name="startgame" type="TextureButton" parent="what?" unique_id=614914365]
 layout_mode = 0
 offset_left = 338.0
 offset_top = 8.0
 offset_right = 815.0
 offset_bottom = 113.0
-text = "Start!"
+texture_normal = ExtResource("2_4hy44")
+stretch_mode = 0
 
-[node name="quit" type="Button" parent="what?" unique_id=1297334651]
+[node name="quit" type="TextureButton" parent="what?" unique_id=700569702]
 layout_mode = 0
 offset_left = 820.0
 offset_top = 8.0
 offset_right = 1144.0
 offset_bottom = 74.0
-text = "quit :("
+texture_normal = ExtResource("3_ytr4m")
+stretch_mode = 0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="what?" unique_id=749718961]
 stream = ExtResource("2_7ty0j")

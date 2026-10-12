@@ -49,8 +49,8 @@ func generate_world() -> void:
 	clay_noise.frequency = 0.2 #medium chunks
 	
 	var sand_noise = FastNoiseLite.new()
-	sand_noise.seed = randi() + 6767
-	sand_noise.frequency = 0.8 #bigger chunks
+	sand_noise.seed = randi() + 6767 # lmao
+	sand_noise.frequency = 0.5 #bigger chunks # should be bigger now(lui)
 	
 	var chunk_rules = [
 		{
@@ -111,33 +111,44 @@ func generate_world() -> void:
 
 #digging
 func _input(event: InputEvent) -> void:
-	#only when pressing lmb
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		#what am I hovering over
-		var mouse_pos = get_local_mouse_position()
-		var player_tile = foreground.local_to_map(foreground.to_local(player.global_position))
-		var target_tile = foreground.local_to_map(foreground.to_local(mouse_pos)) #what your mouse is looking at
-		var tile_pos = target_tile
-		#what is this tile
-		var grid_dist_x = abs(player_tile.x - target_tile.x)
-		var grid_dist_y = abs(player_tile.y - target_tile.y)
-		var grid_dist = grid_dist_x + grid_dist_y
-		var current_id = foreground.get_cell_source_id(tile_pos)
-		#only 1 tile away may pick up
-		if grid_dist == 1:
-			#pick up if its 0
-			if current_id == 0 and not holding_mud:
-				#turn it into 1-0,0
-				foreground.set_cell(tile_pos, 1,Vector2i(0,0))
-				update_surrounding(tile_pos)
+	if event is InputEventMouseButton:
+		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+
+			var player_tile = local_to_map(
+				to_local(player.global_position)
+			)
+
+			var target_tile = local_to_map(
+				get_local_mouse_position()
+			)
+
+			var distance = (
+				abs(player_tile.x - target_tile.x)
+				+ abs(player_tile.y - target_tile.y)
+			)
+
+			var current_id = get_cell_source_id(target_tile)
+
+			print("Player:", player_tile)
+			print("Mouse:", target_tile)
+			print("Distance:", distance)
+			print("Tile ID:", current_id)
+
+			if distance != 1:
+				return
+
+			# DIGGING
+			if current_id == mud_source_id and not holding_mud:
+				set_cell(target_tile, muds_source_id, general_atlas)
+				update_surrounding(target_tile)
 				holding_mud = true
-			#put it down
-			elif current_id == 1 and holding_mud:
-				#turn it to 0
-				foreground.set_cell(tile_pos, 0, Vector2i(0,0))
-				update_surrounding(tile_pos)
+
+			# PLACING
+			elif current_id == muds_source_id and holding_mud:
+				set_cell(target_tile, mud_source_id, general_atlas)
+				update_surrounding(target_tile)
 				holding_mud = false
-				darkness.set_cell(tile_pos, 11, Vector2i(0,0))
+				darkness.set_cell(target_tile, 11, general_atlas)
 func update_tunnel(pos: Vector2i) -> void: #can be combined with next 2
 	var original_id = get_cell_source_id(pos)
 	#check if whole block

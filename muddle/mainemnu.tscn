@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://d06e06lhh6b8f"]
 
-[ext_resource type="Script" uid="uid://c1csmmfoix0e3" path="res://mainemnu.gd" id="1_ykl2l"]
+[ext_resource type="Script" uid="uid://m1rrejidvm7j" path="res://mainemnu.gd" id="1_ykl2l"]
 [ext_resource type="AudioStream" uid="uid://cve5vlrbkgw8x" path="res://gwop wop.mp3" id="2_7ty0j"]
+[ext_resource type="Texture2D" uid="uid://b0wkoqjrga6ry" path="res://deploybutton.png" id="2_185ds"]
+[ext_resource type="Texture2D" uid="uid://dsjcvlc3mjd3r" path="res://icon.svg" id="3_uek0g"]
+[ext_resource type="Texture2D" uid="uid://d3505rhuokyev" path="res://mimic.png" id="4_mmpvn"]
 
 [node name="mainemnu" type="Node2D" unique_id=412104751]
 script = ExtResource("1_ykl2l")
@@ -12,29 +15,31 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="startgame" type="Button" parent="but_man" unique_id=1515369712]
+[node name="startgame" type="TextureButton" parent="but_man" unique_id=173548098]
 layout_mode = 0
-offset_left = 48.0
-offset_top = 172.0
-offset_right = 525.0
-offset_bottom = 277.0
-text = "Start!"
+offset_left = 44.0
+offset_top = 159.0
+offset_right = 425.0
+offset_bottom = 252.0
+texture_normal = ExtResource("2_185ds")
+stretch_mode = 0
 
-[node name="options" type="Button" parent="but_man" unique_id=560031980]
-layout_mode = 0
-offset_left = 34.0
-offset_top = 298.0
-offset_right = 396.0
-offset_bottom = 363.0
-text = "Option!"
-
-[node name="qut" type="Button" parent="but_man" unique_id=1297334651]
+[node name="options" type="TextureButton" parent="but_man" unique_id=714425891]
 layout_mode = 0
 offset_left = 6.0
-offset_top = 374.0
-offset_right = 340.0
-offset_bottom = 440.0
-text = "quit :("
+offset_top = 297.0
+offset_right = 405.0
+offset_bottom = 425.0
+texture_normal = ExtResource("3_uek0g")
+stretch_mode = 0
+
+[node name="qut" type="TextureButton" parent="but_man" unique_id=357671528]
+layout_mode = 0
+offset_top = 457.0
+offset_right = 607.0
+offset_bottom = 535.0
+texture_normal = ExtResource("4_mmpvn")
+stretch_mode = 0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="but_man" unique_id=749718961]
 stream = ExtResource("2_7ty0j")
