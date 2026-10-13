@@ -40,12 +40,6 @@ text = "Deploy"
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="quit" type="Button" parent="what?/toppanel/savespanel" unique_id=1297334651]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "Leave"
-
 [node name="save1" type="Button" parent="what?/toppanel/savespanel" unique_id=1295931282]
 layout_mode = 2
 text = "Save 1"
@@ -55,4 +49,3 @@ layout_mode = 2
 text = "Save 2"
 
 [connection signal="pressed" from="what?/toppanel/startgame" to="." method="_on_startgame_pressed"]
-[connection signal="pressed" from="what?/toppanel/savespanel/quit" to="." method="_on_qut_pressed"]
