@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bay7leh3182ys" path="res://ratty.png" id="1_pmwci"]
 [ext_resource type="Script" uid="uid://b34mkovlwbi8l" path="res://rat.gd" id="1_xl1m0"]
+[ext_resource type="AudioStream" uid="uid://dnjxhyt7nk320" path="res://rat_sfx.mp3" id="3_p3nl4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xl1m0"]
 size = Vector2(7, 3)
@@ -18,3 +19,9 @@ shape = SubResource("RectangleShape2D_xl1m0")
 
 [node name="Timer" type="Timer" parent="." unique_id=854414174]
 one_shot = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1828548696]
+stream = ExtResource("3_p3nl4")
+volume_db = -8.635
+max_distance = 800.0
+attenuation = 2.928171

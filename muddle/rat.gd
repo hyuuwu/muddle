@@ -4,6 +4,9 @@ extends CharacterBody2D
 @export var speed: float = 40.0
 @export var muds_source_id: int = 0
 @export var cave_map: TileMapLayer
+@onready var squeak: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
+@export_range(0.0, 1.0) var squeak_chance: float = 0.3
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var timer: Timer = $Timer
@@ -14,6 +17,7 @@ var direction: Vector2 = Vector2.ZERO
 func _ready() -> void:
 	timer.timeout.connect(change_direction)
 	change_direction()
+	
 
 
 func _physics_process(delta: float) -> void:
@@ -44,7 +48,11 @@ func change_direction() -> void:
 		Vector2.RIGHT,
 		Vector2.ZERO
 	]
-
+	if direction != Vector2.ZERO:
+		if randf() < squeak_chance:
+			if not squeak.playing:
+				squeak.pitch_scale = randf_range(0.85, 1.15)
+				squeak.play()
 	direction = directions.pick_random()
 	timer.start(randf_range(0.8, 2.5))
 ''
