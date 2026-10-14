@@ -57,5 +57,3 @@ func pick_behavior() -> void:
 			[-1.0, 1.0].pick_random(),
 			0.0
 		)
-#func _draw() -> void: #oh why didnt u delet- if needed.
-#	draw_rect(Rect2(-4, -4, 8, 8), Color.RED)

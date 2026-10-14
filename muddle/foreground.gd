@@ -213,30 +213,31 @@ func clear_current_preview() -> void:
 		preview.set_cell(last_preview_cell, -1) #if preview, erase
 		last_preview_cell = Vector2i(-1,-1)
 
-
-
-
+#bug
 func spawn_bug() -> void:
 	if bug_scene == null:
 		print("ERROR: Bug scene not assigned!")
 		return
-
+	
 	var player_cell = local_to_map(to_local(player.global_position))
-
+	
 	for attempt in range(100):
 		var x = player_cell.x + randi_range(-5, 5)
 		var y = player_cell.y + randi_range(-5, 5)
 		var cell = Vector2i(x, y)
-
+		
 		# Only spawn inside caves
 		if get_cell_source_id(cell) == muds_source_id:
 			var bug = bug_scene.instantiate()
 			add_child(bug)
-
+			
 			bug.global_position = to_global(map_to_local(cell))
 			bug.z_index = 10
-
-			print("BUG NEAR PLAYER: ", bug.global_position)
+			
 			return
 
 	print("No suitable cave tile near player!")
+func is_grid_dist_0(world_pos: Vector2) -> bool:
+	var drone_tile = local_to_map(to_local(world_pos))
+	var mouse_tile = local_to_map(to_local(get_global_mouse_position()))
+	return drone_tile == mouse_tile

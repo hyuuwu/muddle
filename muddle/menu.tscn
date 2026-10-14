@@ -42,10 +42,12 @@ size_flags_horizontal = 3
 
 [node name="save1" type="Button" parent="what?/toppanel/savespanel" unique_id=1295931282]
 layout_mode = 2
+size_flags_vertical = 3
 text = "Save 1"
 
 [node name="save2" type="Button" parent="what?/toppanel/savespanel" unique_id=1555616814]
 layout_mode = 2
+size_flags_vertical = 3
 text = "Save 2"
 
 [connection signal="pressed" from="what?/toppanel/startgame" to="." method="_on_startgame_pressed"]

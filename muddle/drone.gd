@@ -3,10 +3,11 @@ extends CharacterBody2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var map: TileMapLayer = $"../foreground"
 @onready var darkness: TileMapLayer = $"../darkness"
-@onready var bugs_eaten: int = 0
+@onready var inventory: CanvasLayer = $"../CanvasLayer"
+var bugs_eaten: int = 0
+var nearby_bugs: Array[Node2D] = []
 #speed of sprite change (pixels/second)
 @export var tilt_threshold: float = 100
-@onready var nearby_bugs: Array[Node2D] = []
 func _physics_process(delta):
 	# a flying drone
 	const ACCEL = 600.0 #speeding
@@ -46,9 +47,10 @@ func _physics_process(delta):
 		velocity.x = 0
 	
 	if Input.is_action_just_pressed("ui_up") and is_on_floor():
-		velocity.y = -80 # jump	
-	if Input.is_action_just_pressed("eat"):
-		eat_bug()
+		velocity.y = -80 # jump
+	if map.is_grid_dist_0(global_position):
+		if Input.is_action_just_pressed("eat"):
+			eat_bug()
 	#LIGHT
 	if darkness:
 		darkness.cast_light(global_position, 3)
@@ -78,11 +80,11 @@ func _on_eatin_body_entered(body: Node2D) -> void:
 	pass # Replace with function body.
 	
 
-func _on_eatin_body_shape_exited(
-	body_rid: RID,
+func _on_eatin_body_shape_exited( #idfk why these r here but stacks errors without
+	_body_rid: RID,
 	body: Node2D,
-	body_shape_index: int,
-	local_shape_index: int
+	_body_shape_index: int,
+	_local_shape_index: int
 ) -> void:
 	if not is_instance_valid(body):
 		return
@@ -98,6 +100,5 @@ func eat_bug() -> void:
 		$AudioStreamPlayer.stream = CorrectSound
 		$AudioStreamPlayer.play()
 		bug.queue_free()
-		print("ate :3")
 		bugs_eaten += 1
-		print("bugs eaten", bugs_eaten)
+		inventory.update_bug_count(bugs_eaten)

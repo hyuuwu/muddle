@@ -2,6 +2,7 @@ extends Camera2D
 
 @export var drone:CharacterBody2D
 @export var intro_spot:Marker2D
+@export var inventory_node: CanvasLayer
 
 var is_following:bool = false
 var can_skip:bool = true
@@ -16,7 +17,7 @@ func _ready() -> void:
 		is_following=true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if is_following and drone:
 		global_position = drone.global_position
 func _unhandled_input(event: InputEvent) -> void:
@@ -24,4 +25,5 @@ func _unhandled_input(event: InputEvent) -> void:
 		if can_skip:
 			is_following = true
 		else:
-			pass #add menu here
+			if inventory_node:
+				inventory_node.visible = not inventory_node.visible
