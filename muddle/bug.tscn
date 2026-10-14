@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bf8ag88skpjse"]
+
+[ext_resource type="Script" uid="uid://bqwli6wi7v3p2" path="res://bug.gd" id="1_hs7dx"]
+[ext_resource type="Texture2D" uid="uid://bjkbjfetii73s" path="res://bug.png" id="2_q3ryj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ji6q"]
+size = Vector2(8, 4)
+
+[node name="bug" type="CharacterBody2D" unique_id=530364693 groups=["bugs"]]
+script = ExtResource("1_hs7dx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=577261645]
+texture = ExtResource("2_q3ryj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1299105601]
+shape = SubResource("RectangleShape2D_5ji6q")

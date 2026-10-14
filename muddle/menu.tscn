@@ -49,3 +49,5 @@ layout_mode = 2
 text = "Save 2"
 
 [connection signal="pressed" from="what?/toppanel/startgame" to="." method="_on_startgame_pressed"]
+[connection signal="pressed" from="what?/toppanel/savespanel/save1" to="." method="_on_save_1_pressed"]
+[connection signal="pressed" from="what?/toppanel/savespanel/save2" to="." method="_on_save_2_pressed"]

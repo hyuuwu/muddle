@@ -9,6 +9,9 @@ extends TileMapLayer
 @export var map_width = 100
 @export var map_height = 40
 @export var swap_interval: float = 0.5
+@export var bug_scene: PackedScene
+@export var bug_count: int = 10
+
 
 var holding_mud: bool = false
 var last_preview_cell: Vector2i = Vector2i(-1,-1) #where preview is
@@ -39,6 +42,8 @@ func _ready() -> void:
 	#place me
 	if player != null:
 		player.global_position = map_to_local(spawn_pos)
+	for i in range(bug_count):
+		spawn_bug()
 func generate_world() -> void:
 	var cave_noise = FastNoiseLite.new()
 	cave_noise.seed = randi()
@@ -207,3 +212,31 @@ func clear_current_preview() -> void:
 		#is it preview?
 		preview.set_cell(last_preview_cell, -1) #if preview, erase
 		last_preview_cell = Vector2i(-1,-1)
+
+
+
+
+func spawn_bug() -> void:
+	if bug_scene == null:
+		print("ERROR: Bug scene not assigned!")
+		return
+
+	var player_cell = local_to_map(to_local(player.global_position))
+
+	for attempt in range(100):
+		var x = player_cell.x + randi_range(-5, 5)
+		var y = player_cell.y + randi_range(-5, 5)
+		var cell = Vector2i(x, y)
+
+		# Only spawn inside caves
+		if get_cell_source_id(cell) == muds_source_id:
+			var bug = bug_scene.instantiate()
+			add_child(bug)
+
+			bug.global_position = to_global(map_to_local(cell))
+			bug.z_index = 10
+
+			print("BUG NEAR PLAYER: ", bug.global_position)
+			return
+
+	print("No suitable cave tile near player!")

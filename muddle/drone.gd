@@ -3,10 +3,10 @@ extends CharacterBody2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var map: TileMapLayer = $"../foreground"
 @onready var darkness: TileMapLayer = $"../darkness"
-
+@onready var bugs_eaten: int = 0
 #speed of sprite change (pixels/second)
 @export var tilt_threshold: float = 100
-
+@onready var nearby_bugs: Array[Node2D] = []
 func _physics_process(delta):
 	# a flying drone
 	const ACCEL = 600.0 #speeding
@@ -47,7 +47,8 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("ui_up") and is_on_floor():
 		velocity.y = -80 # jump	
-	
+	if Input.is_action_just_pressed("eat"):
+		eat_bug()
 	#LIGHT
 	if darkness:
 		darkness.cast_light(global_position, 3)
@@ -69,3 +70,34 @@ func animate() -> void:
 			sprite.play("drone")
 func die():
 	get_tree().quit()
+	# js restart the scene, lol.
+	
+func _on_eatin_body_entered(body: Node2D) -> void:
+	if body.is_in_group("bugs"):
+		nearby_bugs.append(body)
+	pass # Replace with function body.
+	
+
+func _on_eatin_body_shape_exited(
+	body_rid: RID,
+	body: Node2D,
+	body_shape_index: int,
+	local_shape_index: int
+) -> void:
+	if not is_instance_valid(body):
+		return
+
+	if body.is_in_group("bugs"):
+		nearby_bugs.erase(body)
+func eat_bug() -> void:
+	if nearby_bugs.is_empty():
+		return
+	var bug = nearby_bugs.pop_front()
+	var CorrectSound = preload("res://9-cartoon-chomp.mp3")
+	if is_instance_valid(bug):
+		$AudioStreamPlayer.stream = CorrectSound
+		$AudioStreamPlayer.play()
+		bug.queue_free()
+		print("ate :3")
+		bugs_eaten += 1
+		print("bugs eaten", bugs_eaten)
