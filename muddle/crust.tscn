@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://mwolebutuwvp" path="res://drop pod.png" id="10_nmtif"]
 [ext_resource type="PackedScene" uid="uid://bf8ag88skpjse" path="res://bug.tscn" id="12_jnltu"]
 [ext_resource type="Script" uid="uid://b0jeqnknqtnnb" path="res://control.gd" id="14_uqc8c"]
+[ext_resource type="PackedScene" uid="uid://dmsxpnse0r81q" path="res://rat.tscn" id="15_5t3nh"]
 
 [sub_resource type="Gradient" id="Gradient_rhxu1"]
 interpolation_mode = 1
@@ -83,6 +84,7 @@ script = ExtResource("2_0piv4")
 map_width = 200
 map_height = 80
 bug_scene = ExtResource("12_jnltu")
+rat_scene = ExtResource("15_5t3nh")
 
 [node name="darkness" type="TileMapLayer" parent="." unique_id=1041560706]
 modulate = Color(0.24780053, 0.24780053, 0.24780053, 0.95000005)
@@ -161,7 +163,6 @@ texture = ExtResource("10_nmtif")
 [node name="bug" parent="." unique_id=530364693 instance=ExtResource("12_jnltu")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2009713601]
-visible = false
 script = ExtResource("14_uqc8c")
 
 [node name="Panel" type="Panel" parent="CanvasLayer" unique_id=921317012]
@@ -184,6 +185,8 @@ size_flags_vertical = 0
 [node name="Label" type="Label" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer" unique_id=585194507]
 layout_mode = 2
 text = "bugs:0"
+
+[node name="rats" parent="." unique_id=367140909 instance=ExtResource("15_5t3nh")]
 
 [connection signal="body_entered" from="drone/eatin" to="drone" method="_on_eatin_body_entered"]
 [connection signal="body_shape_exited" from="drone/eatin" to="drone" method="_on_eatin_body_shape_exited"]

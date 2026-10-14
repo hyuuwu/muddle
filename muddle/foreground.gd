@@ -11,7 +11,8 @@ extends TileMapLayer
 @export var swap_interval: float = 0.5
 @export var bug_scene: PackedScene
 @export var bug_count: int = 10
-
+@export var rat_scene: PackedScene
+@export var rat_count: int = 5
 
 var holding_mud: bool = false
 var last_preview_cell: Vector2i = Vector2i(-1,-1) #where preview is
@@ -44,13 +45,15 @@ func _ready() -> void:
 		player.global_position = map_to_local(spawn_pos)
 	for i in range(bug_count):
 		spawn_bug()
+	for i in range(rat_count):
+		spawn_rat()	
 func generate_world() -> void:
 	var cave_noise = FastNoiseLite.new()
 	cave_noise.seed = randi()
 	cave_noise.frequency = 0.6
 	
 	var plastic_noise = FastNoiseLite.new()
-	plastic_noise.seed = randi() + 1000 #literally any number it doesnt matter, just different from others
+	plastic_noise.seed = randi() + 1000 #literally any number it doesnt matter, just different from others # okok
 	plastic_noise.frequency = 0.2 #medium chunks
 	
 	var sand_noise = FastNoiseLite.new()
@@ -241,3 +244,32 @@ func is_grid_dist_0(world_pos: Vector2) -> bool:
 	var drone_tile = local_to_map(to_local(world_pos))
 	var mouse_tile = local_to_map(to_local(get_global_mouse_position()))
 	return drone_tile == mouse_tile
+
+
+func spawn_rat() -> void:
+	if rat_scene == null:
+		print("ERROR: Rat scene not assigned!")
+		return
+
+	var player_cell = local_to_map(to_local(player.global_position))
+
+	for attempt in range(100):
+		var x = player_cell.x + randi_range(-5, 5)
+		var y = player_cell.y + randi_range(-5, 5)
+		var cell = Vector2i(x, y)
+
+		if get_cell_source_id(cell) == muds_source_id:
+			var rat = rat_scene.instantiate()
+
+			# rat on map
+			add_child(rat)
+
+			# connect
+			rat.cave_map = self
+			rat.muds_source_id = muds_source_id
+
+			rat.global_position = to_global(map_to_local(cell))
+			rat.z_index = 10
+
+			print("Rat spawned!")
+			return

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dmsxpnse0r81q"]
+
+[ext_resource type="Texture2D" uid="uid://bay7leh3182ys" path="res://ratty.png" id="1_pmwci"]
+[ext_resource type="Script" uid="uid://b34mkovlwbi8l" path="res://rat.gd" id="1_xl1m0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xl1m0"]
+size = Vector2(7, 3)
+
+[node name="rat" type="CharacterBody2D" unique_id=367140909 groups=["rat"]]
+script = ExtResource("1_xl1m0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1454714766]
+texture = ExtResource("1_pmwci")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1000902797]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_xl1m0")
+
+[node name="Timer" type="Timer" parent="." unique_id=854414174]
+one_shot = true
