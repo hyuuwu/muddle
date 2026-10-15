@@ -55,4 +55,8 @@ func change_direction() -> void:
 				squeak.play()
 	direction = directions.pick_random()
 	timer.start(randf_range(0.8, 2.5))
-''
+	if direction.x < 0:
+		$Sprite2D.flip_h = false
+		
+	elif direction.x > 0:
+		$Sprite2D.flip_h = true
