@@ -8,7 +8,7 @@
 
 #cutscene
 	#make it 3 diagonal SW frames by dragging, with solid animated drone box sprite PRIORITY 3
-	#give indication of loading screenaaaaaaaaa
+	#give indication of loading screenaaaaaaaaaaa
 
 #terrain
 	#resprite oil to plastic

@@ -102,3 +102,27 @@ func eat_bug() -> void:
 		bug.queue_free()
 		bugs_eaten += 1
 		inventory.update_bug_count(bugs_eaten)
+		save_game()
+func _ready() -> void:
+	load_game()
+	await inventory.ready
+	inventory.update_bug_count(bugs_eaten)
+	#load
+func load_game() -> void:
+	if FileAccess.file_exists("user://savefilepleasedontmodify.lsblk"):
+		var file = FileAccess.open("user://savefilepleasedontmodify.lsblk", FileAccess.READ)
+
+		if file:
+			bugs_eaten = file.get_32()
+			file.close()
+			print("Loaded! Bugs eaten: ", bugs_eaten)
+
+func save_game() -> void:
+	var file = FileAccess.open("user://savefilepleasedontmodify.lsblk", FileAccess.WRITE)
+
+	if file:
+		file.store_32(bugs_eaten)
+		file.close()
+		print("Saved! Bugs eaten: ", bugs_eaten)
+	else:
+		print("Save error: ", FileAccess.get_open_error())

@@ -254,8 +254,8 @@ func spawn_rat() -> void:
 	var player_cell = local_to_map(to_local(player.global_position))
 
 	for attempt in range(100):
-		var x = player_cell.x + randi_range(-5, 5)
-		var y = player_cell.y + randi_range(-5, 5)
+		var x = player_cell.x + randi_range(-10, 10)
+		var y = player_cell.y + randi_range(-10, 10)
 		var cell = Vector2i(x, y)
 
 		if get_cell_source_id(cell) == muds_source_id:
@@ -271,5 +271,5 @@ func spawn_rat() -> void:
 			rat.global_position = to_global(map_to_local(cell))
 			rat.z_index = 10
 
-			print("Rat spawned!")
+			
 			return

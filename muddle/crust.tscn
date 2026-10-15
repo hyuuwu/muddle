@@ -75,6 +75,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pcilw"]
 size = Vector2(10, 11)
 
+[sub_resource type="LabelSettings" id="LabelSettings_5t3nh"]
+
 [node name="Crust" type="Node2D" unique_id=1542787482]
 
 [node name="foreground" type="TileMapLayer" parent="." unique_id=1106368002]
@@ -111,6 +113,7 @@ texture = ExtResource("5_ljna6")
 
 [node name="drone" type="CharacterBody2D" parent="." unique_id=493170960]
 script = ExtResource("2_3epac")
+tilt_threshold = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="drone" unique_id=2120449979]
 shape = SubResource("CapsuleShape2D_3epac")
@@ -163,6 +166,7 @@ texture = ExtResource("10_nmtif")
 [node name="bug" parent="." unique_id=530364693 instance=ExtResource("12_jnltu")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2009713601]
+visible = false
 script = ExtResource("14_uqc8c")
 
 [node name="Panel" type="Panel" parent="CanvasLayer" unique_id=921317012]
@@ -185,6 +189,7 @@ size_flags_vertical = 0
 [node name="Label" type="Label" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer" unique_id=585194507]
 layout_mode = 2
 text = "bugs:0"
+label_settings = SubResource("LabelSettings_5t3nh")
 
 [node name="rats" parent="." unique_id=367140909 instance=ExtResource("15_5t3nh")]
 
