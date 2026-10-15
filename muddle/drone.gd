@@ -123,6 +123,5 @@ func save_game() -> void:
 	if file:
 		file.store_32(bugs_eaten)
 		file.close()
-		print("Saved! Bugs eaten: ", bugs_eaten)
 	else:
 		print("Save error: ", FileAccess.get_open_error())

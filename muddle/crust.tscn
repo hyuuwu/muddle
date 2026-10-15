@@ -73,7 +73,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pcilw"]
-size = Vector2(10, 11)
+size = Vector2(18, 18)
 
 [sub_resource type="LabelSettings" id="LabelSettings_5t3nh"]
 
@@ -113,7 +113,6 @@ texture = ExtResource("5_ljna6")
 
 [node name="drone" type="CharacterBody2D" parent="." unique_id=493170960]
 script = ExtResource("2_3epac")
-tilt_threshold = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="drone" unique_id=2120449979]
 shape = SubResource("CapsuleShape2D_3epac")
@@ -126,7 +125,6 @@ animation = &"drone"
 [node name="eatin" type="Area2D" parent="drone" unique_id=579517877]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="drone/eatin" unique_id=479013719]
-position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_pcilw")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="drone" unique_id=585549670]
@@ -147,10 +145,10 @@ autoplay = true
 parameters/looping = true
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1144067932]
-position = Vector2(0, -13550)
+position = Vector2(-144.00002, -83.00128)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=186675604]
-position = Vector2(-1, -13548.999)
+position = Vector2(-145.00002, -82.000305)
 scale = Vector2(0.25173607, 0.25308546)
 texture = ExtResource("9_agsck")
 script = ExtResource("10_6p1lv")
@@ -159,7 +157,7 @@ script = ExtResource("10_6p1lv")
 autostart = true
 
 [node name="DropPod" type="Sprite2D" parent="." unique_id=311565841]
-position = Vector2(79, -13561)
+position = Vector2(-65.000015, -94.00128)
 scale = Vector2(0.5625, 0.5234375)
 texture = ExtResource("10_nmtif")
 
