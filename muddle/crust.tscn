@@ -151,7 +151,6 @@ parameters/looping = true
 position = Vector2(-144.00002, -83.00128)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=186675604]
-visible = false
 position = Vector2(-145.00002, -82.000305)
 scale = Vector2(0.25173607, 0.25308546)
 texture = ExtResource("9_agsck")
