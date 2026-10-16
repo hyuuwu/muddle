@@ -47,5 +47,22 @@ text = "Kid, do you want to buy or not?"
 wait_time = 2.2279999999999998
 autostart = true
 
+[node name="Button2" type="Button" parent="." unique_id=284327578]
+layout_mode = 0
+offset_left = 491.0
+offset_top = 362.0
+offset_right = 827.0
+offset_bottom = 425.0
+text = "buy advice"
+
+[node name="Label2" type="Label" parent="." unique_id=966735583]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 29.0
+offset_right = 44.0
+offset_bottom = 52.0
+text = "Bugs: "
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
