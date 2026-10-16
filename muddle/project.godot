@@ -15,10 +15,11 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Muddle"
+config/description="An game"
 run/main_scene="uid://g3rkh66kvhuq"
 config/features=PackedStringArray("4.7", "Forward Plus")
 boot_splash/bg_color=Color(0.13816993, 0.13816993, 0.13816993, 0)
-config/icon="res://icon.svg"
+config/icon="uid://mwolebutuwvp"
 boot_splash/minimum_display_time=2000
 
 [editor_plugins]
