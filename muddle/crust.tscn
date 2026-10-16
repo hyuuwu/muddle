@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bbex61xhs4k6g" path="res://foreground.gd" id="2_0piv4"]
 [ext_resource type="Script" uid="uid://be4q18uxd3r5f" path="res://drone.gd" id="2_3epac"]
 [ext_resource type="Script" uid="uid://ck2rh3tf1xqm0" path="res://darkness.gd" id="2_l1bmj"]
+[ext_resource type="PackedScene" uid="uid://c0nrots7nr4py" path="res://shopentrance.tscn" id="3_ys4ol"]
 [ext_resource type="Texture2D" uid="uid://d3505rhuokyev" path="res://mimic.png" id="4_3epac"]
 [ext_resource type="Texture2D" uid="uid://23hfmle37daj" path="res://mudgrab.png" id="5_ljna6"]
 [ext_resource type="Script" uid="uid://cmu6kb3t6hhbg" path="res://camera.gd" id="7_1sxd4"]
@@ -83,6 +84,7 @@ size = Vector2(18, 18)
 z_index = 2
 tile_set = ExtResource("1_ljna6")
 script = ExtResource("2_0piv4")
+shop_entrance_scene = ExtResource("3_ys4ol")
 map_width = 200
 map_height = 80
 bug_scene = ExtResource("12_jnltu")

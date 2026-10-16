@@ -1,5 +1,8 @@
 extends TileMapLayer
 
+@export var shop_entrance_scene: PackedScene
+@export var shop_spawn_chance := 0.05
+
 @onready var player: CharacterBody2D = $"../drone"
 @onready var mudgrab: Sprite2D = $"../splotch"
 @onready var foreground: TileMapLayer = $"../foreground"
@@ -27,7 +30,7 @@ const drone_box_source_id = 4
 const plastic_source_id = 6
 const sand_source_id = 7
 const general_atlas = Vector2i(0,0) #position in atlas
-
+const shop_id = 5
 #world gen
 func _ready() -> void:
 	generate_world()
@@ -47,6 +50,8 @@ func _ready() -> void:
 		spawn_bug()
 	for i in range(rat_count):
 		spawn_rat()	
+	if randf() < shop_spawn_chance:
+		spawn_shop()
 func generate_world() -> void:
 	var cave_noise = FastNoiseLite.new()
 	cave_noise.seed = randi()
@@ -273,3 +278,25 @@ func spawn_rat() -> void:
 
 			
 			return
+
+func spawn_shop() -> void:
+	if shop_entrance_scene == null:
+		return
+
+	var possible_cells: Array[Vector2i] = []
+
+	for x in range(11, map_width - 11):
+		for y in range(11, map_height - 11):
+			var cell = Vector2i(x, y)
+
+			if get_cell_source_id(cell) == muds_source_id:
+				possible_cells.append(cell)
+
+	if possible_cells.is_empty():
+		return
+
+	var cell = possible_cells.pick_random()
+	var shop = shop_entrance_scene.instantiate()
+
+	add_child(shop)
+	shop.global_position = to_global(map_to_local(cell))
