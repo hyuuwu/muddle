@@ -2,13 +2,14 @@ extends TileMapLayer
 
 @export var shop_entrance_scene: PackedScene
 @export var shop_spawn_chance := 0.05
-
+@onready var cell_label: Label = $"../CanvasLayer/Panel/MarginContainer/VBoxContainer/Label2"
 @onready var player: CharacterBody2D = $"../drone"
 @onready var mudgrab: Sprite2D = $"../splotch"
 @onready var foreground: TileMapLayer = $"../foreground"
 @onready var preview: TileMapLayer = $"../preview"
 @onready var darkness: TileMapLayer = $"../darkness"
-
+@export var shop_scene: PackedScene
+var opening_shop := false
 @export var map_width = 100
 @export var map_height = 40
 @export var swap_interval: float = 0.5
@@ -34,6 +35,8 @@ const shop_id = 5
 #world gen
 func _ready() -> void:
 	generate_world()
+	try_spawn_shop()
+
 	#a random spawn, same height
 	var random_x = randi_range(11,map_width - 11)
 	var spawn_y = 10
@@ -50,8 +53,7 @@ func _ready() -> void:
 		spawn_bug()
 	for i in range(rat_count):
 		spawn_rat()	
-	if randf() < shop_spawn_chance:
-		spawn_shop()
+
 func generate_world() -> void:
 	var cave_noise = FastNoiseLite.new()
 	cave_noise.seed = randi()
@@ -127,7 +129,11 @@ func _input(event: InputEvent) -> void:
 	#only when pressing lmb
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		#what am I hovering over
-		var mouse_pos = get_local_mouse_position()
+		var mouse_pos := get_global_mouse_position()
+
+
+
+
 		var player_tile = foreground.local_to_map(foreground.to_local(player.global_position))
 		var target_tile = foreground.local_to_map(foreground.to_local(mouse_pos)) #what your mouse is looking at
 		var tile_pos = target_tile
@@ -151,6 +157,8 @@ func _input(event: InputEvent) -> void:
 				update_surrounding(tile_pos)
 				holding_mud = false
 				darkness.set_cell(tile_pos, 11, Vector2i(0,0))
+			if get_cell_source_id(target_tile) == shop_id:
+				open_shop()
 func update_tunnel(pos: Vector2i) -> void: #can be combined with next 2
 	var original_id = get_cell_source_id(pos)
 	#check if whole block
@@ -205,6 +213,9 @@ func _process(delta: float) -> void: #what happens when youre holding a block (a
 			#transparent mud
 			preview.set_cell(current_cell, 0, Vector2i(0,0), 1)
 			last_preview_cell = current_cell
+			var player_cell := local_to_map(to_local(player.global_position))
+			cell_label.text = "loc: " + str(player_cell)
+			
 func get_checkerboard_tile(): #in function _process for some reason, for water
 	for x in range(map_width):
 		for y in range(map_height):
@@ -278,25 +289,45 @@ func spawn_rat() -> void:
 
 			
 			return
-
-func spawn_shop() -> void:
-	if shop_entrance_scene == null:
+func open_shop() -> void:
+	if opening_shop or shop_scene == null:
 		return
 
-	var possible_cells: Array[Vector2i] = []
+	opening_shop = true
+	var shop = shop_scene.instantiate()
+	get_tree().current_scene.add_child(shop)
+
+	# Start the animation in the shop scene.
+	var animation_player := shop.get_node_or_null("AnimationPlayer") as AnimationPlayer
+	if animation_player:
+		animation_player.play("open")
+func try_spawn_shop() -> void:
+	if randf() > shop_spawn_chance:
+		return
+
+	var candidates: Array[Vector2i] = []
 
 	for x in range(11, map_width - 11):
 		for y in range(11, map_height - 11):
-			var cell = Vector2i(x, y)
+			var cell := Vector2i(x, y)
 
-			if get_cell_source_id(cell) == muds_source_id:
-				possible_cells.append(cell)
+			# Shop goes in an open cave cell, with solid mud below it.
+			if get_cell_source_id(cell) == muds_source_id \
+			and get_cell_source_id(cell + Vector2i.DOWN) == mud_source_id:
+				candidates.append(cell)
 
-	if possible_cells.is_empty():
+	if candidates.is_empty():
+		print("No suitable cave tile found for the shop.")
 		return
 
-	var cell = possible_cells.pick_random()
-	var shop = shop_entrance_scene.instantiate()
+	var shop_cell: Vector2i = candidates.pick_random()
+	set_cell(shop_cell, shop_id, Vector2i(0, 0)) # use shoppy's atlas coordinates
+	darkness.erase_cell(shop_cell)
+	darkness.erase_cell(shop_cell + Vector2i.UP)
+	darkness.erase_cell(shop_cell + Vector2i.DOWN)
+	darkness.erase_cell(shop_cell + Vector2i.LEFT)
+	darkness.erase_cell(shop_cell + Vector2i.RIGHT)
 
-	add_child(shop)
-	shop.global_position = to_global(map_to_local(cell))
+
+	print("Shop spawnou na célula: ", shop_cell)
+	print("Posição no mundo: ", to_global(map_to_local(shop_cell)))
