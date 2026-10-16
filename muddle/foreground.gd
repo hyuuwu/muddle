@@ -1,7 +1,7 @@
 extends TileMapLayer
 
 @export var shop_entrance_scene: PackedScene
-@export var shop_spawn_chance := 0.05
+@export var shop_spawn_chance := 100
 @onready var cell_label: Label = $"../CanvasLayer/Panel/MarginContainer/VBoxContainer/Label2"
 @onready var player: CharacterBody2D = $"../drone"
 @onready var mudgrab: Sprite2D = $"../splotch"
@@ -17,6 +17,7 @@ var opening_shop := false
 @export var bug_count: int = 10
 @export var rat_scene: PackedScene
 @export var rat_count: int = 5
+@export var shop_cell := Vector2i(-1, -1)
 
 var holding_mud: bool = false
 var last_preview_cell: Vector2i = Vector2i(-1,-1) #where preview is
@@ -77,6 +78,7 @@ func generate_world() -> void:
 			"max_y": map_height-11,
 			"noise_machine": plastic_noise
 		},
+
 	]
 	for x in range(map_width):
 		for y in range(map_height):
@@ -213,8 +215,16 @@ func _process(delta: float) -> void: #what happens when youre holding a block (a
 			#transparent mud
 			preview.set_cell(current_cell, 0, Vector2i(0,0), 1)
 			last_preview_cell = current_cell
-			var player_cell := local_to_map(to_local(player.global_position))
+			var player_cell := local_to_map(to_local(player.global_position)) 
 			cell_label.text = "loc: " + str(player_cell)
+		if shop_cell == Vector2i(-1, -1):
+			return
+		
+		var player_cell :=local_to_map(to_local(player.global_position))
+		if player_cell.distance_to(shop_cell) <= 1.5 \
+		and Input.is_action_just_pressed("interact"):
+			enter_shop()
+		
 			
 func get_checkerboard_tile(): #in function _process for some reason, for water
 	for x in range(map_width):
@@ -235,7 +245,7 @@ func clear_current_preview() -> void:
 #bug
 func spawn_bug() -> void:
 	if bug_scene == null:
-		print("ERROR: Bug scene not assigned!")
+		print("ERROR: Bug scene not assigned!") #this checks if there is a bug scene attached
 		return
 	
 	var player_cell = local_to_map(to_local(player.global_position))
@@ -260,7 +270,9 @@ func is_grid_dist_0(world_pos: Vector2) -> bool:
 	var drone_tile = local_to_map(to_local(world_pos))
 	var mouse_tile = local_to_map(to_local(get_global_mouse_position()))
 	return drone_tile == mouse_tile
-
+func enter_shop():
+	print("shop open")
+	get_tree().change_scene_to_file("res://shop.tscn")
 
 func spawn_rat() -> void:
 	if rat_scene == null:
@@ -302,6 +314,7 @@ func open_shop() -> void:
 	if animation_player:
 		animation_player.play("open")
 func try_spawn_shop() -> void:
+	var shop_cell := Vector2i(-1, -1)
 	if randf() > shop_spawn_chance:
 		return
 
@@ -317,10 +330,11 @@ func try_spawn_shop() -> void:
 				candidates.append(cell)
 
 	if candidates.is_empty():
+		shop_cell = candidates.pick_random()
 		print("No suitable cave tile found for the shop.")
 		return
 
-	var shop_cell: Vector2i = candidates.pick_random()
+
 	set_cell(shop_cell, shop_id, Vector2i(0, 0)) # use shoppy's atlas coordinates
 	darkness.erase_cell(shop_cell)
 	darkness.erase_cell(shop_cell + Vector2i.UP)
@@ -329,5 +343,5 @@ func try_spawn_shop() -> void:
 	darkness.erase_cell(shop_cell + Vector2i.RIGHT)
 
 
-	print("Shop spawnou na célula: ", shop_cell)
+	print("Shop spawnou na célula: ", shop_cell) 
 	print("Posição no mundo: ", to_global(map_to_local(shop_cell)))

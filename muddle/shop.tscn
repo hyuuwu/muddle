@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bs13txc5okimn"]
 
 [ext_resource type="Script" uid="uid://bq3tl4mupjijs" path="res://shop.gd" id="1_fgaav"]
-[ext_resource type="Texture2D" uid="uid://dsjcvlc3mjd3r" path="res://icon.svg" id="1_viryw"]
 [ext_resource type="Texture2D" uid="uid://mwolebutuwvp" path="res://drop pod.png" id="2_e7rdd"]
+[ext_resource type="Texture2D" uid="uid://thrub1jvdih7" path="res://stone.png" id="2_fgaav"]
 [ext_resource type="AudioStream" uid="uid://cj24ioxws7my7" path="res://shop song.mp3" id="3_blqjs"]
 
 [node name="Control" type="Control" unique_id=919689299]
@@ -15,9 +15,9 @@ grow_vertical = 2
 script = ExtResource("1_fgaav")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=868835193]
-position = Vector2(585.5, 134)
-scale = Vector2(4.3203125, 1.578125)
-texture = ExtResource("1_viryw")
+position = Vector2(498, 161)
+scale = Vector2(6.144531, 5.0078125)
+texture = ExtResource("2_fgaav")
 
 [node name="Button" type="Button" parent="." unique_id=360838475]
 layout_mode = 0
@@ -44,7 +44,7 @@ offset_bottom = 318.0
 text = "Kid, do you want to buy or not?"
 
 [node name="Timer" type="Timer" parent="." unique_id=1564844593]
-wait_time = 2.2279999999999998
+wait_time = 2.228
 autostart = true
 
 [node name="Button2" type="Button" parent="." unique_id=284327578]
