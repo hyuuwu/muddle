@@ -4,18 +4,160 @@
 [ext_resource type="Script" uid="uid://bbex61xhs4k6g" path="res://foreground.gd" id="2_0piv4"]
 [ext_resource type="Script" uid="uid://be4q18uxd3r5f" path="res://drone.gd" id="2_3epac"]
 [ext_resource type="Script" uid="uid://ck2rh3tf1xqm0" path="res://darkness.gd" id="2_l1bmj"]
-[ext_resource type="PackedScene" uid="uid://bs13txc5okimn" path="res://shop.tscn" id="3_ys4ol"]
+[ext_resource type="Texture2D" uid="uid://thrub1jvdih7" path="res://stone.png" id="3_cmcfm"]
 [ext_resource type="Texture2D" uid="uid://d3505rhuokyev" path="res://mimic.png" id="4_3epac"]
 [ext_resource type="Texture2D" uid="uid://23hfmle37daj" path="res://mudgrab.png" id="5_ljna6"]
+[ext_resource type="AudioStream" uid="uid://cj24ioxws7my7" path="res://shop song.mp3" id="5_yefvl"]
+[ext_resource type="Script" uid="uid://bqwli6wi7v3p2" path="res://bug.gd" id="6_ic5i0"]
 [ext_resource type="Script" uid="uid://cmu6kb3t6hhbg" path="res://camera.gd" id="7_1sxd4"]
+[ext_resource type="Texture2D" uid="uid://bjkbjfetii73s" path="res://bug.png" id="7_3vyyv"]
 [ext_resource type="AudioStream" uid="uid://d0aq5ml8fr72m" path="res://t.mp3" id="8_1sxd4"]
 [ext_resource type="AudioStream" uid="uid://dm12xtjrncjwi" path="res://9-cartoon-chomp.mp3" id="8_h3rrp"]
+[ext_resource type="Script" uid="uid://b34mkovlwbi8l" path="res://rat.gd" id="8_xmaq7"]
 [ext_resource type="Texture2D" uid="uid://but7w3bfskgko" path="res://loading.png" id="9_agsck"]
+[ext_resource type="Texture2D" uid="uid://bay7leh3182ys" path="res://ratty.png" id="9_bew1d"]
 [ext_resource type="Script" uid="uid://cft5gfrtf7pay" path="res://cutscene.gd" id="10_6p1lv"]
+[ext_resource type="AudioStream" uid="uid://dnjxhyt7nk320" path="res://rat_sfx.mp3" id="10_maxgj"]
 [ext_resource type="Texture2D" uid="uid://mwolebutuwvp" path="res://drop pod.png" id="10_nmtif"]
 [ext_resource type="PackedScene" uid="uid://bf8ag88skpjse" path="res://bug.tscn" id="12_jnltu"]
 [ext_resource type="Script" uid="uid://b0jeqnknqtnnb" path="res://control.gd" id="14_uqc8c"]
 [ext_resource type="PackedScene" uid="uid://dmsxpnse0r81q" path="res://rat.tscn" id="15_5t3nh"]
+
+[sub_resource type="GDScript" id="GDScript_v8nov"]
+script/source = "extends Control
+
+var bugs_eaten = 0
+var text = [
+	\"Clanker.\",
+	\"Buy or get out.\",
+	\"Can you stop spinning for a second?\",
+	\"How about that thing i lent you?\",
+	\"I want my 20 bugs back. You still own me.\"
+]
+func _ready():
+	load_game()
+	$Label2.text = \"Bugs: %d\" % bugs_eaten
+	
+var advices = [
+	\"Caution going east. Heard the bats attack you.\",
+	\"*cough* Dont touch the water.\",
+	\"Rats? They are your friend. Dont kill them.\"
+]
+func _on_button_pressed() -> void:
+	var random_dialogue = text.pick_random()
+
+	$Label.text = random_dialogue
+	$Label.show()
+	$Timer.start()
+
+
+func _on_timer_timeout() -> void:
+	$Label.hide()
+
+func save_game() -> void:
+	var file = FileAccess.open(\"user://savefilepleasedontmodify.lsblk\", FileAccess.WRITE)
+
+	if file:
+		file.store_32(bugs_eaten)
+		file.close()
+	else:
+		print(\"Save error: \", FileAccess.get_open_error())
+
+func load_game() -> void:
+	if FileAccess.file_exists(\"user://savefilepleasedontmodify.lsblk\"):
+		var file = FileAccess.open(\"user://savefilepleasedontmodify.lsblk\", FileAccess.READ)
+
+		if file:
+			bugs_eaten = file.get_32()
+			file.close()
+			print(\"Loaded! Bugs eaten: \", bugs_eaten)
+
+
+
+func _on_button_2_pressed() -> void:
+	if bugs_eaten < 20:
+		$Label.text = \"Poor. Come back with 20 bugs.\"
+		$Label.show()
+		$Timer.start()
+		return
+
+	# Charge the player 20 bugs
+	bugs_eaten -= 20
+
+	# Pick random advice
+	var rand = advices.pick_random()
+	$Label.text = rand
+
+	# Update the counter
+	$Label2.text = \"Bugs: %d\" % bugs_eaten
+
+	# Save the new balance
+	save_game()
+
+	# Show advice temporarily
+	$Label.show()
+	$Timer.start()
+
+		
+		
+func close_shop() -> void:
+	get_parent().opening_shop = false
+	queue_free()
+
+func _on_button_3_pressed() -> void:
+	close_shop()
+"
+
+[sub_resource type="PackedScene" id="PackedScene_u3pj7"]
+_bundled = {
+"conn_count": 4,
+"conns": PackedInt32Array(1073741833, 1073741832, 69, 68, 2, 0, 0, 1073741835, 1073741834, 71, 70, 2, 0, 0, 1073741837, 1073741836, 73, 72, 2, 0, 0, 1073741839, 1073741838, 75, 74, 2, 0, 0),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("Control", "Control", "layout_mode", "anchors_preset", "anchor_right", "anchor_bottom", "grow_horizontal", "grow_vertical", "script", "Sprite2D", "Sprite2D", "position", "scale", "texture", "Button", "Button", "layout_mode", "offset_left", "offset_top", "offset_right", "offset_bottom", "text", "icon", "expand_icon", "AudioStreamPlayer2D", "AudioStreamPlayer2D", "stream", "autoplay", "parameters/looping", "Label", "Label", "visible", "layout_mode", "offset_left", "offset_top", "offset_right", "offset_bottom", "text", "Timer", "Timer", "wait_time", "autostart", "Button2", "Button", "layout_mode", "offset_left", "offset_top", "offset_right", "offset_bottom", "text", "Label2", "Label", "layout_mode", "offset_left", "offset_top", "offset_right", "offset_bottom", "text", "Button3", "Button", "layout_mode", "anchors_preset", "anchor_left", "anchor_right", "offset_left", "offset_bottom", "grow_horizontal", "text", "_on_button_pressed", "pressed", "_on_timer_timeout", "timeout", "_on_button_2_pressed", "pressed", "_on_button_3_pressed", "pressed"),
+"node_count": 9,
+"node_ids": PackedInt32Array(919689299, 868835193, 360838475, 1608920580, 752591741, 1564844593, 284327578, 966735583, 517067552),
+"node_paths": [NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath("Button"), NodePath("."), NodePath("Timer"), NodePath("."), NodePath("Button2"), NodePath("."), NodePath("Button3")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 7, 2, 0, 3, 1, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 0, 1073741824, 0, 10, 9, -1, 3, 11, 7, 12, 8, 13, 9, 0, 1073741825, 0, 15, 14, -1, 8, 16, 10, 17, 11, 18, 12, 19, 13, 20, 14, 21, 15, 22, 16, 23, 17, 0, 1073741826, 0, 25, 24, -1, 3, 26, 18, 27, 19, 28, 20, 0, 1073741827, 0, 30, 29, -1, 7, 31, 21, 32, 22, 33, 23, 34, 24, 35, 25, 36, 26, 37, 27, 0, 1073741828, 0, 39, 38, -1, 2, 40, 28, 41, 29, 0, 1073741829, 0, 43, 42, -1, 6, 44, 30, 45, 31, 46, 32, 47, 33, 48, 34, 49, 35, 0, 1073741830, 0, 51, 50, -1, 6, 52, 36, 53, 37, 54, 38, 55, 39, 56, 40, 57, 41, 0, 1073741831, 0, 59, 58, -1, 8, 60, 42, 61, 43, 62, 44, 63, 45, 64, 46, 65, 47, 66, 48, 67, 49, 0),
+"variants": [3, 15, 1.0, 1.0, 2, 2, SubResource("GDScript_v8nov"), Vector2(498, 161), Vector2(6.144531, 5.0078125), ExtResource("3_cmcfm"), 0, 221.0, 367.0, 464.0, 425.0, "TALK", ExtResource("10_nmtif"), true, ExtResource("5_yefvl"), true, true, false, 0, 519.0, 295.0, 559.0, 318.0, "Kid, do you want to buy or not?", 2.228, true, 0, 513.0, 360.0, 849.0, 423.0, "buy advice", 0, 4.0, 29.0, 44.0, 52.0, "Bugs: ", 1, 1, 1.0, 1.0, -255.0, 138.0, 0, "go bak"],
+"version": 3
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ji6q"]
+size = Vector2(8, 4)
+
+[sub_resource type="PackedScene" id="PackedScene_m86xp"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("bug", "CharacterBody2D", "script", "Sprite2D", "Sprite2D", "texture", "CollisionShape2D", "CollisionShape2D", "shape"),
+"node_count": 3,
+"node_ids": PackedInt32Array(530364693, 577261645, 1299105601),
+"node_paths": [NodePath("."), NodePath(".")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 1, 5, 1, 0, 1073741825, 0, 7, 6, -1, 1, 8, 2, 0),
+"variants": [ExtResource("6_ic5i0"), ExtResource("7_3vyyv"), SubResource("RectangleShape2D_5ji6q")],
+"version": 3
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xl1m0"]
+size = Vector2(10, 4)
+
+[sub_resource type="PackedScene" id="PackedScene_luf2l"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("rat", "CharacterBody2D", "rat", "script", "Sprite2D", "Sprite2D", "texture", "CollisionShape2D", "CollisionShape2D", "shape", "Timer", "Timer", "wait_time", "one_shot", "AudioStreamPlayer2D", "AudioStreamPlayer2D", "stream", "volume_db", "max_distance", "attenuation"),
+"node_count": 5,
+"node_ids": PackedInt32Array(367140909, 1454714766, 1000902797, 854414174, 1828548696),
+"node_paths": [NodePath("."), NodePath("."), NodePath("."), NodePath(".")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 3, 0, 1, 2, 1073741824, 0, 5, 4, -1, 1, 6, 1, 0, 1073741825, 0, 8, 7, -1, 1, 9, 2, 0, 1073741826, 0, 11, 10, -1, 2, 12, 3, 13, 4, 0, 1073741827, 0, 15, 14, -1, 4, 16, 5, 17, 6, 18, 7, 19, 8, 0),
+"variants": [ExtResource("8_xmaq7"), ExtResource("9_bew1d"), SubResource("RectangleShape2D_xl1m0"), 15.0, true, ExtResource("10_maxgj"), -8.635, 800.0, 2.928171],
+"version": 3
+}
 
 [sub_resource type="Gradient" id="Gradient_rhxu1"]
 interpolation_mode = 1
@@ -84,11 +226,11 @@ size = Vector2(18, 18)
 z_index = 2
 tile_set = ExtResource("1_ljna6")
 script = ExtResource("2_0piv4")
-shop_scene = ExtResource("3_ys4ol")
+shop_scene = SubResource("PackedScene_u3pj7")
 map_width = 200
 map_height = 80
-bug_scene = ExtResource("12_jnltu")
-rat_scene = ExtResource("15_5t3nh")
+bug_scene = SubResource("PackedScene_m86xp")
+rat_scene = SubResource("PackedScene_luf2l")
 
 [node name="darkness" type="TileMapLayer" parent="." unique_id=1041560706]
 modulate = Color(0.24780053, 0.24780053, 0.24780053, 0.95000005)
@@ -240,7 +382,6 @@ parameters/looping = true
 position = Vector2(-144.00002, -83.00128)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=186675604]
-visible = false
 position = Vector2(-145.00002, -82.000305)
 scale = Vector2(0.25173607, 0.25308546)
 texture = ExtResource("9_agsck")

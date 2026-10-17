@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://djlwyntx87cg0" path="res://ocean and sea.png" id="4_faghv"]
 [ext_resource type="Texture2D" uid="uid://cl0ci540pr12t" path="res://drone box.png" id="5_abpjn"]
 [ext_resource type="Texture2D" uid="uid://cbpqnyi1yi2bl" path="res://clay.png" id="7_gwh77"]
-[ext_resource type="Texture2D" uid="uid://ukves1mb81k2" path="res://shop.png" id="9_c0gsq"]
 [ext_resource type="Texture2D" uid="uid://cmcw50fbiocdu" path="res://box drill.png" id="9_dwbm3"]
 [ext_resource type="Texture2D" uid="uid://bfvo8mfjw4whh" path="res://sand.png" id="9_ofobk"]
 [ext_resource type="Texture2D" uid="uid://b6l816kgvf2wx" path="res://plastic.png" id="10_c0gsq"]
@@ -125,9 +124,11 @@ texture_region_size = Vector2i(32, 32)
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, -8.093643, 16, -7.913783, 16, -16)
 0:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-16, 16, 16, 16, 16, 7.913784, -16, 7.913784)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ofobk"]
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gmydv"]
 resource_name = "shoppy"
-texture = ExtResource("9_c0gsq")
+texture = SubResource("CompressedTexture2D_ofobk")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
