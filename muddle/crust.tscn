@@ -423,10 +423,6 @@ layout_mode = 2
 text = "bugs:0"
 label_settings = SubResource("LabelSettings_5t3nh")
 
-[node name="Label2" type="Label" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer" unique_id=391181720]
-layout_mode = 2
-text = "thing"
-
 [node name="rats" parent="." unique_id=367140909 instance=ExtResource("15_5t3nh")]
 
 [connection signal="body_entered" from="drone/eatin" to="drone" method="_on_eatin_body_entered"]

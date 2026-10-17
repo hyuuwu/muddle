@@ -208,7 +208,6 @@ func _process(delta: float) -> void:
 			preview.set_cell(current_cell, 0, Vector2i(0,0), 1)
 			last_preview_cell = current_cell
 			var player_cell := local_to_map(to_local(player.global_position)) 
-			cell_label.text = "loc: " + str(player_cell)
 func get_checkerboard_tile(): #in function _process for some reason, for water
 	for x in range(map_width):
 		for y in range(map_height):
