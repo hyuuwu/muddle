@@ -24,6 +24,10 @@ boot_splash/image="uid://mwolebutuwvp"
 config/icon="uid://mwolebutuwvp"
 boot_splash/minimum_display_time=2000
 
+[autoload]
+
+Setin="*uid://bp0t158t5c8qp"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")

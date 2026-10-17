@@ -49,10 +49,10 @@ autostart = true
 
 [node name="Button2" type="Button" parent="." unique_id=284327578]
 layout_mode = 0
-offset_left = 491.0
-offset_top = 362.0
-offset_right = 827.0
-offset_bottom = 425.0
+offset_left = 513.0
+offset_top = 360.0
+offset_right = 849.0
+offset_bottom = 423.0
 text = "buy advice"
 
 [node name="Label2" type="Label" parent="." unique_id=966735583]
@@ -63,6 +63,17 @@ offset_right = 44.0
 offset_bottom = 52.0
 text = "Bugs: "
 
+[node name="Button3" type="Button" parent="." unique_id=517067552]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -255.0
+offset_bottom = 138.0
+grow_horizontal = 0
+text = "go bak"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]

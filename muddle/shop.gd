@@ -74,3 +74,9 @@ func _on_button_2_pressed() -> void:
 
 		
 		
+func close_shop() -> void:
+	get_parent().opening_shop = false
+	queue_free()
+
+func _on_button_3_pressed() -> void:
+	close_shop()
